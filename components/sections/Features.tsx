@@ -42,7 +42,7 @@ export default function Features() {
         </div>
 
         {/* Features Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border border-gray-100 rounded-3xl p-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border border-gray-100 rounded-3xl p-4 md:p-8">
           {[
             { title: "Customer Engagment", icon: "/features/015-chatting.png" },
             { title: "Clinical Managment", icon: "/features/013-hospital.png" },

@@ -70,48 +70,51 @@ export default function Header() {
           </button>
         </div>
 
-        {/* Mobile Menu */}
-        {isMenuOpen && (
-          <div className="md:hidden py-4 border-t border-gray-100 animate-fade-in-up">
-            <div className="flex flex-col gap-4">
-              <a
-                href="#home"
-                onClick={() => setIsMenuOpen(false)}
-                className="text-gray-700 hover:text-cyan-600 transition-colors font-medium py-2"
-              >
-                Home
-              </a>
-              <a
-                href="#features"
-                onClick={() => setIsMenuOpen(false)}
-                className="text-gray-700 hover:text-cyan-600 transition-colors font-medium py-2"
-              >
-                Features
-              </a>
-              <a
-                href="#services"
-                onClick={() => setIsMenuOpen(false)}
-                className="text-gray-700 hover:text-cyan-600 transition-colors font-medium py-2"
-              >
-                Services
-              </a>
-              <a
-                href="#testimonials"
-                onClick={() => setIsMenuOpen(false)}
-                className="text-gray-700 hover:text-cyan-600 transition-colors font-medium py-2"
-              >
-                Testimonials
-              </a>
-              <a
-                href="#contact"
-                onClick={() => setIsMenuOpen(false)}
-                className="text-gray-700 hover:text-cyan-600 transition-colors font-medium py-2"
-              >
-                Contact
-              </a>
-            </div>
+        {/* Mobile Menu Overlay */}
+        <div
+          className={`fixed inset-0 z-40 bg-white/95 backdrop-blur-md transition-transform duration-300 md:hidden overflow-y-auto ${
+            isMenuOpen ? "translate-x-0" : "translate-x-full"
+          }`}
+          style={{ top: "64px" }}
+        >
+          <div className="container-custom py-8 flex flex-col gap-6">
+            <a
+              href="#home"
+              onClick={() => setIsMenuOpen(false)}
+              className="text-2xl font-semibold text-gray-800 hover:text-[#582974] transition-colors"
+            >
+              Home
+            </a>
+            <a
+              href="#features"
+              onClick={() => setIsMenuOpen(false)}
+              className="text-2xl font-semibold text-gray-800 hover:text-[#582974] transition-colors"
+            >
+              Features
+            </a>
+            <a
+              href="#services"
+              onClick={() => setIsMenuOpen(false)}
+              className="text-2xl font-semibold text-gray-800 hover:text-[#582974] transition-colors"
+            >
+              Services
+            </a>
+            <a
+              href="#testimonials"
+              onClick={() => setIsMenuOpen(false)}
+              className="text-2xl font-semibold text-gray-800 hover:text-[#582974] transition-colors"
+            >
+              Testimonials
+            </a>
+            <a
+              href="#contact"
+              onClick={() => setIsMenuOpen(false)}
+              className="text-2xl font-semibold text-gray-800 hover:text-[#582974] transition-colors"
+            >
+              Contact
+            </a>
           </div>
-        )}
+        </div>
       </nav>
     </header>
   );

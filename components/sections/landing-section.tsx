@@ -47,7 +47,7 @@ export default function Hero() {
           </div>
 
           {/* Right - Professional Saasonic-Style Image Collage */}
-          <div className="relative h-[600px] lg:h-[700px] flex items-center justify-center">
+          <div className="relative h-[400px] sm:h-[500px] md:h-[600px] lg:h-[700px] flex items-center justify-center w-full">
             {/* Background Glows */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-purple-200/20 blur-[100px] rounded-full"></div>
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-cyan-200/20 blur-[80px] rounded-full translate-x-20"></div>
