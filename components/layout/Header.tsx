@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { Menu, X } from "lucide-react";
 
 export default function Header() {
@@ -19,18 +20,19 @@ export default function Header() {
               muted
               playsInline
               preload="auto"
+              suppressHydrationWarning
               className="w-auto h-full max-h-[64px] md:max-h-[70px] object-contain pointer-events-none"
             />
           </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
-            <a
-              href="#home"
+            <Link
+              href="/"
               className="text-gray-700 hover:text-[#582974] transition-colors font-medium"
             >
               Home
-            </a>
+            </Link>
             <a
               href="#features"
               className="text-gray-700 hover:text-[#582974] transition-colors font-medium"
@@ -55,6 +57,12 @@ export default function Header() {
             >
               Contact
             </a>
+            <Link
+              href="/blog"
+              className="text-gray-700 hover:text-[#582974] transition-colors font-medium"
+            >
+              Blog
+            </Link>
           </div>
 
           {/* Desktop Spacer - Maintains layout balance after removing CTA button */}
@@ -78,13 +86,13 @@ export default function Header() {
           style={{ top: "64px" }}
         >
           <div className="container-custom py-8 flex flex-col gap-6">
-            <a
-              href="#home"
+            <Link
+              href="/"
               onClick={() => setIsMenuOpen(false)}
               className="text-2xl font-semibold text-gray-800 hover:text-[#582974] transition-colors"
             >
               Home
-            </a>
+            </Link>
             <a
               href="#features"
               onClick={() => setIsMenuOpen(false)}
@@ -113,6 +121,13 @@ export default function Header() {
             >
               Contact
             </a>
+            <Link
+              href="/blog"
+              onClick={() => setIsMenuOpen(false)}
+              className="text-2xl font-semibold text-gray-800 hover:text-[#582974] transition-colors"
+            >
+              Blog
+            </Link>
           </div>
         </div>
       </nav>

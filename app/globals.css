@@ -200,11 +200,6 @@
     }
   }
 
-  /* Gradient Text */
-  .gradient-text {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-[#582974] via-[#14BBD3] to-[#582974];
-  }
-
   /* Card Hover Effects */
   .card-hover {
     @apply transition-all duration-300 hover:shadow-2xl hover:-translate-y-2;

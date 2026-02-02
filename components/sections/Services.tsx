@@ -48,7 +48,7 @@ export default function Services() {
                 />
               </span>
             </span>{" "}
-            <span className="gradient-text">business succeed</span>
+            <span className="text-[#582974]">business succeed</span>
           </h2>
           <p className="text-lg text-gray-600">
             Comprehensive healthcare solutions designed for modern medical

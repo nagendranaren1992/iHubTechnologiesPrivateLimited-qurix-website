@@ -33,7 +33,7 @@ export default function Features() {
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
             Boost your business with{" "}
-            <span className="gradient-text">powerful features</span>
+            <span className="text-[#582974]">powerful features</span>
           </h2>
           <p className="text-lg text-gray-600">
             Everything you need to streamline operations, enhance patient care,

@@ -56,7 +56,7 @@ export default function HowItWorks() {
           <div className="text-left">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
               How it works to help <br />
-              <span className="gradient-text">your business</span>
+              <span className="text-[#582974]">your business</span>
             </h2>
 
             <p className="text-lg text-gray-600 mb-8 leading-relaxed max-w-lg">

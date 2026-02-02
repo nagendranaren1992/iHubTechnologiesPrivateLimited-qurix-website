@@ -131,7 +131,7 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="mt-12 pt-8 border-t border-slate-800">
-          <p className="text-center text-slate-400">
+          <p className="text-center text-slate-400" suppressHydrationWarning>
             © {new Date().getFullYear()} Qurix Healthcare. All rights reserved.
           </p>
         </div>

@@ -22,7 +22,7 @@ export default function Hero() {
           <div className={`${mounted ? "animate-fade-in-up" : "opacity-0"}`}>
             <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-900 leading-tight mb-6">
               Transform Healthcare with{" "}
-              <span className="gradient-text">Intelligent Solutions</span>
+              <span className="text-[#582974]">Intelligent Solutions</span>
             </h1>
             <p className="text-lg md:text-xl text-gray-600 mb-8 leading-relaxed max-w-xl">
               Empower your medical practice with cutting-edge technology.
