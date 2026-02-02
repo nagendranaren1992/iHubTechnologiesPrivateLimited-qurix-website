@@ -121,7 +121,6 @@ export default function Header() {
             >
               Contact
             </a>
-            {/* Blog Link */}
             <Link
               href="/blog"
               onClick={() => setIsMenuOpen(false)}
