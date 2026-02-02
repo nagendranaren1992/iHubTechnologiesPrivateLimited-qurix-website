@@ -2,6 +2,7 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import Hero from "@/components/sections/landing-section";
 import TrustedCompanies from "@/components/sections/trusted-companies";
+import WhatIsQurix from "@/components/sections/what-is-qurix";
 import Features from "@/components/sections/Features";
 import Services from "@/components/sections/Services";
 import HowItWorks from "@/components/sections/HowItWorks";
@@ -15,6 +16,7 @@ export default function Home() {
       <main>
         <Hero />
         <TrustedCompanies />
+        <WhatIsQurix />
         <Features />
         <Services />
         <HowItWorks />

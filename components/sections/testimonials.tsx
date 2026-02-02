@@ -8,34 +8,64 @@ export default function Testimonials() {
 
   const testimonials = [
     {
-      name: "Dr. Sarah Mitchell",
-      role: "Chief Medical Officer",
-      company: "Metro General Hospital",
+      name: "Dr. Sridhar",
+      role: "Critical care specialist",
+      company: "Nandyal Intensive and Trauma Care",
       rating: 5,
       quote:
         "Qurix Healthcare has transformed how we manage patient care. The analytics and reporting features have given us insights we never had before, leading to better outcomes and more efficient operations.",
-      avatar: "SM",
+      avatar: "/testimonals/Sreedhar.png",
       bgColor: "from-[#582974] to-[#753a93]",
     },
     {
-      name: "James Rodriguez",
-      role: "Practice Manager",
-      company: "Family Care Clinic",
+      name: "Dr.Aasrith",
+      role: "Critical Care & emergency Medicine Specialist",
+      company: "Jope Hospital",
       rating: 5,
       quote:
         "The telemedicine integration is seamless and our patients love the convenience. We've seen a 40% increase in patient satisfaction scores since implementing Qurix Healthcare.",
-      avatar: "JR",
+      avatar: "/testimonals/Aasrith.png",
       bgColor: "from-[#14BBD3] to-[#40d4e8]",
     },
     {
-      name: "Dr. Emily Chen",
-      role: "Director of Operations",
-      company: "HealthFirst Medical Group",
+      name: "Dr. Suman",
+      role: "MBBS, MD – Paediatrics",
+      company: "Avi Clinics",
       rating: 5,
       quote:
         "Implementation was incredibly smooth, and the support team was there every step of the way. The platform has helped us reduce administrative overhead by 30% while improving care quality.",
-      avatar: "EC",
+      avatar: "/testimonals/Suman.png",
       bgColor: "from-[#582974] to-[#14BBD3]",
+    },
+    {
+      name: "Dr.Siddarth Reddy",
+      role: "Paediatric & Adult Neurologist",
+      company: "Sidarth Hospitals",
+      rating: 5,
+      quote:
+        "Navigating complex surgical schedules used to be a nightmare. Qurix's intuitive interface has streamlined our workflow, allowing us to focus more on patient outcomes and less on logistics.",
+      avatar: "/testimonals/Sidharth.png",
+      bgColor: "from-[#14bbd3] to-[#753a93]",
+    },
+    {
+      name: "Dr. Kishore B Reddy",
+      role: "HOD Orthopaedics & Ortho Oncology",
+      company: "AMOR Hospitals",
+      rating: 5,
+      quote:
+        "Qurix has revolutionized our billing cycle. The automated features have drastically reduced errors and improved our revenue flow, giving us financial stability to expand our services.",
+      avatar: "/testimonals/Kishorereddy.png",
+      bgColor: "from-[#753a93] to-[#582974]",
+    },
+    {
+      name: "Sravani Chettupalli",
+      role: "CEO Philanthropist, Educationalist & Entrepreneur",
+      company: "Sravani Hospitals",
+      rating: 5,
+      quote:
+        "Having instant access to comprehensive patient history is critical in cardiology. Qurix provides a unified view that helps us make faster, more accurate diagnoses.",
+      avatar: "/testimonals/Sravani.png",
+      bgColor: "from-[#40d4e8] to-[#14bbd3]",
     },
   ];
 
@@ -96,10 +126,12 @@ export default function Testimonials() {
 
               {/* Author */}
               <div className="flex items-center gap-4">
-                <div
-                  className={`w-16 h-16 rounded-full bg-gradient-to-br ${testimonials[activeIndex].bgColor} flex items-center justify-center text-white font-bold text-xl`}
-                >
-                  {testimonials[activeIndex].avatar}
+                <div className="w-24 h-24 rounded-full overflow-hidden flex-shrink-0 border-2 border-white shadow-md">
+                  <img
+                    src={testimonials[activeIndex].avatar}
+                    alt={testimonials[activeIndex].name}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 <div>
                   <div className="font-bold text-gray-900 text-lg">
