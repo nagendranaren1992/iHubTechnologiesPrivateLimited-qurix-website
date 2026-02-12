@@ -1,18 +1,18 @@
 import type { Metadata } from "next";
-import { Mulish } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 
-const mulish = Mulish({
-  variable: "--font-mulish",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
-  weight: ["400", "700"],
+  weight: ["300", "400", "500", "600", "700", "800", "900"],
 });
 
 export const metadata: Metadata = {
   title: "Qurix",
   description: "Qurix -",
   icons: {
-    icon: "/images/qurix.ico",
+    icon: "/favicon.ico",
   },
 };
 
@@ -23,7 +23,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${mulish.variable} antialiased`}>{children}</body>
+      <body className={`${inter.variable} font-sans antialiased`}>
+        {children}
+      </body>
     </html>
   );
 }

@@ -1,28 +1,45 @@
+"use client";
+
 import Image from "next/image";
 import { BarChart3, Heart, Shield } from "lucide-react";
 
 export default function Features() {
   const features = [
     {
-      icon: <BarChart3 size={40} className="text-[#582974]" />,
-      title: "Advanced Analytics",
-      description:
-        "Gain deep insights into patient data and healthcare trends with our powerful analytics dashboard and reporting tools.",
-      image: "/feature_analytics_1769842736341.png",
+      title: "Customer Engagment",
+      icon: "/images/features/icons/015-chatting.png",
     },
     {
-      icon: <Heart size={40} className="text-[#14BBD3]" />,
-      title: "Patient-Centric Care",
-      description:
-        "Deliver personalized care experiences with comprehensive patient profiles and intelligent care coordination.",
-      image: "/feature_patient_care_1769842751487.png",
+      title: "Clinical Managment",
+      icon: "/images/features/icons/013-hospital.png",
+    },
+    { title: "speciality Care", icon: "/images/features/icons/008-x-rays.png" },
+    { title: "Mobile App", icon: "/images/features/icons/012-smartphone.png" },
+    {
+      title: "Care at Distance",
+      icon: "/images/features/icons/006-ambulance.png",
     },
     {
-      icon: <Shield size={40} className="text-[#582974]" />,
-      title: "HIPAA Compliant Security",
-      description:
-        "Enterprise-grade security ensuring complete HIPAA compliance and protecting sensitive patient information.",
-      image: "/feature_security_1769842766922.png",
+      title: "Revenue Cycle",
+      icon: "/images/features/icons/005-credit-card.png",
+    },
+    {
+      title: "Managed Care",
+      icon: "/images/features/icons/004-heart.png",
+      isActive: true,
+    },
+    {
+      title: "Population Health",
+      icon: "/images/features/icons/003-medicine.png",
+    },
+    {
+      title: "Community Connect",
+      icon: "/images/features/icons/002-molecule.png",
+    },
+    { title: "Interoperability", icon: "/images/features/icons/worldwide.png" },
+    {
+      title: "Regulation Compliance",
+      icon: "/images/features/icons/007-report-1.png",
     },
   ];
 
@@ -31,39 +48,26 @@ export default function Features() {
       <div className="container-custom">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#1a1a1a] mb-6">
             Boost your business with{" "}
             <span className="text-[#582974]">powerful features</span>
           </h2>
-          <p className="text-lg text-gray-600">
+          <p className="text-lg text-gray-600 font-medium">
             Everything you need to streamline operations, enhance patient care,
             and grow your healthcare practice.
           </p>
         </div>
 
         {/* Features Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border border-gray-100 rounded-3xl p-4 md:p-8">
-          {[
-            { title: "Customer Engagment", icon: "/features/015-chatting.png" },
-            { title: "Clinical Managment", icon: "/features/013-hospital.png" },
-            { title: "speciality Care", icon: "/features/002-molecule.png" },
-            { title: "Mobile App", icon: "/features/001-business.png" },
-            { title: "Care at Distance", icon: "/features/005-lighthouse.png" },
-            { title: "Revenue Cycle", icon: "/features/005-credit-card.png" },
-            { title: "Managed Care", icon: "/features/002-presentation.png" },
-            { title: "Population Health", icon: "/features/worldwide.png" },
-            { title: "Community Connect", icon: "/features/002-molecule.png" },
-            { title: "Interoperability", icon: "/features/worldwide.png" },
-            {
-              title: "Regulation Compliance",
-              icon: "/features/001-business.png",
-            },
-          ].map((feature, index) => (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 max-w-7xl mx-auto px-4">
+          {features.map((feature, index) => (
             <div
               key={index}
-              className="group bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col items-center justify-center text-center border border-gray-100 h-full"
+              className={`aspect-square group bg-white rounded-md p-6 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col items-center justify-center text-center border-2 ${
+                feature.isActive ? "border-[#14BBD3]" : "border-gray-50"
+              }`}
             >
-              <div className="w-16 h-16 mb-4 relative">
+              <div className="w-16 h-16 md:w-20 md:h-20 mb-6 relative transition-transform duration-300 group-hover:scale-110">
                 <Image
                   src={feature.icon}
                   alt={feature.title}
@@ -71,24 +75,40 @@ export default function Features() {
                   className="object-contain"
                 />
               </div>
-              <h3 className="text-lg font-bold text-[#582974] mb-2">
+              <h3 className="text-lg md:text-xl font-bold text-[#4b5563] leading-tight px-2">
                 {feature.title}
               </h3>
             </div>
           ))}
 
-          {/* Schedule Demo Card */}
-          <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100 flex flex-col items-center justify-center text-center h-full">
-            <div className="w-16 h-16 mb-4 relative flex items-center justify-center">
-              {/* Placeholder for verify icon in the screenshot, using existing or recreating logic */}
-              <div className="w-8 h-8 border-2 border-[#14BBD3] rounded-full flex items-center justify-center">
-                <span className="text-[#14BBD3] font-bold">✓</span>
+          {/* Schedule Demo CTA Box */}
+          <div className="aspect-square bg-[#f9fafb] rounded-md p-6 shadow-sm flex flex-col items-center justify-between text-center relative overflow-hidden">
+            {/* Top Right Icon Decoration */}
+            <div className="absolute top-4 right-4">
+              <div className="w-6 h-6 relative">
+                <Image
+                  src="/images/icons/plus-icon.svg"
+                  alt="Qurix Plus"
+                  fill
+                  className="object-contain"
+                />
               </div>
             </div>
-            <p className="text-sm text-gray-600 mb-4 leading-relaxed">
-              Free versions of every Qurix. Start now and upgrade as you grow.
-            </p>
-            <button className="bg-[#582974] text-white px-6 py-2 rounded-md font-semibold hover:bg-[#4a2262] transition-colors w-full">
+
+            <div className="flex-grow flex items-center justify-center pt-8">
+              <p className="text-sm md:text-base text-[#6b7280] leading-relaxed font-medium px-4">
+                Free versions of every Qurix. Start now and upgrade as you grow.
+              </p>
+            </div>
+
+            <button
+              className="w-full py-4 bg-[#3b125a] hover:bg-[#2d0e45] text-white font-bold text-lg rounded-sm transition-colors mt-6 uppercase tracking-wide"
+              onClick={() =>
+                document
+                  .getElementById("contact")
+                  ?.scrollIntoView({ behavior: "smooth" })
+              }
+            >
               Schedule Demo
             </button>
           </div>

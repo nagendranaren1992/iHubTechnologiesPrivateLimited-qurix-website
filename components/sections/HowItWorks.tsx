@@ -41,7 +41,7 @@ export default function HowItWorks() {
                   className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-300 z-20 group/btn"
                   aria-label="Play video"
                 >
-                  <div className="w-16 h-16 bg-[#ff7659] rounded-full flex items-center justify-center">
+                  <div className="w-16 h-16 bg-[#582974] rounded-full flex items-center justify-center">
                     <Play className="w-6 h-6 text-white ml-1 fill-current" />
                   </div>
                 </button>
@@ -67,7 +67,7 @@ export default function HowItWorks() {
 
             <Link
               href="/request-a-demo"
-              className="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-[#ff7659] border-2 border-[#ff7659] rounded-full hover:bg-[#ff7659] hover:text-white transition-all duration-300"
+              className="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-white bg-[#582974] border-2 border-[#582974] rounded-xl hover:bg-[#4a2262] hover:border-[#4a2262] transition-all duration-300 shadow-lg shadow-purple-500/20"
             >
               Book a demo
             </Link>

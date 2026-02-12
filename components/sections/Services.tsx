@@ -1,106 +1,105 @@
 import Image from "next/image";
-import { MonitorSmartphone, FileText, Stethoscope } from "lucide-react";
 
 export default function Services() {
   const services = [
     {
-      icon: <Stethoscope size={32} className="text-white" />,
-      title: "Patient Management",
+      icon: "/images/features/icons/005-lighthouse.png",
+      title: "Implementation",
       description:
-        "Comprehensive patient records, appointment scheduling, and care coordination in one unified platform.",
-      image: "/service_management_1769842784243.png",
-      gradient: "from-[#582974] to-[#753a93]",
+        "All the dashboards, actionable insights, easy customizations, flexible reports, data exchange, automations, business processes, standards are at the assistance of organization.",
     },
     {
-      icon: <MonitorSmartphone size={32} className="text-white" />,
-      title: "Telemedicine Solutions",
+      icon: "/images/features/icons/002-presentation.png",
+      title: "Training",
       description:
-        "Enable virtual consultations with secure video conferencing and remote patient monitoring capabilities.",
-      gradient: "from-[#14BBD3] to-[#40d4e8]",
+        "All the dashboards, actionable insights, easy customizations, flexible reports, data exchange, automations, business processes, standards are at the assistance of organization.",
     },
     {
-      icon: <FileText size={32} className="text-white" />,
-      title: "Smart Reporting",
+      icon: "/images/features/icons/004-wrench.png",
+      title: "Technical Services",
       description:
-        "Automated reporting, clinical documentation, and intelligent insights to improve decision-making.",
-      gradient: "from-[#582974] to-[#14BBD3]",
+        "All the dashboards, actionable insights, easy customizations, flexible reports, data exchange, automations, business processes, standards are at the assistance of organization.",
+    },
+    {
+      icon: "/images/features/icons/003-customer-service.png",
+      title: "Ongoing Services",
+      description:
+        "All the dashboards, actionable insights, easy customizations, flexible reports, data exchange, automations, business processes, standards are at the assistance of organization.",
+    },
+    {
+      icon: "/images/features/icons/001-business.png",
+      title: "Cont. Improvement",
+      description:
+        "All the dashboards, actionable insights, easy customizations, flexible reports, data exchange, automations, business processes, standards are at the assistance of organization.",
     },
   ];
 
   return (
     <section
       id="services"
-      className="section-padding bg-gradient-to-br from-gray-50 to-gray-100"
+      className="section-padding bg-[#f8f9fa] overflow-hidden"
     >
-      <div className="container-custom">
+      <div className="container-custom relative">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-            Our Services to Help Your
-            <span className="relative inline-block ml-2">
-              <span className="absolute -top-10 -right-10 animate-float-diagonal block">
-                <Image
-                  src="/service_icon.svg"
-                  alt="Service Decor"
-                  width={50}
-                  height={50}
-                  className="object-contain"
+        <div className="text-center max-w-3xl mx-auto mb-24">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-gray-900 mb-8 tracking-tight">
+            Our Services to Help Your <br className="hidden md:block" />
+            <span className="text-[#582974] relative inline-block">
+              business succeed
+              <svg
+                className="absolute -bottom-2 left-0 w-full h-2 text-purple-200"
+                viewBox="0 0 100 10"
+                preserveAspectRatio="none"
+              >
+                <path
+                  d="M0 5 Q 25 0, 50 5 T 100 5"
+                  stroke="currentColor"
+                  strokeWidth="4"
+                  fill="transparent"
                 />
-              </span>
-            </span>{" "}
-            <span className="text-[#582974]">business succeed</span>
+              </svg>
+            </span>
           </h2>
-          <p className="text-lg text-gray-600">
+          <p className="text-xl text-gray-500 font-medium tracking-tight">
             Comprehensive healthcare solutions designed for modern medical
             practices.
           </p>
         </div>
 
         {/* Services Grid */}
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-16 relative">
           {services.map((service, index) => (
-            <div
-              key={index}
-              className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
-            >
-              {/* Service Image/Icon */}
-              <div
-                className={`h-48 bg-gradient-to-br ${service.gradient} flex items-center justify-center relative overflow-hidden`}
-              >
-                {service.image ? (
-                  <div className="relative w-40 h-40 group-hover:scale-110 transition-transform duration-300">
-                    <Image
-                      src={service.image}
-                      alt={service.title}
-                      fill
-                      className="object-contain drop-shadow-2xl"
-                    />
-                  </div>
-                ) : (
-                  <div className="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm group-hover:scale-110 transition-transform duration-300">
-                    {service.icon}
-                  </div>
-                )}
-
-                {/* Decorative Gradient Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent"></div>
+            <div key={index} className="flex flex-col items-start max-w-sm">
+              <div className="mb-8 w-20 h-20 relative bg-purple-50/50 rounded-2xl flex items-center justify-center p-4 border border-purple-100/50 transition-all hover:scale-110">
+                <div className="relative w-full h-full">
+                  <Image
+                    src={service.icon}
+                    alt={service.title}
+                    fill
+                    className="object-contain"
+                  />
+                </div>
               </div>
-
-              {/* Service Content */}
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-3">
-                  {service.title}
-                </h3>
-                <p className="text-gray-600 leading-relaxed mb-4">
-                  {service.description}
-                </p>
-                <button className="text-[#582974] font-semibold hover:text-[#753a93] transition-colors flex items-center gap-2 group-hover:gap-3">
-                  Learn More
-                  <span className="transition-all">→</span>
-                </button>
-              </div>
+              <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 tracking-tight">
+                {service.title}
+              </h3>
+              <p className="text-gray-500 text-sm md:text-base leading-[1.6] font-medium">
+                {service.description}
+              </p>
             </div>
           ))}
+
+          {/* 6th Slot: Decorative Pattern (Matches Screenshot) */}
+          <div className="hidden lg:flex items-center justify-center relative min-h-[300px]">
+            <div className="absolute inset-x-0 bottom-0 top-12 opacity-[0.55] pointer-events-none">
+              <Image
+                src="/images/brand/plus-pattern.svg"
+                alt="Background Pattern 1"
+                fill
+                className="object-contain object-right-bottom scale-125 translate-x-10 translate-y-10"
+              />
+            </div>
+          </div>
         </div>
       </div>
     </section>

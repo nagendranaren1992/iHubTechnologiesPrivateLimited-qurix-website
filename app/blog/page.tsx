@@ -38,7 +38,7 @@ export default function BlogPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-white" suppressHydrationWarning>
+    <div className="min-h-screen bg-white">
       <Header />
       <main className="pt-20">
         {/* Hero Section */}

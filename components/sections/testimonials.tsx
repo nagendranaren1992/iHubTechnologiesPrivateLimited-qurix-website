@@ -14,7 +14,7 @@ export default function Testimonials() {
       rating: 5,
       quote:
         "Qurix Healthcare has transformed how we manage patient care. The analytics and reporting features have given us insights we never had before, leading to better outcomes and more efficient operations.",
-      avatar: "/testimonals/Sreedhar.png",
+      avatar: "/images/testimonials/Sreedhar.png",
       bgColor: "from-[#582974] to-[#753a93]",
     },
     {
@@ -24,7 +24,7 @@ export default function Testimonials() {
       rating: 5,
       quote:
         "The telemedicine integration is seamless and our patients love the convenience. We've seen a 40% increase in patient satisfaction scores since implementing Qurix Healthcare.",
-      avatar: "/testimonals/Aasrith.png",
+      avatar: "/images/testimonials/Aasrith.png",
       bgColor: "from-[#14BBD3] to-[#40d4e8]",
     },
     {
@@ -34,7 +34,7 @@ export default function Testimonials() {
       rating: 5,
       quote:
         "Implementation was incredibly smooth, and the support team was there every step of the way. The platform has helped us reduce administrative overhead by 30% while improving care quality.",
-      avatar: "/testimonals/Suman.png",
+      avatar: "/images/testimonials/Suman.png",
       bgColor: "from-[#582974] to-[#14BBD3]",
     },
     {
@@ -44,7 +44,7 @@ export default function Testimonials() {
       rating: 5,
       quote:
         "Navigating complex surgical schedules used to be a nightmare. Qurix's intuitive interface has streamlined our workflow, allowing us to focus more on patient outcomes and less on logistics.",
-      avatar: "/testimonals/Sidharth.png",
+      avatar: "/images/testimonials/Sidharth.png",
       bgColor: "from-[#14bbd3] to-[#753a93]",
     },
     {
@@ -54,7 +54,7 @@ export default function Testimonials() {
       rating: 5,
       quote:
         "Qurix has revolutionized our billing cycle. The automated features have drastically reduced errors and improved our revenue flow, giving us financial stability to expand our services.",
-      avatar: "/testimonals/Kishorereddy.png",
+      avatar: "/images/testimonials/Kishorereddy.png",
       bgColor: "from-[#753a93] to-[#582974]",
     },
     {
@@ -64,7 +64,7 @@ export default function Testimonials() {
       rating: 5,
       quote:
         "Having instant access to comprehensive patient history is critical in cardiology. Qurix provides a unified view that helps us make faster, more accurate diagnoses.",
-      avatar: "/testimonals/Sravani.png",
+      avatar: "/images/testimonials/Sravani.png",
       bgColor: "from-[#40d4e8] to-[#14bbd3]",
     },
   ];

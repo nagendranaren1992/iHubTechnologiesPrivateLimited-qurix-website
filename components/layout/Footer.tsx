@@ -11,7 +11,7 @@ export default function Footer() {
           <div className="md:col-span-2">
             <Link href="/" className="inline-block mb-6">
               <Image
-                src="/images/qurix_logo.svg"
+                src="/images/brand/logo.svg"
                 alt="Qurix Healthcare"
                 width={160}
                 height={50}
