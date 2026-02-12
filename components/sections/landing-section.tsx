@@ -14,7 +14,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative pt-32 md:pt-48 pb-32 md:pb-56 bg-white overflow-hidden"
+      className="relative pt-32 md:pt-48 pb-32 bg-white overflow-hidden"
     >
       {/* Immersive Background Canvas */}
       <div className="absolute inset-0 pointer-events-none -z-10">
