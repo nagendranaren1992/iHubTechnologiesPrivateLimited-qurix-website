@@ -196,13 +196,19 @@ export default function Hero() {
             Engineered for World-Class Institutions
           </p>
           <div className="flex -space-x-3 md:-space-x-5">
-            {[1, 2, 3, 4, 5].map((i) => (
+            {[
+              "/images/testimonials/Sreedhar.png",
+              "/images/testimonials/Aasrith.png",
+              "/images/testimonials/Suman.png",
+              "/images/testimonials/Sidharth.png",
+              "/images/testimonials/Kishorereddy.png",
+            ].map((src, i) => (
               <div
                 key={i}
                 className="w-10 h-10 md:w-14 md:h-14 rounded-full border-2 md:border-4 border-white bg-gray-100 overflow-hidden shadow-xl"
               >
                 <img
-                  src={`https://i.pravatar.cc/150?u=${i + 20}`}
+                  src={src}
                   alt="healthcare provider"
                   className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500 cursor-pointer"
                 />
