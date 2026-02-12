@@ -93,7 +93,16 @@ export default function Header() {
               className="md:hidden p-2 text-gray-700 hover:text-primary transition-colors relative z-[1001]"
               aria-label="Toggle menu"
             >
-              {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
+              <div className="relative w-7 h-7">
+                <Menu
+                  size={28}
+                  className={`absolute inset-0 transition-all duration-300 ${isMenuOpen ? "opacity-0 scale-50 rotate-90" : "opacity-100 scale-100 rotate-0"}`}
+                />
+                <X
+                  size={28}
+                  className={`absolute inset-0 transition-all duration-300 ${isMenuOpen ? "opacity-100 scale-100 rotate-0" : "opacity-0 scale-50 -rotate-90"}`}
+                />
+              </div>
             </button>
           </div>
         </nav>
