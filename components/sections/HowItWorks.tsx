@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Play, X } from "lucide-react";
+import { ArrowRight, Play, X } from "lucide-react";
 
 export default function HowItWorks() {
   const [isVideoOpen, setIsVideoOpen] = useState(false);
@@ -25,7 +25,10 @@ export default function HowItWorks() {
           <div className="relative group">
             {/* Image Container with decoration */}
             <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-              <div className="aspect-[4/3] relative">
+              <div
+                className="aspect-[4/3] relative cursor-pointer"
+                onClick={() => setIsVideoOpen(true)}
+              >
                 <Image
                   src="https://img.youtube.com/vi/CD2hQkYYeXM/maxresdefault.jpg"
                   alt="Video Thumbnail"
@@ -37,7 +40,6 @@ export default function HowItWorks() {
 
                 {/* Play Button */}
                 <button
-                  onClick={() => setIsVideoOpen(true)}
                   className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-300 z-20 group/btn"
                   aria-label="Play video"
                 >
@@ -67,9 +69,13 @@ export default function HowItWorks() {
 
             <Link
               href="/request-a-demo"
-              className="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-white bg-[#582974] border-2 border-[#582974] rounded-xl hover:bg-[#4a2262] hover:border-[#4a2262] transition-all duration-300 shadow-lg shadow-purple-500/20"
+              className="group inline-flex items-center justify-center gap-2 px-8 py-4 text-base font-bold text-white bg-[#582974] border-2 border-[#582974] rounded-xl hover:bg-[#4a2262] hover:border-[#4a2262] transition-all duration-300 shadow-lg shadow-purple-500/20"
             >
-              Book a demo
+              Schedule Demo
+              <ArrowRight
+                className="group-hover:translate-x-1 transition-transform"
+                size={20}
+              />
             </Link>
           </div>
         </div>
