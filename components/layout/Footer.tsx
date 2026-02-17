@@ -19,8 +19,8 @@ export default function Footer() {
               />
             </Link>
             <p className="text-slate-400 text-lg mb-8 max-w-md leading-relaxed">
-              All the dashboards, actionable insights, easy customizations,
-              flexible reports.
+              Transforming healthcare management with intelligent, unified
+              solutions.
             </p>
             <div className="flex items-center gap-6">
               <a
