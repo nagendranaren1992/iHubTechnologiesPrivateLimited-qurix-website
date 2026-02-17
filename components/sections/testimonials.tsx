@@ -20,7 +20,7 @@ export default function Testimonials() {
     {
       name: "Dr.Aasrith",
       role: "Critical Care & emergency Medicine Specialist",
-      company: "Jope Hospital",
+      company: "Hope Hospital",
       rating: 5,
       quote:
         "The telemedicine integration is seamless and our patients love the convenience. We've seen a 40% increase in patient satisfaction scores since implementing Qurix Healthcare.",
