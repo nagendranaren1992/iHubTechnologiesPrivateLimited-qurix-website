@@ -2,6 +2,11 @@ import type { Metadata } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 
+/**
+ * NOTE: "Plus Jakarta Sans" is the mandated font for the entire application.
+ * DO NOT change this font or its fallback in any part of the codebase.
+ */
+
 const plusJakarta = Plus_Jakarta_Sans({
   variable: "--font-plus-jakarta",
   subsets: ["latin"],
@@ -22,8 +27,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${plusJakarta.variable} font-sans antialiased`}>
+    <html lang="en" suppressHydrationWarning>
+      <body
+        className={`${plusJakarta.variable} font-sans antialiased`}
+        suppressHydrationWarning
+      >
         {children}
       </body>
     </html>

@@ -1,108 +1,67 @@
-"use client";
-
 import React from "react";
+import { Shield, Layers, Rocket } from "lucide-react";
 
 const features = [
   {
-    icon: (
-      <svg
-        className="w-8 h-8 text-white"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"
-        />
-      </svg>
-    ),
-    title: "Operational Control Positioning",
+    icon: <Shield size={24} strokeWidth={1.5} />,
+    title: "Operational Command Center",
     description:
-      "Complete visibility and control over every aspect of your healthcare operations from a single dashboard",
+      "Gain complete visibility across hospital operations with real-time dashboards, analytics, and intelligent reporting.",
   },
   {
-    icon: (
-      <svg
-        className="w-8 h-8 text-white"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          d="M13 10V3L4 14h7v7l9-11h-7z"
-        />
-      </svg>
-    ),
-    title: "Modular Adoption Model",
+    icon: <Layers size={24} strokeWidth={1.5} />,
+    title: "Modular Platform Architecture",
     description:
-      "Start with what you need, scale as you grow. No forced bundling or unnecessary complexity",
+      "Adopt only the modules you need and expand as your healthcare organization grows.",
   },
   {
-    icon: (
-      <svg
-        className="w-8 h-8 text-white"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-        />
-      </svg>
-    ),
-    title: "Fast Implementation",
+    icon: <Rocket size={24} strokeWidth={1.5} />,
+    title: "Rapid Implementation",
     description:
-      "Go live in weeks, not months. Minimal disruption with maximum impact on your operations",
+      "Deploy in weeks instead of months with minimal disruption to clinical and administrative workflows.",
   },
 ];
 
 export default function WhyQurix() {
   return (
-    <section id="why-qurix" className="py-16 md:py-24 bg-[#582974]/5">
+    <section id="why-qurix" className="py-20 md:py-32 bg-white">
       <div className="container-custom">
-        {/* Section Header */}
-        <div className="text-center mb-12 md:mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[#1a1a1a]">
-            Why <span className="text-[#582974]">QURIX</span>
+        <div className="text-center max-w-3xl mx-auto mb-16 md:mb-24">
+          <div className="inline-block px-6 py-2 rounded-full bg-[#EFE9F4] text-[#582974] text-[11px] font-bold uppercase tracking-[0.15em] mb-8">
+            Why QURIX
+          </div>
+          <h2 className="text-2xl md:text-3xl lg:text-[38px] font-extrabold mb-8 text-[#1a1a1a] leading-[1.15]">
+            Why Healthcare Organizations Choose QURIX
           </h2>
-          <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
-            Built for healthcare, designed for growth, optimized for results
+          <p className="text-[18px] text-gray-500 max-w-2xl mx-auto leading-relaxed font-medium">
+            Purpose-built healthcare technology designed for scalability,
+            operational visibility, and rapid adoption.
           </p>
         </div>
 
-        {/* Feature Cards */}
-        <div className="grid md:grid-cols-3 gap-8">
+        {/* Feature Cards Grid */}
+        <div className="grid md:grid-cols-3 gap-6">
           {features.map((feature, index) => (
-            <div key={index} className="relative group h-full">
-              {/* Hover glow background */}
-              <div className="absolute inset-0 bg-[#582974] rounded-2xl opacity-0 group-hover:opacity-100 blur transition-all duration-300"></div>
-
-              {/* Card */}
-              <div className="relative bg-white rounded-2xl p-8 border-2 border-[#582974]/10 group-hover:border-transparent transition-all duration-300 h-full flex flex-col">
-                {/* Icon */}
-                <div className="w-16 h-16 bg-[#582974] rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+            <div
+              key={index}
+              className="group relative overflow-hidden bg-white hover:bg-[#582974] rounded-[24px] border-2 border-[#582974]/10 hover:border-[#582974] hover:shadow-xl transition-all duration-300 h-full flex flex-col items-start text-left p-10"
+            >
+              {/* Icon Box */}
+              <div className="w-16 h-16 bg-[#F8F5FA] group-hover:bg-white/10 rounded-2xl flex items-center justify-center mb-8 transition-all duration-300 group-hover:scale-110">
+                <div className="text-[#582974] group-hover:text-white transition-colors duration-300">
                   {feature.icon}
                 </div>
-
-                {/* Title */}
-                <h3 className="text-xl font-bold mb-4 text-gray-900 group-hover:text-[#582974] transition-colors duration-300">
-                  {feature.title}
-                </h3>
-
-                {/* Description */}
-                <p className="text-gray-600 leading-relaxed">
-                  {feature.description}
-                </p>
               </div>
+
+              {/* Title */}
+              <h3 className="text-[22px] font-bold mb-4 text-[#1a1a1a] group-hover:text-white transition-colors duration-300 leading-tight">
+                {feature.title}
+              </h3>
+
+              {/* Description */}
+              <p className="text-gray-500 group-hover:text-white/90 leading-relaxed text-[16px] font-medium transition-colors duration-300">
+                {feature.description}
+              </p>
             </div>
           ))}
         </div>

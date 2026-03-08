@@ -1,169 +1,114 @@
 "use client";
 
 import React from "react";
-import { ArrowRight } from "lucide-react";
+import {
+  FileText,
+  DollarSign,
+  Hexagon,
+  Activity,
+  Box,
+  Users,
+} from "lucide-react";
 
 const modules = [
   {
-    icon: (
-      <svg
-        className="w-7 h-7"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"
-        />
-      </svg>
-    ),
-    title: "Pharmacy Management",
+    icon: <FileText size={22} strokeWidth={1.5} />,
+    title: "Electronic Medical Records",
     description:
-      "Complete pharmacy operations from dispensing to stock management with automated reordering",
+      "Centralized digital patient records enabling efficient clinical decision-making.",
+    isFeatured: true,
   },
   {
-    icon: (
-      <svg
-        className="w-7 h-7"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-        />
-      </svg>
-    ),
+    icon: <DollarSign size={22} strokeWidth={1.5} />,
     title: "Billing & Revenue",
     description:
-      "Intelligent billing engine with automated coding, insurance claims, and revenue cycle management",
+      "Automated billing systems with coding support, claim management, and revenue analytics.",
   },
   {
-    icon: (
-      <svg
-        className="w-7 h-7"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"
-        />
-      </svg>
-    ),
+    icon: <Hexagon size={22} strokeWidth={1.5} />,
+    title: "Pharmacy Management",
+    description:
+      "Digital prescription management, pharmacy inventory tracking, and medicine dispensing workflows.",
+  },
+  {
+    icon: <Activity size={22} strokeWidth={1.5} />,
+    title: "Laboratory Information System",
+    description:
+      "Integrated diagnostic workflows with test management, reporting, and lab analytics.",
+  },
+  {
+    icon: <Box size={22} strokeWidth={1.5} />,
     title: "Inventory Control",
     description:
-      "Real-time inventory tracking, automated procurement, and expiry management across locations",
+      "Real-time tracking of medical supplies, automated stock alerts, and supply chain optimization.",
   },
   {
-    icon: (
-      <svg
-        className="w-7 h-7"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
-        />
-      </svg>
-    ),
-    title: "HMS Core",
+    icon: <Users size={22} strokeWidth={1.5} />,
+    title: "Hospital Administration",
     description:
-      "Comprehensive hospital management with patient records, appointments, and care coordination",
-  },
-  {
-    icon: (
-      <svg
-        className="w-7 h-7"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
-        />
-      </svg>
-    ),
-    title: "Clinic Management",
-    description:
-      "Streamlined outpatient operations with queue management, EMR, and multi-location support",
-  },
-  {
-    icon: (
-      <svg
-        className="w-7 h-7"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"
-        />
-      </svg>
-    ),
-    title: "Diagnostics",
-    description:
-      "Lab and radiology management with result delivery, equipment tracking, and quality control",
+      "Staff management, scheduling, department coordination, and operational analytics.",
   },
 ];
 
 export default function CoreModules() {
   return (
-    <section id="modules" className="py-16 md:py-24 bg-white">
+    <section id="modules" className="py-20 md:py-32 bg-white">
       <div className="container-custom">
         {/* Section Header */}
-        <div className="text-center mb-12 md:mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[#1a1a1a]">
-            Core <span className="text-[#582974]">Modules</span>
+        <div className="text-center max-w-4xl mx-auto mb-16 md:mb-24">
+          <div className="inline-block px-6 py-2 rounded-full bg-[#EFE9F4] text-[#582974] text-[11px] font-bold uppercase tracking-[0.15em] mb-8">
+            Core Modules
+          </div>
+          <h2 className="text-2xl md:text-3xl lg:text-[38px] font-extrabold mb-8 text-[#1a1a1a] leading-[1.15]">
+            Comprehensive Modules for End-to-End{" "}
+            <br className="hidden lg:block" /> Hospital Management
           </h2>
-          <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
-            Comprehensive healthcare management solutions tailored to your
-            organization&apos;s needs
+          <p className="text-[17px] text-gray-500 max-w-2xl mx-auto leading-relaxed font-medium">
+            QURIX offers modular healthcare solutions designed to cover the
+            entire hospital ecosystem.
           </p>
         </div>
 
         {/* Module Cards Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {modules.map((module, index) => (
             <div
               key={index}
-              className="group relative overflow-hidden bg-white hover:bg-[#582974] rounded-2xl border-2 border-[#582974]/10 hover:border-[#582974] hover:shadow-xl transition-all duration-300 h-full"
+              className={`group rounded-[24px] p-8 transition-all duration-300 flex items-start gap-5 shadow-sm border-2 ${
+                module.isFeatured
+                  ? "bg-[#582974] text-white border-[#582974]"
+                  : "bg-white border-[#582974]/10 hover:border-[#582974] hover:shadow-xl hover:shadow-purple-500/5 group-hover:-translate-y-1"
+              }`}
             >
-              {/* Card Content */}
-              <div className="relative p-8 flex flex-col h-full">
-                {/* Icon */}
-                <div className="w-14 h-14 bg-[#582974]/5 group-hover:bg-white/10 rounded-xl flex items-center justify-center mb-6 transition-all duration-300 group-hover:scale-110">
-                  <div className="text-[#582974] group-hover:text-white transition-colors duration-300">
-                    {module.icon}
-                  </div>
+              {/* Icon Box */}
+              <div
+                className={`w-12 h-12 shrink-0 rounded-xl flex items-center justify-center ${
+                  module.isFeatured ? "bg-white/10" : "bg-[#F3E8FF]"
+                }`}
+              >
+                <div
+                  className={
+                    module.isFeatured ? "text-white" : "text-[#582974]"
+                  }
+                >
+                  {module.icon}
                 </div>
+              </div>
 
-                {/* Title */}
-                <h3 className="text-xl font-bold mb-3 text-gray-900 group-hover:text-white transition-colors duration-300">
+              {/* Text Content */}
+              <div className="flex flex-col">
+                <h3
+                  className={`text-[16px] font-bold mb-2 leading-tight ${
+                    module.isFeatured ? "text-white" : "text-[#1a1a1a]"
+                  }`}
+                >
                   {module.title}
                 </h3>
-
-                {/* Description */}
-                <p className="text-gray-600 group-hover:text-white/90 leading-relaxed mb-6 flex-1 transition-colors duration-300">
+                <p
+                  className={`text-[13px] leading-relaxed ${
+                    module.isFeatured ? "text-white/60" : "text-gray-500"
+                  }`}
+                >
                   {module.description}
                 </p>
               </div>

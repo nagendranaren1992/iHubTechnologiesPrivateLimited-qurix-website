@@ -1,105 +1,100 @@
-import Image from "next/image";
+"use client";
+
+import React from "react";
+import { Book, Wrench, Coffee, TrendingUp, Hexagon } from "lucide-react";
+
+const services = [
+  {
+    title: "Implementation",
+    description:
+      "Complete platform deployment including configuration, integrations, and hospital workflow alignment.",
+    icon: <Hexagon size={20} className="text-[#14bbd3]" strokeWidth={1.5} />,
+  },
+  {
+    title: "Training",
+    description:
+      "Comprehensive staff training programs to ensure smooth platform adoption.",
+    icon: <Book size={20} className="text-[#14bbd3]" strokeWidth={1.5} />,
+  },
+  {
+    title: "Technical Services",
+    description:
+      "Dedicated technical support, platform customization, and infrastructure optimization.",
+    icon: <Wrench size={20} className="text-[#14bbd3]" strokeWidth={1.5} />,
+  },
+  {
+    title: "Managed Support",
+    description:
+      "Ongoing system monitoring, upgrades, and performance improvements.",
+    icon: <Coffee size={20} className="text-[#14bbd3]" strokeWidth={1.5} />,
+  },
+  {
+    title: "Continuous Optimization",
+    description:
+      "Regular platform improvements based on evolving healthcare requirements.",
+    icon: <TrendingUp size={20} className="text-[#14bbd3]" strokeWidth={1.5} />,
+  },
+];
 
 export default function Services() {
-  const services = [
-    {
-      icon: "/images/features/icons/005-lighthouse.png",
-      title: "Implementation",
-      description:
-        "All the dashboards, actionable insights, easy customizations, flexible reports, data exchange, automations, business processes, standards are at the assistance of organization.",
-    },
-    {
-      icon: "/images/features/icons/002-presentation.png",
-      title: "Training",
-      description:
-        "All the dashboards, actionable insights, easy customizations, flexible reports, data exchange, automations, business processes, standards are at the assistance of organization.",
-    },
-    {
-      icon: "/images/features/icons/004-wrench.png",
-      title: "Technical Services",
-      description:
-        "All the dashboards, actionable insights, easy customizations, flexible reports, data exchange, automations, business processes, standards are at the assistance of organization.",
-    },
-    {
-      icon: "/images/features/icons/003-customer-service.png",
-      title: "Ongoing Services",
-      description:
-        "All the dashboards, actionable insights, easy customizations, flexible reports, data exchange, automations, business processes, standards are at the assistance of organization.",
-    },
-    {
-      icon: "/images/features/icons/001-business.png",
-      title: "Cont. Improvement",
-      description:
-        "All the dashboards, actionable insights, easy customizations, flexible reports, data exchange, automations, business processes, standards are at the assistance of organization.",
-    },
-  ];
-
   return (
     <section
       id="services"
-      className="section-padding bg-[#f8f9fa] overflow-hidden"
+      className="py-20 md:py-32 bg-[#fff] relative overflow-hidden"
     >
-      <div className="container-custom relative">
+      {/* Subtle Background Decor */}
+      <div className="absolute top-0 left-0 w-full h-full pointer-events-none overflow-hidden opacity-50">
+        <div className="absolute top-[10%] -right-24 w-96 h-96 bg-[#582974]/5 rounded-full blur-[100px]"></div>
+        <div className="absolute bottom-[10%] -left-24 w-96 h-96 bg-[#14bbd3]/5 rounded-full blur-[100px]"></div>
+      </div>
+
+      <div className="container-custom relative z-10">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-24">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-gray-900 mb-8 tracking-tight">
-            Our Services to Help Your <br className="hidden md:block" />
-            <span className="text-[#582974] relative inline-block">
-              business succeed
-              <svg
-                className="absolute -bottom-2 left-0 w-full h-2 text-purple-200"
-                viewBox="0 0 100 10"
-                preserveAspectRatio="none"
-              >
-                <path
-                  d="M0 5 Q 25 0, 50 5 T 100 5"
-                  stroke="currentColor"
-                  strokeWidth="4"
-                  fill="transparent"
-                />
-              </svg>
-            </span>
+        <div className="text-center max-w-4xl mx-auto mb-16 md:mb-24">
+          <div className="inline-block px-5 py-2 rounded-full bg-[#EFE9F4] text-[#582974] text-[11px] font-bold uppercase tracking-[0.15em] mb-8 border border-[#582974]/10">
+            Our Services
+          </div>
+          <h2 className="text-2xl md:text-3xl lg:text-[38px] font-extrabold mb-8 text-[#1a1a1a] leading-[1.15] tracking-tight">
+            Services to Ensure Successful <br className="hidden lg:block" />{" "}
+            Healthcare Transformation
           </h2>
-          <p className="text-xl text-gray-500 font-medium tracking-tight">
-            Comprehensive healthcare solutions designed for modern medical
-            practices.
+          <p className="text-[17px] text-gray-500 max-w-2xl mx-auto leading-relaxed font-medium">
+            Beyond software, QURIX provides expert services to ensure seamless{" "}
+            <br className="hidden md:block" /> implementation and continuous
+            optimization.
           </p>
         </div>
 
-        {/* Services Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-16 relative">
+        {/* Services Row */}
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-5">
           {services.map((service, index) => (
-            <div key={index} className="flex flex-col items-start max-w-sm">
-              <div className="mb-8 w-20 h-20 relative bg-purple-50/50 rounded-2xl flex items-center justify-center p-4 border border-purple-100/50 transition-all hover:scale-110">
-                <div className="relative w-full h-full">
-                  <Image
-                    src={service.icon}
-                    alt={service.title}
-                    fill
-                    className="object-contain"
-                  />
+            <div
+              key={index}
+              className="group relative overflow-hidden bg-white hover:bg-[#582974] rounded-[24px] border-2 border-[#582974]/10 hover:border-[#582974] hover:shadow-xl p-8 transition-all duration-300 flex flex-col items-start min-h-[300px]"
+            >
+              {/* Icon Box - Circular to match premium aesthetic */}
+              <div className="w-12 h-12 rounded-full border border-[#14bbd3]/20 bg-[#f0fdfa] flex items-center justify-center mb-10 transition-all duration-300 group-hover:bg-white/10 group-hover:border-white/20 group-hover:scale-110">
+                <div className="text-[#14bbd3] group-hover:text-white transition-colors duration-300">
+                  {React.cloneElement(
+                    service.icon as React.ReactElement<{ className?: string }>,
+                    {
+                      className: undefined,
+                    },
+                  )}
                 </div>
               </div>
-              <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 tracking-tight">
+
+              {/* Title */}
+              <h3 className="text-[17px] font-bold mb-4 text-[#1a1a1a] group-hover:text-white transition-colors duration-300 leading-tight">
                 {service.title}
               </h3>
-              <p className="text-gray-500 text-sm md:text-base leading-[1.6] font-medium">
+
+              {/* Description */}
+              <p className="text-gray-500 text-[13px] leading-relaxed group-hover:text-white/80 transition-colors duration-300">
                 {service.description}
               </p>
             </div>
           ))}
-
-          {/* 6th Slot: Decorative Pattern (Matches Screenshot) */}
-          <div className="hidden lg:flex items-center justify-center relative min-h-[300px]">
-            <div className="absolute inset-x-0 bottom-0 top-12 opacity-[0.55] pointer-events-none">
-              <Image
-                src="/images/brand/plus-pattern.svg"
-                alt="Background Pattern 1"
-                fill
-                className="object-contain object-right-bottom scale-125 translate-x-10 translate-y-10"
-              />
-            </div>
-          </div>
         </div>
       </div>
     </section>

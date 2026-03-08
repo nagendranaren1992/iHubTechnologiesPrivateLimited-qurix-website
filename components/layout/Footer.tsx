@@ -1,139 +1,53 @@
-import Image from "next/image";
+import React from "react";
 import Link from "next/link";
-import { Facebook, Twitter, Github, Linkedin } from "lucide-react";
 
 export default function Footer() {
+  const currentYear = new Date().getFullYear();
+
   return (
-    <footer className="bg-slate-900 text-white">
-      <div className="container-custom section-padding">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
-          {/* Brand Column */}
-          <div className="md:col-span-2">
-            <Link href="/" className="inline-block mb-6">
-              <Image
-                src="/images/brand/logo.svg"
-                alt="Qurix Healthcare"
-                width={160}
-                height={50}
-                className="h-12 w-auto brightness-0 invert"
-              />
-            </Link>
-            <p className="text-slate-400 text-lg mb-8 max-w-md leading-relaxed">
-              Transforming healthcare management with intelligent, unified
-              solutions.
-            </p>
-            <div className="flex items-center gap-6">
+    <footer className="bg-[#080414] py-12 md:py-16">
+      <div className="container-custom">
+        <div className="flex flex-col items-center text-center space-y-8">
+          {/* Main Navigation Links */}
+          <nav className="flex flex-wrap justify-center gap-x-10 gap-y-4">
+            {[
+              { name: "Product", href: "#features" },
+              { name: "Modules", href: "#modules" },
+              { name: "Services", href: "#services" },
+              { name: "Results", href: "#results" },
+              { name: "Contact", href: "#contact" },
+            ].map((link) => (
               <a
-                href="#"
-                className="text-white hover:text-[#14BBD3] transition-colors"
+                key={link.name}
+                href={link.href}
+                className="text-white/60 hover:text-white text-[15px] font-bold transition-all duration-300 uppercase tracking-wider"
               >
-                <Facebook size={24} />
+                {link.name}
               </a>
-              <a
-                href="#"
-                className="text-white hover:text-[#14BBD3] transition-colors"
-              >
-                <Twitter size={24} />
-              </a>
-              <a
-                href="#"
-                className="text-white hover:text-[#14BBD3] transition-colors"
-              >
-                <Github size={24} />
-              </a>
-              <a
-                href="#"
-                className="text-white hover:text-[#14BBD3] transition-colors"
-              >
-                <Linkedin size={24} />
-              </a>
-            </div>
+            ))}
+          </nav>
+
+          {/* Copyright Row */}
+          <div className="text-white/40 text-[14px] leading-relaxed font-normal">
+            © {currentYear}{" "}
+            <span className="font-bold text-white/80">
+              QURIX Healthcare Platform
+            </span>{" "}
+            — All rights reserved.
           </div>
 
-          {/* Quick Links */}
-          <div>
-            <h3 className="font-semibold text-lg mb-4">Quick Links</h3>
-            <ul className="space-y-2">
-              <li>
-                <a
-                  href="#home"
-                  className="text-slate-400 hover:text-[#14BBD3] transition-colors"
-                >
-                  Home
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#features"
-                  className="text-slate-400 hover:text-[#14BBD3] transition-colors"
-                >
-                  Features
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#services"
-                  className="text-slate-400 hover:text-[#14BBD3] transition-colors"
-                >
-                  Services
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#testimonials"
-                  className="text-slate-400 hover:text-[#14BBD3] transition-colors"
-                >
-                  Testimonials
-                </a>
-              </li>
-            </ul>
+          {/* SEO Keywords Row */}
+          <div className="flex flex-wrap justify-center gap-x-3 gap-y-2 text-white/20 text-[12px] font-medium uppercase tracking-[0.05em]">
+            <span>Healthcare Management Platform</span>
+            <span className="opacity-50">·</span>
+            <span>Hospital Management Software</span>
+            <span className="opacity-50">·</span>
+            <span>Patient Lifecycle Management</span>
+            <span className="opacity-50">·</span>
+            <span>Healthcare ERP</span>
+            <span className="opacity-50">·</span>
+            <span>Clinical Workflow Platform</span>
           </div>
-
-          {/* Legal */}
-          <div>
-            <h3 className="font-semibold text-lg mb-4">Legal</h3>
-            <ul className="space-y-2">
-              <li>
-                <a
-                  href="#"
-                  className="text-slate-400 hover:text-[#14BBD3] transition-colors"
-                >
-                  Privacy Policy
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-slate-400 hover:text-[#14BBD3] transition-colors"
-                >
-                  Terms of Service
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-slate-400 hover:text-[#14BBD3] transition-colors"
-                >
-                  HIPAA Compliance
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-slate-400 hover:text-[#14BBD3] transition-colors"
-                >
-                  Cookie Policy
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        {/* Bottom Bar */}
-        <div className="mt-12 pt-8 border-t border-slate-800">
-          <p className="text-center text-slate-400" suppressHydrationWarning>
-            © {new Date().getFullYear()} Qurix Healthcare. All rights reserved.
-          </p>
         </div>
       </div>
     </footer>
