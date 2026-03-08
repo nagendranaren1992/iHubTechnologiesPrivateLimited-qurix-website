@@ -7,13 +7,18 @@ const companies = [
   { name: "Alavi", logo: "/images/clients/alavi.png", id: 1 },
   { name: "Amor", logo: "/images/clients/amor.png", id: 2 },
   { name: "Avani", logo: "/images/clients/avani.png", id: 3 },
-  { name: "BlockArt", logo: "/images/clients/blockart.svg", id: 4 },
-  { name: "Demmand", logo: "/images/clients/demmand.svg", id: 5 },
-  { name: "Dielco", logo: "/images/clients/dielco.svg", id: 6 },
-  { name: "Digicom", logo: "/images/clients/digicom.svg", id: 7 },
-  { name: "DSymbol", logo: "/images/clients/dsymbol.svg", id: 8 },
-  { name: "Sidarth", logo: "/images/clients/sidarth.png", id: 9 },
-  { name: "Sravani", logo: "/images/clients/sravani.png", id: 10 },
+  { name: "Sidarth", logo: "/images/clients/sidarth.png", id: 4 },
+  { name: "Sravani", logo: "/images/clients/sravani.png", id: 5 },
+  { name: "Avi", logo: "/images/clients/avi_clinics_uppal.png", id: 6 },
+  {
+    name: "Basavatarakam",
+    logo: "/images/clients/basavatharakam_hopital.png",
+    id: 7,
+  },
+  { name: "Hope Hospital", logo: "/images/clients/hope_hospital.png", id: 8 },
+  { name: "MNJIORCC", logo: "/images/clients/mnj_hospital.png", id: 9 },
+  { name: "NITC", logo: "/images/clients/nandyal_hospital.png", id: 10 },
+  { name: "Seasons", logo: "/images/clients/seasons2.png", id: 11 },
 ];
 
 export default function TrustedCompanies() {
