@@ -53,16 +53,22 @@ export default function Hero() {
             </p>
             {/* CTA Buttons */}
             <div className="flex flex-wrap gap-4">
-              <button className="cursor-pointer group bg-[#582974] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#6b3a8a] hover:shadow-xl hover:shadow-[#582974]/25 transition-all duration-300 flex items-center gap-2">
+              <a
+                href="#contact"
+                className="cursor-pointer group bg-[#582974] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#6b3a8a] hover:shadow-xl hover:shadow-[#582974]/25 transition-all duration-300 flex items-center gap-2"
+              >
                 Schedule Demo
                 <ArrowRight
                   size={20}
                   className="group-hover:translate-x-1 transition-transform"
                 />
-              </button>
-              <button className="cursor-pointer border-2 border-[#582974] text-[#582974] px-8 py-4 rounded-full font-semibold hover:bg-[#582974]/5 transition-all duration-300">
+              </a>
+              <a
+                href="#features"
+                className="cursor-pointer border-2 border-[#582974] text-[#582974] px-8 py-4 rounded-full font-semibold hover:bg-[#582974]/5 transition-all duration-300"
+              >
                 Explore Features
-              </button>
+              </a>
             </div>
 
             {/* Trust Badges */}

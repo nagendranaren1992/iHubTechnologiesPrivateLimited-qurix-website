@@ -52,20 +52,23 @@ export default function IndustryProblems() {
           {problems.map((problem, index) => (
             <div
               key={index}
-              className="bg-white rounded-[24px] p-8 shadow-sm transition-all duration-300 border border-transparent hover:border-gray-100 h-full flex flex-col items-start text-left"
+              className="group relative overflow-hidden bg-white rounded-[32px] p-10 shadow-[0_4px_20px_rgba(0,0,0,0.03)] transition-all duration-300 border border-transparent hover:border-gray-100 h-full min-h-[380px] flex flex-col items-start text-left"
             >
+              {/* Top border on hover */}
+              <div className="absolute top-0 left-0 right-0 h-1 bg-[#F15A2B] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+
               {/* Icon Box */}
-              <div className="w-12 h-12 bg-[#FFF2F0] rounded-xl flex items-center justify-center mb-6">
+              <div className="w-12 h-12 bg-[#FFF2F0] rounded-xl flex items-center justify-center mb-6 relative z-10">
                 {problem.icon}
               </div>
 
               {/* Title */}
-              <h3 className="text-[18px] font-bold mb-3 text-[#1a1a1a] leading-tight">
+              <h3 className="text-[20px] font-bold mb-4 text-[#1a1a1a] leading-tight">
                 {problem.title}
               </h3>
 
               {/* Description */}
-              <p className="text-[#64748b] leading-[1.6] text-[14px] font-normal">
+              <p className="text-[#64748b] leading-[1.6] text-[15px] font-normal max-w-[210px]">
                 {problem.description}
               </p>
             </div>

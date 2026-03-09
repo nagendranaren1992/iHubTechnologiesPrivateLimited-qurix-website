@@ -3,9 +3,11 @@
 import { useState } from "react";
 import Link from "next/link";
 import { Menu, X, Phone } from "lucide-react";
+import DemoModal from "../ui/demo-modal";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isDemoModalOpen, setIsDemoModalOpen] = useState(false);
 
   const navLinks = [
     { name: "Product", href: "#features" },
@@ -21,7 +23,17 @@ export default function Header() {
         <nav className="container-custom">
           <div className="flex items-center justify-between h-16 md:h-20 lg:h-24">
             {/* Logo */}
-            <Link href="/" className="flex items-center h-full">
+            <Link
+              href="/"
+              className="flex items-center h-full"
+              onClick={(e) => {
+                if (window.location.pathname === "/") {
+                  e.preventDefault();
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+                  window.history.pushState(null, "", "/");
+                }
+              }}
+            >
               <img
                 src="/images/brand/logo.svg"
                 alt="Qurix Logo"
@@ -56,12 +68,12 @@ export default function Header() {
                 </div>
               </div>
 
-              <Link
-                href="/#contact"
+              <button
+                onClick={() => setIsDemoModalOpen(true)}
                 className="group flex items-center gap-2 px-8 py-4 bg-[#582974] text-white rounded-xl font-bold text-[14px] hover:bg-[#4a2262] transition-all duration-300 shadow-xl shadow-purple-500/10 active:scale-[0.98]"
               >
                 Schedule Demo
-              </Link>
+              </button>
             </div>
 
             {/* Mobile Menu Button */}
@@ -112,16 +124,23 @@ export default function Header() {
               </div>
             </div>
 
-            <Link
-              href="/#contact"
-              onClick={() => setIsMenuOpen(false)}
+            <button
+              onClick={() => {
+                setIsMenuOpen(false);
+                setIsDemoModalOpen(true);
+              }}
               className="flex items-center justify-center w-full px-8 py-5 bg-[#582974] text-white rounded-2xl font-black text-xl shadow-2xl shadow-purple-500/20 active:scale-95 transition-transform"
             >
               Schedule Demo
-            </Link>
+            </button>
           </div>
         </div>
       </div>
+
+      <DemoModal
+        isOpen={isDemoModalOpen}
+        onClose={() => setIsDemoModalOpen(false)}
+      />
     </>
   );
 }
