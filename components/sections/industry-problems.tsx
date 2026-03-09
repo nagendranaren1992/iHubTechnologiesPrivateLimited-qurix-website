@@ -68,7 +68,7 @@ export default function IndustryProblems() {
               </h3>
 
               {/* Description */}
-              <p className="text-[#64748b] leading-[1.6] text-[15px] font-normal max-w-[210px]">
+              <p className="text-[#64748b] leading-[1.6] text-[15px] font-normal max-w-[210px] line-clamp-4">
                 {problem.description}
               </p>
             </div>

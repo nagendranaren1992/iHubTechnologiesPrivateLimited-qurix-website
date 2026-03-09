@@ -74,41 +74,21 @@ export default function CoreModules() {
           {modules.map((module, index) => (
             <div
               key={index}
-              className={`group rounded-[24px] p-8 transition-all duration-300 flex items-start gap-5 shadow-sm border-2 ${
-                module.isFeatured
-                  ? "bg-[#582974] text-white border-[#582974]"
-                  : "bg-white border-[#582974]/10 hover:border-[#582974] hover:shadow-xl hover:shadow-purple-500/5 group-hover:-translate-y-1"
-              }`}
+              className="group rounded-[24px] p-8 transition-all duration-300 flex items-start gap-5 shadow-sm border-2 border-[#582974]/10 hover:bg-[#582974] hover:border-[#582974] hover:shadow-xl hover:shadow-purple-500/5"
             >
               {/* Icon Box */}
-              <div
-                className={`w-12 h-12 shrink-0 rounded-xl flex items-center justify-center ${
-                  module.isFeatured ? "bg-white/10" : "bg-[#F3E8FF]"
-                }`}
-              >
-                <div
-                  className={
-                    module.isFeatured ? "text-white" : "text-[#582974]"
-                  }
-                >
+              <div className="w-12 h-12 shrink-0 rounded-xl flex items-center justify-center bg-[#F3E8FF] group-hover:bg-white/10">
+                <div className="text-[#582974] group-hover:text-white">
                   {module.icon}
                 </div>
               </div>
 
               {/* Text Content */}
               <div className="flex flex-col">
-                <h3
-                  className={`text-[16px] font-bold mb-2 leading-tight ${
-                    module.isFeatured ? "text-white" : "text-[#1a1a1a]"
-                  }`}
-                >
+                <h3 className="text-[16px] font-bold mb-2 leading-tight text-[#1a1a1a] group-hover:text-white">
                   {module.title}
                 </h3>
-                <p
-                  className={`text-[13px] leading-relaxed ${
-                    module.isFeatured ? "text-white/60" : "text-gray-500"
-                  }`}
-                >
+                <p className="text-[13px] leading-relaxed text-gray-500 group-hover:text-white/60">
                   {module.description}
                 </p>
               </div>

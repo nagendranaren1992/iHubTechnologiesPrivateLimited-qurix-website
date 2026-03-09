@@ -108,40 +108,26 @@ export default function Features() {
           {features.map((feature, index) => (
             <div
               key={index}
-              className={`group rounded-[24px] p-8 shadow-sm transition-all duration-300 flex flex-col items-start text-left border-2 ${
-                feature.isLarge
-                  ? "lg:col-span-2 bg-[#582974] text-white border-[#582974]"
-                  : "bg-white border-[#582974]/10 hover:border-[#582974] hover:shadow-xl hover:shadow-purple-500/5 group-hover:-translate-y-1"
+              className={`group rounded-[24px] p-8 shadow-sm transition-all duration-300 flex flex-col items-start text-left border-2 border-[#582974]/10 hover:bg-[#582974] hover:border-[#582974] hover:shadow-xl hover:shadow-purple-500/5 ${
+                feature.isLarge ? "lg:col-span-2" : ""
               }`}
             >
               {/* Icon Box */}
               <div
-                className={`w-12 h-12 rounded-xl flex items-center justify-center mb-6 ${
-                  feature.isLarge ? "bg-white/10" : "bg-[#E6F9F7]"
-                }`}
+                className="w-12 h-12 rounded-xl flex items-center justify-center mb-6 bg-[#E6F9F7] group-hover:bg-white/10"
               >
-                <div
-                  className={feature.isLarge ? "text-white" : "text-[#14bbd3]"}
-                >
+                <div className="text-[#14bbd3] group-hover:text-white">
                   {feature.icon}
                 </div>
               </div>
 
               {/* Title */}
-              <h3
-                className={`text-[15px] font-bold mb-3 leading-tight ${
-                  feature.isLarge ? "text-white" : "text-[#1a1a1a]"
-                }`}
-              >
+              <h3 className="text-[15px] font-bold mb-3 leading-tight text-[#1a1a1a] group-hover:text-white">
                 {feature.title}
               </h3>
 
               {/* Description */}
-              <p
-                className={`leading-relaxed text-[13px] ${
-                  feature.isLarge ? "text-white/60" : "text-gray-500"
-                }`}
-              >
+              <p className="leading-relaxed text-[13px] text-gray-500 group-hover:text-white/60">
                 {feature.description}
               </p>
             </div>
