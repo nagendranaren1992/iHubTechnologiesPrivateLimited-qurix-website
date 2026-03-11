@@ -216,7 +216,7 @@ export default function ContactUs() {
                         Call Sales Directly
                       </div>
                       <div className="text-[13px] text-white/40 font-medium">
-                        040-328 8324 (Mon-Sat, 9am-7pm)
+                        +91 - 7075740042 (Mon-Sat, 9am-7pm)
                       </div>
                     </div>
                   </div>
@@ -231,7 +231,7 @@ export default function ContactUs() {
                         Email Our Team
                       </div>
                       <div className="text-[13px] text-white/40 font-medium">
-                        sales@ihub.co.in
+                        hello@qurix.com
                       </div>
                     </div>
                   </div>

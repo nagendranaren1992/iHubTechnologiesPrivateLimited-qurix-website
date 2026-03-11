@@ -63,7 +63,7 @@ export default function Header() {
                 </div>
                 <div className="flex flex-col">
                   <span className="text-[15px] font-extrabold text-[#111827] leading-none">
-                    040-328 8324
+                    +91 - 7075740042
                   </span>
                 </div>
               </div>
@@ -118,7 +118,7 @@ export default function Header() {
                 </div>
                 <div className="flex flex-col gap-1">
                   <span className="text-xl font-black text-[#111827]">
-                    040-328 8324
+                    +91 - 7075740042
                   </span>
                 </div>
               </div>
