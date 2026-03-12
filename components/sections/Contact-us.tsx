@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import { useState } from "react";
 import {
   Calendar,
   ChevronRight,
@@ -12,8 +12,121 @@ import {
   Shield,
   ArrowRight,
 } from "lucide-react";
+import { submitDemoRequest, DemoFormData } from "@/lib/api";
+
+import NotificationModal from "@/components/ui/notification-modal";
 
 export default function ContactUs() {
+  const [formData, setFormData] = useState<DemoFormData>({
+    name: "",
+    designation: "",
+    email: "",
+    mobileNumber: "",
+    organizationName: "",
+    noOfBeds: "",
+    intrestedModulesList: [],
+    comments: "",
+  });
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [notification, setNotification] = useState<{
+    isOpen: boolean;
+    type: "success" | "error";
+    title: string;
+    message: string;
+  }>({
+    isOpen: false,
+    type: "success",
+    title: "",
+    message: "",
+  });
+
+  const handleInputChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >,
+  ) => {
+    const { name, value } = e.target;
+    let newValue = value;
+
+    // Capitalize first letter for text fields
+    if (
+      ["name", "designation", "organizationName", "comments"].includes(name) &&
+      value.length > 0
+    ) {
+      newValue = value.charAt(0).toUpperCase() + value.slice(1);
+    }
+
+    // Restrict mobile number to 10 digits
+    if (name === "mobileNumber") {
+      newValue = value.replace(/\D/g, "").slice(0, 10);
+    }
+
+    setFormData((prev) => ({ ...prev, [name]: newValue }));
+  };
+
+  const handleCheckboxChange = (module: string) => {
+    setFormData((prev) => {
+      let modules = [...prev.intrestedModulesList];
+
+      if (module === "Full Platform") {
+        // If clicking Full Platform, just set it to Full Platform or empty
+        modules = modules.includes("Full Platform") ? [] : ["Full Platform"];
+      } else {
+        // If clicking any other module
+        if (modules.includes(module)) {
+          // Uncheck
+          modules = modules.filter((m) => m !== module);
+        } else {
+          // Check and remove Full Platform if it exists
+          modules = [...modules.filter((m) => m !== "Full Platform"), module];
+        }
+      }
+
+      return { ...prev, intrestedModulesList: modules };
+    });
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    try {
+      const result = await submitDemoRequest(formData);
+
+      if (result.status === "Success" || result.responseCode === 200) {
+        setNotification({
+          isOpen: true,
+          type: "success",
+          title: "Request Received!",
+          message: `Thank you, ${formData.name}. We've received your request for ${formData.organizationName} and our team will contact you shortly.`,
+        });
+        setFormData({
+          name: "",
+          designation: "",
+          email: "",
+          mobileNumber: "",
+          organizationName: "",
+          noOfBeds: "",
+          intrestedModulesList: [],
+          comments: "",
+        });
+      } else {
+        throw new Error("Server returned non-success status");
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      setNotification({
+        isOpen: true,
+        type: "error",
+        title: "Submission Failed",
+        message: "We encountered an error while processing your request. Please try again or contact us directly.",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <section id="contact" className="py-20 md:py-32 bg-[#F8FAFC]">
       <div className="container-custom">
@@ -43,7 +156,7 @@ export default function ContactUs() {
               </div>
 
               {/* Form */}
-              <form className="space-y-8">
+              <form className="space-y-8" onSubmit={handleSubmit}>
                 <div className="grid md:grid-cols-2 gap-6">
                   {/* Full Name */}
                   <div className="space-y-2">
@@ -52,8 +165,12 @@ export default function ContactUs() {
                     </label>
                     <input
                       type="text"
-                      placeholder="Dr. Priya Sharma"
-                      className="w-full px-5 py-4 rounded-xl bg-slate-50 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#582974]/10 focus:border-[#582974] transition-all text-[#111827] placeholder:text-slate-400 font-medium"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleInputChange}
+                      placeholder="Enter your full name"
+                      required
+                      className="w-full px-5 py-4 rounded-xl bg-slate-50 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#582974]/10 focus:border-[#582974] transition-all text-[#111827] placeholder:text-slate-300 font-medium"
                     />
                   </div>
                   {/* Designation */}
@@ -63,8 +180,11 @@ export default function ContactUs() {
                     </label>
                     <input
                       type="text"
-                      placeholder="CIO / Admin Director / IT Head"
-                      className="w-full px-5 py-4 rounded-xl bg-slate-50 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#582974]/10 focus:border-[#582974] transition-all text-[#111827] placeholder:text-slate-400 font-medium"
+                      name="designation"
+                      value={formData.designation}
+                      onChange={handleInputChange}
+                      placeholder="e.g. Chief Medical Officer"
+                      className="w-full px-5 py-4 rounded-xl bg-slate-50 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#582974]/10 focus:border-[#582974] transition-all text-[#111827] placeholder:text-slate-300 font-medium"
                     />
                   </div>
                   {/* Work Email */}
@@ -74,8 +194,12 @@ export default function ContactUs() {
                     </label>
                     <input
                       type="email"
-                      placeholder="priya@hospital.com"
-                      className="w-full px-5 py-4 rounded-xl bg-slate-50 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#582974]/10 focus:border-[#582974] transition-all text-[#111827] placeholder:text-slate-400 font-medium"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleInputChange}
+                      placeholder="name@hospital.com"
+                      required
+                      className="w-full px-5 py-4 rounded-xl bg-slate-50 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#582974]/10 focus:border-[#582974] transition-all text-[#111827] placeholder:text-slate-300 font-medium"
                     />
                   </div>
                   {/* Phone Number */}
@@ -85,8 +209,15 @@ export default function ContactUs() {
                     </label>
                     <input
                       type="tel"
-                      placeholder="+91 98765 43210"
-                      className="w-full px-5 py-4 rounded-xl bg-slate-50 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#582974]/10 focus:border-[#582974] transition-all text-[#111827] placeholder:text-slate-400 font-medium"
+                      name="mobileNumber"
+                      value={formData.mobileNumber}
+                      onChange={handleInputChange}
+                      placeholder="Enter mobile number"
+                      pattern="[0-9]{10}"
+                      title="Please enter a 10-digit mobile number"
+                      maxLength={10}
+                      required
+                      className="w-full px-5 py-4 rounded-xl bg-slate-50 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#582974]/10 focus:border-[#582974] transition-all text-[#111827] placeholder:text-slate-300 font-medium"
                     />
                   </div>
                   {/* Hospital */}
@@ -97,8 +228,12 @@ export default function ContactUs() {
                     </label>
                     <input
                       type="text"
-                      placeholder="Avani Hospital"
-                      className="w-full px-5 py-4 rounded-xl bg-slate-50 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#582974]/10 focus:border-[#582974] transition-all text-[#111827] placeholder:text-slate-400 font-medium"
+                      name="organizationName"
+                      value={formData.organizationName}
+                      onChange={handleInputChange}
+                      placeholder="Enter hospital / clinic name"
+                      required
+                      className="w-full px-5 py-4 rounded-xl bg-slate-50 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#582974]/10 focus:border-[#582974] transition-all text-[#111827] placeholder:text-slate-300 font-medium"
                     />
                   </div>
                   {/* Number of Beds */}
@@ -107,12 +242,17 @@ export default function ContactUs() {
                       Number of Beds
                     </label>
                     <div className="relative">
-                      <select className="w-full px-5 py-4 rounded-xl bg-slate-50 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#582974]/10 focus:border-[#582974] transition-all text-[#111827] appearance-none font-medium">
-                        <option>Select range</option>
-                        <option>Under 50</option>
-                        <option>50 - 100</option>
-                        <option>100 - 500</option>
-                        <option>500+</option>
+                      <select
+                        name="noOfBeds"
+                        value={formData.noOfBeds}
+                        onChange={handleInputChange}
+                        className="w-full px-5 py-4 rounded-xl bg-slate-50 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#582974]/10 focus:border-[#582974] transition-all text-[#111827] appearance-none font-medium"
+                      >
+                        <option value="">Select range</option>
+                        <option value="Under 50">Under 50</option>
+                        <option value="50 - 100">50 - 100</option>
+                        <option value="100 - 500">100 - 500</option>
+                        <option value="500+">500+</option>
                       </select>
                       <ChevronRight
                         className="absolute right-5 top-1/2 -translate-y-1/2 rotate-90 text-slate-400 pointer-events-none"
@@ -142,6 +282,8 @@ export default function ContactUs() {
                       >
                         <input
                           type="checkbox"
+                          checked={formData.intrestedModulesList.includes(item)}
+                          onChange={() => handleCheckboxChange(item)}
                           className="w-5 h-5 rounded-md border-[#b4b7c1] text-[#582974] focus:ring-[#582974] focus:ring-offset-0 bg-white transition-all cursor-pointer"
                         />
                         <span className="text-[14px] font-medium text-[#4b5563] group-hover:text-[#111827] transition-colors">
@@ -159,19 +301,28 @@ export default function ContactUs() {
                   </label>
                   <textarea
                     rows={4}
-                    placeholder="E.g., We want to see the OPD workflow and billing integration"
-                    className="w-full px-5 py-4 rounded-xl bg-slate-50 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#582974]/10 focus:border-[#582974] transition-all text-[#111827] placeholder:text-slate-400 font-medium resize-none"
+                    name="comments"
+                    value={formData.comments}
+                    onChange={handleInputChange}
+                    placeholder="Mention any specific requirements or questions"
+                    className="w-full px-5 py-4 rounded-xl bg-slate-50 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#582974]/10 focus:border-[#582974] transition-all text-[#111827] placeholder:text-slate-300 font-medium resize-none"
                   ></textarea>
                 </div>
 
                 {/* Footer Section */}
                 <div className="flex flex-col md:flex-row items-center justify-between gap-6 pt-6">
-                  <button className="flex items-center gap-3 px-8 py-4 rounded-xl bg-[#582974] text-white font-bold text-[15px] hover:bg-[#4a2262] transition-all shadow-lg shadow-purple-200 group w-full md:w-auto">
-                    Book My Demo
-                    <ArrowRight
-                      size={18}
-                      className="group-hover:translate-x-1 transition-transform"
-                    />
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="flex items-center justify-center gap-3 px-8 py-4 rounded-xl bg-[#582974] text-white font-bold text-[15px] hover:bg-[#4a2262] transition-all shadow-lg shadow-purple-200 group w-full md:w-auto disabled:opacity-70 disabled:cursor-not-allowed"
+                  >
+                    {isSubmitting ? "Sending..." : "Book My Demo"}
+                    {!isSubmitting && (
+                      <ArrowRight
+                        size={18}
+                        className="group-hover:translate-x-1 transition-transform"
+                      />
+                    )}
                   </button>
                   <div className="flex items-center gap-3">
                     <div className="w-8 h-8 rounded-full bg-teal-50 flex items-center justify-center">
@@ -186,6 +337,14 @@ export default function ContactUs() {
               </form>
             </div>
           </div>
+
+          <NotificationModal
+            isOpen={notification.isOpen}
+            type={notification.type}
+            title={notification.title}
+            message={notification.message}
+            onClose={() => setNotification((prev) => ({ ...prev, isOpen: false }))}
+          />
 
           {/* Right Column - Info Cards (4/5 cols) */}
           <div className="lg:col-span-5 space-y-6">
