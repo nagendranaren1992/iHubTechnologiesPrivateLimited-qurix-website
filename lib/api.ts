@@ -11,7 +11,7 @@ export interface DemoFormData {
 
 export async function submitDemoRequest(formData: DemoFormData) {
   const baseUrl =
-    process.env.NEXT_PUBLIC_BASE_URL || "https://preprod.qurix.io/preprodhims/";
+    process.env.NEXT_PUBLIC_BASE_URL || "https://qurix.io/hims/";
   const apiUrl = `${baseUrl}openapi/qurix/savedemo`;
 
   const response = await fetch(apiUrl, {
