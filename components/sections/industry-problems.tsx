@@ -58,7 +58,7 @@ export default function IndustryProblems() {
               <div className="absolute top-0 left-0 right-0 h-1 bg-[#F15A2B] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
               {/* Icon Box */}
-              <div className="w-12 h-12 bg-[#FFF2F0] rounded-xl flex items-center justify-center mb-6 relative z-10">
+              <div className="w-12 h-12 bg-[#FFF2F0] border border-[#F15A2B]/30 rounded-full flex items-center justify-center mb-6 relative z-10">
                 {problem.icon}
               </div>
 

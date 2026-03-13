@@ -195,7 +195,7 @@ export default function Hero() {
 
               {/* Floating Improvement Badge */}
               <div className="absolute -top-10 right-4 lg:-right-10 z-20 bg-white rounded-2xl p-5 shadow-2xl border border-gray-100 flex items-center gap-4 animate-float">
-                <div className="w-12 h-12 rounded-xl bg-[#E6F9F7] flex items-center justify-center">
+                <div className="w-12 h-12 rounded-full bg-[#ecfeff] border border-[#14bbd3]/30 flex items-center justify-center">
                   <TrendingUp className="text-[#14bbd3]" size={24} />
                 </div>
                 <div>

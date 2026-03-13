@@ -114,7 +114,7 @@ export default function Features() {
             >
               {/* Icon Box */}
               <div
-                className="w-12 h-12 rounded-xl flex items-center justify-center mb-6 bg-[#E6F9F7] group-hover:bg-white/10"
+                className="w-12 h-12 rounded-full border border-[#14bbd3]/30 flex items-center justify-center mb-6 bg-[#ecfeff] group-hover:bg-white/10"
               >
                 <div className="text-[#14bbd3] group-hover:text-white">
                   {feature.icon}

@@ -165,10 +165,10 @@ export default function DemoModal({ isOpen, onClose }: DemoModalProps) {
         </button>
 
         {/* Scrollable Content Wrapper */}
-        <div className="w-full h-full max-h-[90vh] overflow-y-auto px-6 py-8 sm:px-[40px] sm:py-[44px] [&::-webkit-scrollbar]:w-1.5 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-[#4B2982] [&::-webkit-scrollbar-thumb]:rounded-full">
+        <div className="w-full h-full max-h-[90vh] overflow-y-auto px-6 py-8 sm:px-[40px] sm:py-[44px] [&::-webkit-scrollbar]:w-1.5 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-[#14bbd3] [&::-webkit-scrollbar-thumb]:rounded-full">
           {/* Header */}
           <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#f4eff8] text-[#14bbd3] mb-6">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#ecfeff] text-[#14bbd3] mb-6">
               <Calendar size={14} className="stroke-[2.5]" />
               <span className="text-xs font-bold tracking-wide">
                 Quick Demo Request
@@ -357,7 +357,7 @@ export default function DemoModal({ isOpen, onClose }: DemoModalProps) {
           <button
             type="submit"
             disabled={isSubmitting}
-            className="w-full h-14 bg-[#4B2982] hover:bg-[#3d2169] text-white rounded-xl font-bold text-lg flex items-center justify-center gap-2 transition-colors mt-8 shadow-lg shadow-[#4B2982]/20 disabled:opacity-70 disabled:cursor-not-allowed"
+            className="w-full h-14 bg-[#14bbd3] hover:bg-[#12a5ba] text-white rounded-xl font-bold text-lg flex items-center justify-center gap-2 transition-colors mt-8 shadow-lg shadow-[#14bbd3]/20 disabled:opacity-70 disabled:cursor-not-allowed"
           >
             {isSubmitting ? "Sending..." : "Request Demo"}
             {!isSubmitting && <ArrowRight size={20} className="stroke-[2.5]" />}

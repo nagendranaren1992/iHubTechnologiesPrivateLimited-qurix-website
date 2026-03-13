@@ -139,7 +139,7 @@ export default function ContactUs() {
             <div className="relative z-10">
               {/* Header */}
               <div className="mb-12">
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-50 text-[#14bbd3] mb-6 border border-purple-100/50">
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-[#ecfeff] text-[#14bbd3] mb-6 border border-[#14bbd3]/10">
                   <Calendar size={14} className="text-[#14bbd3]" />
                   <span className="text-[12px] font-bold uppercase tracking-wider">
                     Schedule a Demo
@@ -314,7 +314,7 @@ export default function ContactUs() {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="flex items-center justify-center gap-3 px-8 py-4 rounded-xl bg-[#14bbd3] text-white font-bold text-[15px] hover:bg-[#12a5ba] transition-all shadow-lg shadow-purple-200 group w-full md:w-auto disabled:opacity-70 disabled:cursor-not-allowed"
+                    className="flex items-center justify-center gap-3 px-8 py-4 rounded-xl bg-[#14bbd3] text-white font-bold text-[15px] hover:bg-[#12a5ba] transition-all shadow-lg shadow-[#14bbd3]/20 group w-full md:w-auto disabled:opacity-70 disabled:cursor-not-allowed"
                   >
                     {isSubmitting ? "Sending..." : "Book My Demo"}
                     {!isSubmitting && (
@@ -416,7 +416,7 @@ export default function ContactUs() {
             {/* Side by side small white cards */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="bg-white p-8 rounded-[24px] shadow-sm border border-slate-100 flex flex-col items-center text-center">
-                <div className="w-10 h-10 rounded-full bg-purple-50 flex items-center justify-center mb-6">
+                <div className="w-10 h-10 rounded-full bg-[#ecfeff] flex items-center justify-center mb-6 border border-[#14bbd3]/10">
                   <Clock size={18} className="text-[#14bbd3]" />
                 </div>
                 <h4 className="text-[14px] font-bold text-[#111827] mb-2">

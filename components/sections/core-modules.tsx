@@ -77,7 +77,7 @@ export default function CoreModules() {
               className="group rounded-[24px] p-8 transition-all duration-300 flex items-start gap-5 shadow-sm border-2 border-[#14bbd3]/10 hover:bg-[#14bbd3] hover:border-[#14bbd3] hover:shadow-xl hover:shadow-purple-500/5"
             >
               {/* Icon Box */}
-              <div className="w-12 h-12 shrink-0 rounded-xl flex items-center justify-center bg-[#F3E8FF] group-hover:bg-white/10">
+              <div className="w-12 h-12 shrink-0 rounded-full border border-[#14bbd3]/30 flex items-center justify-center bg-[#ecfeff] group-hover:bg-white/10">
                 <div className="text-[#14bbd3] group-hover:text-white">
                   {module.icon}
                 </div>

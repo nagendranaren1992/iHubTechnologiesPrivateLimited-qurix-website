@@ -73,7 +73,7 @@ export default function Services() {
               className="group relative overflow-hidden bg-white hover:bg-[#14bbd3] rounded-[24px] border-2 border-[#14bbd3]/10 hover:border-[#14bbd3] hover:shadow-xl p-8 transition-all duration-300 flex flex-col items-start min-h-[300px]"
             >
               {/* Icon Box - Circular to match premium aesthetic */}
-              <div className="w-12 h-12 rounded-full border border-[#14bbd3]/20 bg-[#f0fdfa] flex items-center justify-center mb-10 transition-all duration-300 group-hover:bg-white/10 group-hover:border-white/20 group-hover:scale-110">
+              <div className="w-12 h-12 rounded-full border border-[#14bbd3]/30 bg-[#ecfeff] flex items-center justify-center mb-10 transition-all duration-300 group-hover:bg-white/10 group-hover:border-white/20 group-hover:scale-110">
                 <div className="text-[#14bbd3] group-hover:text-white transition-colors duration-300">
                   {React.cloneElement(
                     service.icon as React.ReactElement<{ className?: string }>,

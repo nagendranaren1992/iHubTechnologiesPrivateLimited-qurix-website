@@ -47,7 +47,7 @@ export default function WhyQurix() {
               className="group relative overflow-hidden bg-white hover:bg-[#14bbd3] rounded-[24px] border-2 border-[#14bbd3]/10 hover:border-[#14bbd3] hover:shadow-xl transition-all duration-300 h-full flex flex-col items-start text-left p-10"
             >
               {/* Icon Box */}
-              <div className="w-16 h-16 bg-[#F8F5FA] group-hover:bg-white/10 rounded-2xl flex items-center justify-center mb-8 transition-all duration-300 group-hover:scale-110">
+              <div className="w-16 h-16 bg-[#ecfeff] border border-[#14bbd3]/30 group-hover:bg-white/10 rounded-full flex items-center justify-center mb-8 transition-all duration-300 group-hover:scale-110">
                 <div className="text-[#14bbd3] group-hover:text-white transition-colors duration-300">
                   {feature.icon}
                 </div>
