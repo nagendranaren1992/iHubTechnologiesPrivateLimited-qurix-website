@@ -91,7 +91,7 @@ export default function Features() {
       <div className="container-custom">
         {/* Section Header */}
         <div className="text-center max-w-4xl mx-auto mb-16 md:mb-24">
-          <div className="inline-block px-6 py-2 rounded-full bg-[#EFE9F4] text-[#582974] text-[11px] font-bold uppercase tracking-[0.15em] mb-8">
+          <div className="inline-block px-6 py-2 rounded-full bg-[#ecfeff] text-[#14bbd3] text-[11px] font-bold uppercase tracking-[0.15em] mb-8">
             Platform Capabilities
           </div>
           <h2 className="text-2xl md:text-3xl lg:text-[38px] font-extrabold mb-8 text-[#1a1a1a] leading-[1.15]">
@@ -108,7 +108,7 @@ export default function Features() {
           {features.map((feature, index) => (
             <div
               key={index}
-              className={`group rounded-[24px] p-8 shadow-sm transition-all duration-300 flex flex-col items-start text-left border-2 border-[#582974]/10 hover:bg-[#582974] hover:border-[#582974] hover:shadow-xl hover:shadow-purple-500/5 ${
+              className={`group rounded-[24px] p-8 shadow-sm transition-all duration-300 flex flex-col items-start text-left border-2 border-[#14bbd3]/10 hover:bg-[#14bbd3] hover:border-[#14bbd3] hover:shadow-xl hover:shadow-purple-500/5 ${
                 feature.isLarge ? "lg:col-span-2" : ""
               }`}
             >

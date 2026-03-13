@@ -3,7 +3,8 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Blog | Qurix - Healthcare Technology Insights",
-  description: "Explore the latest insights on healthcare technology, interoperability, and AI from the Qurix team.",
+  description:
+    "Explore the latest insights on healthcare technology, interoperability, and AI from the Qurix team.",
 };
 
 export default function BlogPage() {
@@ -48,7 +49,12 @@ export default function BlogPage() {
       <Header />
       <main className="pt-20">
         {/* Hero Section */}
-        <section className="relative py-24 bg-gradient-to-br from-[#582974] to-[#2a1338] text-white overflow-hidden">
+        <section className="relative py-24 bg-gradient-to-br from-[#14bbd3] to-[#0d99ad] text-white overflow-hidden">
+          {/* Decorative background elements */}
+          <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+            <div className="absolute -top-1/4 -left-1/4 w-1/2 h-1/2 bg-white/20 rounded-full blur-[120px]"></div>
+            <div className="absolute -bottom-1/4 -right-1/4 w-1/2 h-1/2 bg-black/10 rounded-full blur-[120px]"></div>
+          </div>
           <div className="absolute inset-0 bg-[url('/images/grid-pattern.svg')] opacity-10"></div>
           <div className="container-custom relative z-10 text-center">
             <h1 className="text-5xl md:text-6xl font-extrabold mb-6 tracking-tight">
@@ -85,7 +91,7 @@ export default function BlogPage() {
                   {/* Content Section */}
                   <div className="w-full md:w-2/3 flex flex-col justify-start pt-1">
                     <div className="flex items-center gap-4 text-sm text-gray-500 mb-3 font-medium">
-                      <span className="text-[#582974]">{post.date}</span>
+                      <span className="text-[#14bbd3]">{post.date}</span>
                       <span>•</span>
                       <span>{post.author}</span>
                     </div>
@@ -95,19 +101,19 @@ export default function BlogPage() {
                         post.tags.map((tag) => (
                           <span
                             key={tag}
-                            className="px-3 py-1 bg-[#582974]/5 text-[#582974] text-xs font-semibold rounded-full border border-[#582974]/10"
+                            className="px-3 py-1 bg-[#14bbd3]/5 text-[#14bbd3] text-xs font-semibold rounded-full border border-[#14bbd3]/10"
                           >
                             {tag}
                           </span>
                         ))
                       ) : (
-                        <span className="px-3 py-1 bg-[#582974]/5 text-[#582974] text-xs font-semibold rounded-full border border-[#582974]/10">
+                        <span className="px-3 py-1 bg-[#14bbd3]/5 text-[#14bbd3] text-xs font-semibold rounded-full border border-[#14bbd3]/10">
                           {post.tag}
                         </span>
                       )}
                     </div>
 
-                    <h2 className="text-xl md:text-2xl font-bold text-gray-900 mb-3 leading-tight group-hover:text-[#582974] transition-colors duration-300">
+                    <h2 className="text-xl md:text-2xl font-bold text-gray-900 mb-3 leading-tight group-hover:text-[#14bbd3] transition-colors duration-300">
                       <a href="#" className="block">
                         {post.title}
                       </a>
@@ -119,7 +125,7 @@ export default function BlogPage() {
 
                     <a
                       href="#"
-                      className="inline-flex items-center text-[#582974] font-bold hover:text-[#7a3a99] transition-colors group/link text-sm"
+                      className="inline-flex items-center text-[#14bbd3] font-bold hover:text-[#12a5ba] transition-colors group/link text-sm"
                     >
                       Read more
                       <svg

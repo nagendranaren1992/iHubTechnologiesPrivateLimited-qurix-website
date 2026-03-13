@@ -47,10 +47,10 @@ export default function Header() {
                 <a
                   key={link.name}
                   href={link.href}
-                  className="text-[#4b5563] hover:text-[#582974] transition-all font-bold text-[15px] tracking-tight py-2 px-1 relative group"
+                  className="text-[#4b5563] hover:text-[#14bbd3] transition-all font-bold text-[15px] tracking-tight py-2 px-1 relative group"
                 >
                   {link.name}
-                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#582974] transition-all duration-300 group-hover:w-full"></span>
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#14bbd3] transition-all duration-300 group-hover:w-full"></span>
                 </a>
               ))}
             </div>
@@ -58,7 +58,7 @@ export default function Header() {
             {/* Right Side - Phone & Demo CTA */}
             <div className="hidden md:flex items-center gap-10">
               <div className="flex items-center gap-3 group cursor-pointer group">
-                <div className="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center text-slate-400 group-hover:bg-[#582974] group-hover:text-white transition-all duration-300 border border-slate-100">
+                <div className="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center text-slate-400 group-hover:bg-[#14bbd3] group-hover:text-white transition-all duration-300 border border-slate-100">
                   <Phone size={18} />
                 </div>
                 <div className="flex flex-col">
@@ -79,7 +79,7 @@ export default function Header() {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="md:hidden p-2 text-[#111827] hover:text-[#582974] transition-colors relative z-[1001]"
+              className="md:hidden p-2 text-[#111827] hover:text-[#14bbd3] transition-colors relative z-[1001]"
               aria-label="Toggle menu"
             >
               <div className="relative w-7 h-7">
@@ -104,7 +104,7 @@ export default function Header() {
               key={link.name}
               href={link.href}
               onClick={() => setIsMenuOpen(false)}
-              className="text-2xl font-black text-[#111827] hover:text-[#582974] transition-colors border-b border-slate-50 pb-4"
+              className="text-2xl font-black text-[#111827] hover:text-[#14bbd3] transition-colors border-b border-slate-50 pb-4"
             >
               {link.name}
             </a>
@@ -113,7 +113,7 @@ export default function Header() {
           <div className="mt-8 space-y-6">
             <div className="p-6 bg-slate-50 rounded-2xl border border-slate-100">
               <div className="flex items-center gap-5">
-                <div className="w-14 h-14 rounded-full bg-[#582974] flex items-center justify-center text-white">
+                <div className="w-14 h-14 rounded-full bg-[#14bbd3] flex items-center justify-center text-white">
                   <Phone size={24} />
                 </div>
                 <div className="flex flex-col gap-1">

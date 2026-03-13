@@ -134,13 +134,13 @@ export default function ContactUs() {
           {/* Left Column - Form Card (8 cols) */}
           <div className="lg:col-span-7 bg-white rounded-[32px] p-6 sm:p-8 md:p-12 shadow-xl shadow-slate-200/50 relative overflow-hidden ring-1 ring-slate-100">
             {/* Top accent line */}
-            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#582974] to-[#14bbd3]"></div>
+            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#14bbd3] to-[#14bbd3]"></div>
 
             <div className="relative z-10">
               {/* Header */}
               <div className="mb-12">
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-50 text-[#582974] mb-6 border border-purple-100/50">
-                  <Calendar size={14} className="text-[#582974]" />
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-50 text-[#14bbd3] mb-6 border border-purple-100/50">
+                  <Calendar size={14} className="text-[#14bbd3]" />
                   <span className="text-[12px] font-bold uppercase tracking-wider">
                     Schedule a Demo
                   </span>
@@ -170,7 +170,7 @@ export default function ContactUs() {
                       onChange={handleInputChange}
                       placeholder="Enter your full name"
                       required
-                      className="w-full px-5 py-4 rounded-xl bg-slate-50 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#582974]/10 focus:border-[#582974] transition-all text-[#111827] placeholder:text-slate-300 font-medium"
+                      className="w-full px-5 py-4 rounded-xl bg-slate-50 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#14bbd3]/10 focus:border-[#14bbd3] transition-all text-[#111827] placeholder:text-slate-300 font-medium"
                     />
                   </div>
                   {/* Designation */}
@@ -184,7 +184,7 @@ export default function ContactUs() {
                       value={formData.designation}
                       onChange={handleInputChange}
                       placeholder="e.g. Chief Medical Officer"
-                      className="w-full px-5 py-4 rounded-xl bg-slate-50 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#582974]/10 focus:border-[#582974] transition-all text-[#111827] placeholder:text-slate-300 font-medium"
+                      className="w-full px-5 py-4 rounded-xl bg-slate-50 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#14bbd3]/10 focus:border-[#14bbd3] transition-all text-[#111827] placeholder:text-slate-300 font-medium"
                     />
                   </div>
                   {/* Work Email */}
@@ -199,7 +199,7 @@ export default function ContactUs() {
                       onChange={handleInputChange}
                       placeholder="name@hospital.com"
                       required
-                      className="w-full px-5 py-4 rounded-xl bg-slate-50 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#582974]/10 focus:border-[#582974] transition-all text-[#111827] placeholder:text-slate-300 font-medium"
+                      className="w-full px-5 py-4 rounded-xl bg-slate-50 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#14bbd3]/10 focus:border-[#14bbd3] transition-all text-[#111827] placeholder:text-slate-300 font-medium"
                     />
                   </div>
                   {/* Phone Number */}
@@ -217,7 +217,7 @@ export default function ContactUs() {
                       title="Please enter a 10-digit mobile number"
                       maxLength={10}
                       required
-                      className="w-full px-5 py-4 rounded-xl bg-slate-50 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#582974]/10 focus:border-[#582974] transition-all text-[#111827] placeholder:text-slate-300 font-medium"
+                      className="w-full px-5 py-4 rounded-xl bg-slate-50 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#14bbd3]/10 focus:border-[#14bbd3] transition-all text-[#111827] placeholder:text-slate-300 font-medium"
                     />
                   </div>
                   {/* Hospital */}
@@ -233,7 +233,7 @@ export default function ContactUs() {
                       onChange={handleInputChange}
                       placeholder="Enter hospital / clinic name"
                       required
-                      className="w-full px-5 py-4 rounded-xl bg-slate-50 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#582974]/10 focus:border-[#582974] transition-all text-[#111827] placeholder:text-slate-300 font-medium"
+                      className="w-full px-5 py-4 rounded-xl bg-slate-50 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#14bbd3]/10 focus:border-[#14bbd3] transition-all text-[#111827] placeholder:text-slate-300 font-medium"
                     />
                   </div>
                   {/* Number of Beds */}
@@ -246,7 +246,7 @@ export default function ContactUs() {
                         name="noOfBeds"
                         value={formData.noOfBeds}
                         onChange={handleInputChange}
-                        className="w-full px-5 py-4 rounded-xl bg-slate-50 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#582974]/10 focus:border-[#582974] transition-all text-[#111827] appearance-none font-medium"
+                        className="w-full px-5 py-4 rounded-xl bg-slate-50 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#14bbd3]/10 focus:border-[#14bbd3] transition-all text-[#111827] appearance-none font-medium"
                       >
                         <option value="">Select range</option>
                         <option value="Under 50">Under 50</option>
@@ -278,13 +278,13 @@ export default function ContactUs() {
                     ].map((item) => (
                       <label
                         key={item}
-                        className="flex items-center gap-3 px-5 py-3 rounded-2xl bg-[#f8f9ff] border border-[#eff1ff] cursor-pointer group hover:bg-white hover:border-[#582974]/20 hover:shadow-sm transition-all"
+                        className="flex items-center gap-3 px-5 py-3 rounded-2xl bg-[#f8f9ff] border border-[#eff1ff] cursor-pointer group hover:bg-white hover:border-[#14bbd3]/20 hover:shadow-sm transition-all"
                       >
                         <input
                           type="checkbox"
                           checked={formData.intrestedModulesList.includes(item)}
                           onChange={() => handleCheckboxChange(item)}
-                          className="w-5 h-5 rounded-md border-[#b4b7c1] text-[#582974] focus:ring-[#582974] focus:ring-offset-0 bg-white transition-all cursor-pointer"
+                          className="w-5 h-5 rounded-md border-[#b4b7c1] text-[#14bbd3] focus:ring-[#14bbd3] focus:ring-offset-0 bg-white transition-all cursor-pointer"
                         />
                         <span className="text-[14px] font-medium text-[#4b5563] group-hover:text-[#111827] transition-colors">
                           {item}
@@ -305,7 +305,7 @@ export default function ContactUs() {
                     value={formData.comments}
                     onChange={handleInputChange}
                     placeholder="Mention any specific requirements or questions"
-                    className="w-full px-5 py-4 rounded-xl bg-slate-50 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#582974]/10 focus:border-[#582974] transition-all text-[#111827] placeholder:text-slate-300 font-medium resize-none"
+                    className="w-full px-5 py-4 rounded-xl bg-slate-50 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#14bbd3]/10 focus:border-[#14bbd3] transition-all text-[#111827] placeholder:text-slate-300 font-medium resize-none"
                   ></textarea>
                 </div>
 
@@ -314,7 +314,7 @@ export default function ContactUs() {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="flex items-center justify-center gap-3 px-8 py-4 rounded-xl bg-[#582974] text-white font-bold text-[15px] hover:bg-[#4a2262] transition-all shadow-lg shadow-purple-200 group w-full md:w-auto disabled:opacity-70 disabled:cursor-not-allowed"
+                    className="flex items-center justify-center gap-3 px-8 py-4 rounded-xl bg-[#14bbd3] text-white font-bold text-[15px] hover:bg-[#12a5ba] transition-all shadow-lg shadow-purple-200 group w-full md:w-auto disabled:opacity-70 disabled:cursor-not-allowed"
                   >
                     {isSubmitting ? "Sending..." : "Book My Demo"}
                     {!isSubmitting && (
@@ -351,7 +351,7 @@ export default function ContactUs() {
             {/* Talk To Experts Card */}
             <div className="bg-[#0F0A1E] rounded-[32px] p-8 md:p-10 text-white shadow-2xl relative overflow-hidden">
               {/* Accent decoration */}
-              <div className="absolute top-[-10%] right-[-10%] w-[50%] h-[50%] bg-[#582974]/20 rounded-full blur-[60px]"></div>
+              <div className="absolute top-[-10%] right-[-10%] w-[50%] h-[50%] bg-[#14bbd3]/20 rounded-full blur-[60px]"></div>
 
               <div className="relative z-10 space-y-8">
                 <div className="space-y-4">
@@ -367,7 +367,7 @@ export default function ContactUs() {
                 <div className="space-y-4">
                   {/* Call Sales */}
                   <div className="bg-white/5 rounded-2xl p-5 border border-white/5 flex items-center gap-5 transition-all hover:bg-white/10 group cursor-pointer">
-                    <div className="w-12 h-12 rounded-xl bg-[#582974] flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <div className="w-12 h-12 rounded-xl bg-[#14bbd3] flex items-center justify-center group-hover:scale-110 transition-transform">
                       <Phone size={20} className="text-white" />
                     </div>
                     <div>
@@ -417,7 +417,7 @@ export default function ContactUs() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="bg-white p-8 rounded-[24px] shadow-sm border border-slate-100 flex flex-col items-center text-center">
                 <div className="w-10 h-10 rounded-full bg-purple-50 flex items-center justify-center mb-6">
-                  <Clock size={18} className="text-[#582974]" />
+                  <Clock size={18} className="text-[#14bbd3]" />
                 </div>
                 <h4 className="text-[14px] font-bold text-[#111827] mb-2">
                   30-Minute Demo

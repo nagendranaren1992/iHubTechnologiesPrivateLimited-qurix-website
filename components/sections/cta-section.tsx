@@ -4,7 +4,7 @@ export default function CTASection() {
   return (
     <section id="cta" className="section-padding relative overflow-hidden">
       {/* Gradient Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#582974] via-[#753a93] to-[#14BBD3]"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-[#14bbd3] via-[#12a5ba] to-[#14BBD3]"></div>
 
       {/* Animated Background Elements */}
       <div className="absolute inset-0 opacity-20">
@@ -26,14 +26,14 @@ export default function CTASection() {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="group px-8 py-4 bg-white text-[#582974] rounded-full font-semibold hover:shadow-2xl transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2">
+            <button className="group px-8 py-4 bg-white text-[#14bbd3] rounded-full font-semibold hover:shadow-2xl transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2">
               Schedule Demo
               <ArrowRight
                 className="group-hover:translate-x-1 transition-transform"
                 size={20}
               />
             </button>
-            <button className="px-8 py-4 bg-transparent text-white rounded-full font-semibold border-2 border-white hover:bg-white hover:text-[#582974] transition-all duration-300">
+            <button className="px-8 py-4 bg-transparent text-white rounded-full font-semibold border-2 border-white hover:bg-white hover:text-[#14bbd3] transition-all duration-300">
               Contact Sales
             </button>
           </div>

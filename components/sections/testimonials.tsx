@@ -15,7 +15,7 @@ export default function Testimonials() {
       quote:
         "Qurix Healthcare has transformed how we manage patient care. The analytics and reporting features have given us insights we never had before, leading to better outcomes and more efficient operations.",
       avatar: "/images/testimonials/Sreedhar.png",
-      bgColor: "from-[#582974] to-[#753a93]",
+      bgColor: "from-[#14bbd3] to-[#12a5ba]",
     },
     {
       name: "Dr.Aasrith",
@@ -35,7 +35,7 @@ export default function Testimonials() {
       quote:
         "Implementation was incredibly smooth, and the support team was there every step of the way. The platform has helped us reduce administrative overhead by 30% while improving care quality.",
       avatar: "/images/testimonials/Suman.png",
-      bgColor: "from-[#582974] to-[#14BBD3]",
+      bgColor: "from-[#14bbd3] to-[#14BBD3]",
     },
     {
       name: "Dr.Siddarth Reddy",
@@ -45,7 +45,7 @@ export default function Testimonials() {
       quote:
         "Navigating complex surgical schedules used to be a nightmare. Qurix's intuitive interface has streamlined our workflow, allowing us to focus more on patient outcomes and less on logistics.",
       avatar: "/images/testimonials/Sidharth.png",
-      bgColor: "from-[#14bbd3] to-[#753a93]",
+      bgColor: "from-[#14bbd3] to-[#12a5ba]",
     },
     {
       name: "Dr. Kishore B Reddy",
@@ -55,7 +55,7 @@ export default function Testimonials() {
       quote:
         "Qurix has revolutionized our billing cycle. The automated features have drastically reduced errors and improved our revenue flow, giving us financial stability to expand our services.",
       avatar: "/images/testimonials/Kishorereddy.png",
-      bgColor: "from-[#753a93] to-[#582974]",
+      bgColor: "from-[#12a5ba] to-[#14bbd3]",
     },
     {
       name: "Sravani Chettupalli",
@@ -88,7 +88,7 @@ export default function Testimonials() {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-            What Our <span className="text-[#582974]">Clients Say</span>
+            What Our <span className="text-[#14bbd3]">Clients Say</span>
           </h2>
           <p className="text-lg text-gray-600">
             Trusted by healthcare providers across the country to deliver
@@ -152,7 +152,7 @@ export default function Testimonials() {
           <div className="flex items-center justify-between mt-8">
             <button
               onClick={prevTestimonial}
-              className="p-3 rounded-full bg-white shadow-lg hover:shadow-xl transition-all hover:scale-110 text-gray-700 hover:text-[#582974]"
+              className="p-3 rounded-full bg-white shadow-lg hover:shadow-xl transition-all hover:scale-110 text-gray-700 hover:text-[#14bbd3]"
               aria-label="Previous testimonial"
             >
               <ChevronLeft size={24} />
@@ -176,7 +176,7 @@ export default function Testimonials() {
 
             <button
               onClick={nextTestimonial}
-              className="p-3 rounded-full bg-white shadow-lg hover:shadow-xl transition-all hover:scale-110 text-gray-700 hover:text-[#582974]"
+              className="p-3 rounded-full bg-white shadow-lg hover:shadow-xl transition-all hover:scale-110 text-gray-700 hover:text-[#14bbd3]"
               aria-label="Next testimonial"
             >
               <ChevronRight size={24} />

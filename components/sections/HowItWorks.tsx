@@ -43,7 +43,7 @@ export default function HowItWorks() {
                   className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-300 z-20 group/btn"
                   aria-label="Play video"
                 >
-                  <div className="w-16 h-16 bg-[#582974] rounded-full flex items-center justify-center">
+                  <div className="w-16 h-16 bg-[#14bbd3] rounded-full flex items-center justify-center">
                     <Play className="w-6 h-6 text-white ml-1 fill-current" />
                   </div>
                 </button>
@@ -58,7 +58,7 @@ export default function HowItWorks() {
           <div className="text-left">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
               How it works to help <br />
-              <span className="text-[#582974]">your business</span>
+              <span className="text-[#14bbd3]">your business</span>
             </h2>
 
             <p className="text-lg text-gray-600 mb-8 leading-relaxed max-w-lg">
@@ -69,7 +69,7 @@ export default function HowItWorks() {
 
             <Link
               href="/request-a-demo"
-              className="group inline-flex items-center justify-center gap-2 px-8 py-4 text-base font-bold text-white bg-[#582974] border-2 border-[#582974] rounded-xl hover:bg-[#4a2262] hover:border-[#4a2262] transition-all duration-300 shadow-lg shadow-purple-500/20"
+              className="group inline-flex items-center justify-center gap-2 px-8 py-4 text-base font-bold text-white bg-[#14bbd3] border-2 border-[#14bbd3] rounded-xl hover:bg-[#12a5ba] hover:border-[#12a5ba] transition-all duration-300 shadow-lg shadow-purple-500/20"
             >
               Schedule Demo
               <ArrowRight

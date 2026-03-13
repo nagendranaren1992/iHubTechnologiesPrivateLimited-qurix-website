@@ -168,7 +168,7 @@ export default function DemoModal({ isOpen, onClose }: DemoModalProps) {
         <div className="w-full h-full max-h-[90vh] overflow-y-auto px-6 py-8 sm:px-[40px] sm:py-[44px] [&::-webkit-scrollbar]:w-1.5 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-[#4B2982] [&::-webkit-scrollbar-thumb]:rounded-full">
           {/* Header */}
           <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#f4eff8] text-[#582974] mb-6">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#f4eff8] text-[#14bbd3] mb-6">
               <Calendar size={14} className="stroke-[2.5]" />
               <span className="text-xs font-bold tracking-wide">
                 Quick Demo Request
@@ -197,7 +197,7 @@ export default function DemoModal({ isOpen, onClose }: DemoModalProps) {
                   value={formData.name}
                   onChange={handleInputChange}
                   placeholder="Enter your full name"
-                  className="w-full h-12 px-4 rounded-xl bg-slate-50 border border-slate-200/60 text-slate-800 placeholder:text-slate-300 focus:bg-white focus:border-[#582974] focus:ring-2 focus:ring-[#582974]/20 outline-none transition-all text-[15px]"
+                  className="w-full h-12 px-4 rounded-xl bg-slate-50 border border-slate-200/60 text-slate-800 placeholder:text-slate-300 focus:bg-white focus:border-[#14bbd3] focus:ring-2 focus:ring-[#14bbd3]/20 outline-none transition-all text-[15px]"
                   required
                 />
               </div>
@@ -213,7 +213,7 @@ export default function DemoModal({ isOpen, onClose }: DemoModalProps) {
                   value={formData.designation}
                   onChange={handleInputChange}
                   placeholder="e.g. Chief Medical Officer"
-                  className="w-full h-12 px-4 rounded-xl bg-slate-50 border border-slate-200/60 text-slate-800 placeholder:text-slate-300 focus:bg-white focus:border-[#582974] focus:ring-2 focus:ring-[#582974]/20 outline-none transition-all text-[15px]"
+                  className="w-full h-12 px-4 rounded-xl bg-slate-50 border border-slate-200/60 text-slate-800 placeholder:text-slate-300 focus:bg-white focus:border-[#14bbd3] focus:ring-2 focus:ring-[#14bbd3]/20 outline-none transition-all text-[15px]"
                 />
               </div>
 
@@ -228,7 +228,7 @@ export default function DemoModal({ isOpen, onClose }: DemoModalProps) {
                   value={formData.email}
                   onChange={handleInputChange}
                   placeholder="name@hospital.com"
-                  className="w-full h-12 px-4 rounded-xl bg-slate-50 border border-slate-200/60 text-slate-800 placeholder:text-slate-300 focus:bg-white focus:border-[#582974] focus:ring-2 focus:ring-[#582974]/20 outline-none transition-all text-[15px]"
+                  className="w-full h-12 px-4 rounded-xl bg-slate-50 border border-slate-200/60 text-slate-800 placeholder:text-slate-300 focus:bg-white focus:border-[#14bbd3] focus:ring-2 focus:ring-[#14bbd3]/20 outline-none transition-all text-[15px]"
                   required
                 />
               </div>
@@ -247,7 +247,7 @@ export default function DemoModal({ isOpen, onClose }: DemoModalProps) {
                   pattern="[0-9]{10}"
                   title="Please enter a 10-digit mobile number"
                   maxLength={10}
-                  className="w-full h-12 px-4 rounded-xl bg-slate-50 border border-slate-200/60 text-slate-800 placeholder:text-slate-300 focus:bg-white focus:border-[#582974] focus:ring-2 focus:ring-[#582974]/20 outline-none transition-all text-[15px]"
+                  className="w-full h-12 px-4 rounded-xl bg-slate-50 border border-slate-200/60 text-slate-800 placeholder:text-slate-300 focus:bg-white focus:border-[#14bbd3] focus:ring-2 focus:ring-[#14bbd3]/20 outline-none transition-all text-[15px]"
                   required
                 />
               </div>
@@ -264,7 +264,7 @@ export default function DemoModal({ isOpen, onClose }: DemoModalProps) {
                   value={formData.organizationName}
                   onChange={handleInputChange}
                   placeholder="Enter hospital / clinic name"
-                  className="w-full h-12 px-4 rounded-xl bg-slate-50 border border-slate-200/60 text-slate-800 placeholder:text-slate-300 focus:bg-white focus:border-[#582974] focus:ring-2 focus:ring-[#582974]/20 outline-none transition-all text-[15px]"
+                  className="w-full h-12 px-4 rounded-xl bg-slate-50 border border-slate-200/60 text-slate-800 placeholder:text-slate-300 focus:bg-white focus:border-[#14bbd3] focus:ring-2 focus:ring-[#14bbd3]/20 outline-none transition-all text-[15px]"
                   required
                 />
               </div>
@@ -279,7 +279,7 @@ export default function DemoModal({ isOpen, onClose }: DemoModalProps) {
                     name="noOfBeds"
                     value={formData.noOfBeds}
                     onChange={handleInputChange}
-                    className="w-full h-12 px-4 pr-10 rounded-xl bg-slate-50 border border-slate-200/60 text-slate-800 focus:bg-white focus:border-[#582974] focus:ring-2 focus:ring-[#582974]/20 outline-none transition-all text-[15px] appearance-none"
+                    className="w-full h-12 px-4 pr-10 rounded-xl bg-slate-50 border border-slate-200/60 text-slate-800 focus:bg-white focus:border-[#14bbd3] focus:ring-2 focus:ring-[#14bbd3]/20 outline-none transition-all text-[15px] appearance-none"
                   >
                     <option value="">Select range</option>
                     <option value="Under 50">Under 50</option>
@@ -322,13 +322,13 @@ export default function DemoModal({ isOpen, onClose }: DemoModalProps) {
                 ].map((item) => (
                   <label
                     key={item}
-                    className="flex items-center gap-2 px-3 py-2 rounded-xl bg-slate-50 border border-slate-200/50 cursor-pointer hover:bg-white hover:border-[#582974]/30 hover:shadow-sm transition-all"
+                    className="flex items-center gap-2 px-3 py-2 rounded-xl bg-slate-50 border border-slate-200/50 cursor-pointer hover:bg-white hover:border-[#14bbd3]/30 hover:shadow-sm transition-all"
                   >
                     <input
                       type="checkbox"
                       checked={formData.intrestedModulesList.includes(item)}
                       onChange={() => handleCheckboxChange(item)}
-                      className="w-4 h-4 rounded border-slate-300 text-[#582974] focus:ring-[#582974] focus:ring-offset-0 transition-all cursor-pointer"
+                      className="w-4 h-4 rounded border-slate-300 text-[#14bbd3] focus:ring-[#14bbd3] focus:ring-offset-0 transition-all cursor-pointer"
                     />
                     <span className="text-[13px] font-medium text-slate-600">
                       {item}
@@ -349,7 +349,7 @@ export default function DemoModal({ isOpen, onClose }: DemoModalProps) {
                 onChange={handleInputChange}
                 rows={3}
                 placeholder="Mention any specific requirements or questions"
-                className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200/60 text-slate-800 placeholder:text-slate-300 focus:bg-white focus:border-[#582974] focus:ring-2 focus:ring-[#582974]/20 outline-none transition-all text-[15px] resize-none"
+                className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200/60 text-slate-800 placeholder:text-slate-300 focus:bg-white focus:border-[#14bbd3] focus:ring-2 focus:ring-[#14bbd3]/20 outline-none transition-all text-[15px] resize-none"
               ></textarea>
             </div>
 

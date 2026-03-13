@@ -96,7 +96,7 @@
   --card-foreground: #353535;
   --popover: #ffffff;
   --popover-foreground: #353535;
-  --primary: #582974;
+  --primary: #14bbd3;
   --primary-foreground: #ffffff;
   --secondary: #14bbd3;
   --secondary-foreground: #ffffff;
@@ -107,7 +107,7 @@
   --destructive: #ef4444;
   --border: #e5e5e5;
   --input: #e5e5e5;
-  --ring: #582974;
+  --ring: #14bbd3;
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
@@ -175,7 +175,7 @@
 @layer utilities {
   /* Brand Color Palette */
   .healthcare-primary {
-    background: linear-gradient(135deg, #582974 0%, #753a93 100%);
+    background: linear-gradient(135deg, #14bbd3 0%, #12a5ba 100%);
   }
 
   .healthcare-secondary {
@@ -183,7 +183,7 @@
   }
 
   .healthcare-accent {
-    background: linear-gradient(135deg, #582974 0%, #14bbd3 100%);
+    background: linear-gradient(135deg, #14bbd3 0%, #14bbd3 100%);
   }
 
   /* Section Spacing */

@@ -33,12 +33,12 @@ export default function TrustedCompanies() {
       <section
         className="relative py-6 overflow-hidden border-y border-white/10"
         style={{
-          background: "linear-gradient(135deg, #582974 0%, #753a93 100%)",
+          background: "linear-gradient(135deg, #14bbd3 0%, #12a5ba 100%)",
         }}
       >
         {/* Same structure as real version for hydration match */}
-        <div className="absolute inset-y-0 left-0 w-32 md:w-64 bg-gradient-to-r from-[#582974] to-transparent z-10 pointer-events-none"></div>
-        <div className="absolute inset-y-0 right-0 w-32 md:w-64 bg-gradient-to-l from-[#753a93] to-transparent z-10 pointer-events-none"></div>
+        <div className="absolute inset-y-0 left-0 w-32 md:w-64 bg-gradient-to-r from-[#14bbd3] to-transparent z-10 pointer-events-none"></div>
+        <div className="absolute inset-y-0 right-0 w-32 md:w-64 bg-gradient-to-l from-[#12a5ba] to-transparent z-10 pointer-events-none"></div>
 
         <div className="container-custom">
           <div className="text-center mb-4">
@@ -56,12 +56,12 @@ export default function TrustedCompanies() {
     <section
       className="relative py-6 overflow-hidden border-y border-white/10"
       style={{
-        background: "linear-gradient(135deg, #582974 0%, #753a93 100%)",
+        background: "linear-gradient(135deg, #14bbd3 0%, #12a5ba 100%)",
       }}
     >
       {/* Edge Masking (Fades) - Full Width */}
-      <div className="absolute inset-y-0 left-0 w-32 md:w-64 bg-gradient-to-r from-[#582974] to-transparent z-10 pointer-events-none"></div>
-      <div className="absolute inset-y-0 right-0 w-32 md:w-64 bg-gradient-to-l from-[#753a93] to-transparent z-10 pointer-events-none"></div>
+      <div className="absolute inset-y-0 left-0 w-32 md:w-64 bg-gradient-to-r from-[#14bbd3] to-transparent z-10 pointer-events-none"></div>
+      <div className="absolute inset-y-0 right-0 w-32 md:w-64 bg-gradient-to-l from-[#12a5ba] to-transparent z-10 pointer-events-none"></div>
 
       <div className="container-custom">
         <div className="text-center mb-4">

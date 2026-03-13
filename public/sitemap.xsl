@@ -27,7 +27,7 @@
 						box-shadow: 0 4px 20px rgba(0,0,0,0.05);
 					}
 					h1 {
-						color: #582974;
+						color: #14bbd3;
 						font-size: 28px;
 						margin-bottom: 10px;
 						font-weight: 800;
@@ -46,7 +46,7 @@
 						text-align: left;
 						padding: 12px 15px;
 						background-color: #f3eff6;
-						color: #582974;
+						color: #14bbd3;
 						font-weight: 700;
 						border-bottom: 2px solid #e9ecef;
 						text-transform: uppercase;
@@ -62,7 +62,7 @@
 						background-color: #fcfaff;
 					}
 					a {
-						color: #582974;
+						color: #14bbd3;
 						text-decoration: none;
 						font-weight: 600;
 					}

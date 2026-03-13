@@ -23,7 +23,7 @@ export default function Hero() {
       />
 
       {/* Background gradient overlay */}
-      <div className="absolute inset-0 bg-[#582974]/[0.02] pointer-events-none"></div>
+      <div className="absolute inset-0 bg-[#14bbd3]/[0.02] pointer-events-none"></div>
 
       <div className="container-custom relative">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -32,18 +32,18 @@ export default function Hero() {
             className={`space-y-8 ${mounted ? "animate-fade-in-up" : "opacity-0"}`}
           >
             {/* Badge */}
-            <div className="inline-flex items-center gap-2 bg-[#EFE9F4] text-[#582974] px-5 py-2.5 rounded-full text-sm font-bold border border-[#DCD0E6]">
-              <Heart size={16} fill="#582974" className="text-[#582974]" />
+            <div className="inline-flex items-center gap-2 bg-[#ecfeff] text-[#14bbd3] px-5 py-2.5 rounded-full text-sm font-bold border border-[#cffafe]">
+              <Heart size={16} fill="#14bbd3" className="text-[#14bbd3]" />
               Healthcare Innovation Platform
             </div>
 
             {/* Heading */}
             <h1 className="text-3xl md:text-4xl lg:text-[54px] font-bold leading-tight text-[#1a1a1a]">
               Manage the entire{" "}
-              <span className="text-[#582974]">Patient Journey</span>
+              <span className="text-[#14bbd3]">Patient Journey</span>
               <br />
               on one{" "}
-              <span className="text-[#582974]">Intelligent Platform</span>
+              <span className="text-[#14bbd3]">Intelligent Platform</span>
             </h1>
 
             {/* Description */}
@@ -62,7 +62,7 @@ export default function Hero() {
             <div className="flex flex-wrap gap-4">
               <a
                 href="#contact"
-                className="cursor-pointer group bg-[#582974] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#6b3a8a] hover:shadow-xl hover:shadow-[#582974]/25 transition-all duration-300 flex items-center gap-2"
+                className="cursor-pointer group bg-[#14bbd3] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#12a5ba] hover:shadow-xl hover:shadow-[#14bbd3]/25 transition-all duration-300 flex items-center gap-2"
               >
                 Schedule Demo
                 <ArrowRight
@@ -72,7 +72,7 @@ export default function Hero() {
               </a>
               <a
                 href="#features"
-                className="cursor-pointer border-2 border-[#582974] text-[#582974] px-8 py-4 rounded-full font-semibold hover:bg-[#582974]/5 transition-all duration-300"
+                className="cursor-pointer border-2 border-[#14bbd3] text-[#14bbd3] px-8 py-4 rounded-full font-semibold hover:bg-[#14bbd3]/5 transition-all duration-300"
               >
                 Explore Features
               </a>
@@ -209,7 +209,7 @@ export default function Hero() {
               </div>
 
               {/* Background Decorations */}
-              <div className="absolute -top-20 -right-20 w-80 h-80 bg-[#582974]/10 rounded-full blur-3xl -z-10"></div>
+              <div className="absolute -top-20 -right-20 w-80 h-80 bg-[#14bbd3]/10 rounded-full blur-3xl -z-10"></div>
               <div className="absolute -bottom-20 -left-20 w-80 h-80 bg-[#14bbd3]/10 rounded-full blur-3xl -z-10"></div>
             </div>
           </div>

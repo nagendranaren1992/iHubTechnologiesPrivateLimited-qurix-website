@@ -34,7 +34,7 @@ export default function IndustryProblems() {
       <div className="container-custom">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 md:mb-24">
-          <div className="inline-block px-6 py-2 rounded-full bg-[#EFE9F4] text-[#582974] text-[11px] font-bold uppercase tracking-[0.15em] mb-8">
+          <div className="inline-block px-6 py-2 rounded-full bg-[#ecfeff] text-[#14bbd3] text-[11px] font-bold uppercase tracking-[0.15em] mb-8">
             Industry Challenges
           </div>
           <h2 className="text-2xl md:text-3xl lg:text-[38px] font-extrabold mb-8 text-[#1a1a1a] leading-[1.15]">
