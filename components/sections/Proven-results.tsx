@@ -58,7 +58,7 @@ const Counter = ({ value, suffix }: { value: number; suffix: string }) => {
   return (
     <span
       ref={ref}
-      className="text-4xl md:text-5xl lg:text-[64px] font-black text-[#14bbd3] leading-none mb-4"
+      className="text-4xl md:text-5xl lg:text-[64px] font-black text-white leading-none mb-4"
     >
       {count}
       {suffix}
@@ -70,12 +70,12 @@ export default function ProvenResults() {
   return (
     <section
       id="results"
-      className="relative overflow-hidden py-20 md:py-32 bg-gradient-to-br from-[#582974] to-[#3b125a]"
+      className="relative overflow-hidden py-20 md:py-32 bg-gradient-to-br from-[#14bbd3] to-[#0d99ad]"
     >
       {/* Background Decorations */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-        <div className="absolute -top-1/4 -left-1/4 w-1/2 h-1/2 bg-[#14bbd3]/10 rounded-full blur-[120px]"></div>
-        <div className="absolute -bottom-1/4 -right-1/4 w-1/2 h-1/2 bg-white/5 rounded-full blur-[120px]"></div>
+        <div className="absolute -top-1/4 -left-1/4 w-1/2 h-1/2 bg-white/20 rounded-full blur-[120px]"></div>
+        <div className="absolute -bottom-1/4 -right-1/4 w-1/2 h-1/2 bg-black/5 rounded-full blur-[120px]"></div>
       </div>
 
       <div className="container-custom relative z-10">

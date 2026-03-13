@@ -10,10 +10,10 @@ export default function HospitalResults() {
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
           {/* Left Column - Success Story Card */}
           <div className="relative order-2 lg:order-1">
-            <div className="relative overflow-hidden bg-gradient-to-br from-[#4F39B3] to-[#6D58D8] rounded-[40px] p-8 md:p-12 text-white shadow-2xl">
+            <div className="relative overflow-hidden bg-[#582974] rounded-[40px] p-8 md:p-12 text-white shadow-2xl">
               {/* Branded "Ball" Shapes from Screenshot */}
-              <div className="absolute -right-24 -top-12 w-[440px] h-[440px] bg-[#7C66E3] rounded-full opacity-40 blur-[40px] pointer-events-none"></div>
-              <div className="absolute -left-20 bottom-[-10%] w-[300px] h-[300px] bg-[#3B2D85] rounded-full opacity-30 blur-[30px] pointer-events-none"></div>
+              <div className="absolute -right-24 -top-12 w-[440px] h-[440px] bg-[#6d358e] rounded-full opacity-40 blur-[40px] pointer-events-none"></div>
+              <div className="absolute -left-20 bottom-[-10%] w-[300px] h-[300px] bg-[#431f58] rounded-full opacity-30 blur-[30px] pointer-events-none"></div>
 
               <div className="relative z-10 space-y-10">
                 {/* Success Story Badge */}
@@ -62,7 +62,7 @@ export default function HospitalResults() {
             {/* Metrics Row */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 pt-4">
               <div className="space-y-2">
-                <div className="text-[32px] font-black text-[#3B2D85] leading-none tracking-tight">
+                <div className="text-[32px] font-black text-[#582974] leading-none tracking-tight">
                   18%
                 </div>
                 <div className="text-[13px] text-gray-400 font-medium whitespace-nowrap">
@@ -71,7 +71,7 @@ export default function HospitalResults() {
               </div>
 
               <div className="space-y-2">
-                <div className="text-[32px] font-black text-[#3B2D85] leading-none tracking-tight">
+                <div className="text-[32px] font-black text-[#582974] leading-none tracking-tight">
                   3x
                 </div>
                 <div className="text-[13px] text-gray-400 font-medium whitespace-nowrap">
@@ -80,7 +80,7 @@ export default function HospitalResults() {
               </div>
 
               <div className="space-y-2">
-                <div className="text-[32px] font-black text-[#3B2D85] leading-none tracking-tight">
+                <div className="text-[32px] font-black text-[#582974] leading-none tracking-tight">
                   2 weeks
                 </div>
                 <div className="text-[13px] text-gray-400 font-medium whitespace-nowrap">

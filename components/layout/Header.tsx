@@ -70,7 +70,7 @@ export default function Header() {
 
               <button
                 onClick={() => setIsDemoModalOpen(true)}
-                className="group flex items-center gap-2 px-8 py-4 bg-[#582974] text-white rounded-xl font-bold text-[14px] hover:bg-[#4a2262] transition-all duration-300 shadow-xl shadow-purple-500/10 active:scale-[0.98]"
+                className="group flex items-center gap-2 px-8 py-4 bg-[#14bbd3] text-white rounded-xl font-bold text-[14px] hover:bg-[#12a5ba] transition-all duration-300 shadow-xl shadow-cyan-500/10 active:scale-[0.98]"
               >
                 Schedule Demo
               </button>
@@ -129,7 +129,7 @@ export default function Header() {
                 setIsMenuOpen(false);
                 setIsDemoModalOpen(true);
               }}
-              className="flex items-center justify-center w-full px-8 py-5 bg-[#582974] text-white rounded-2xl font-black text-xl shadow-2xl shadow-purple-500/20 active:scale-95 transition-transform"
+              className="flex items-center justify-center w-full px-8 py-5 bg-[#14bbd3] text-white rounded-2xl font-black text-xl shadow-2xl shadow-cyan-500/20 active:scale-95 transition-transform"
             >
               Schedule Demo
             </button>
