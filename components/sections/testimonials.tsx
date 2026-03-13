@@ -129,7 +129,7 @@ export default function Testimonials() {
                 <div className="w-24 h-24 rounded-full overflow-hidden flex-shrink-0 border-2 border-white shadow-md">
                   <img
                     src={testimonials[activeIndex].avatar}
-                    alt={testimonials[activeIndex].name}
+                    alt={`${testimonials[activeIndex].name} - ${testimonials[activeIndex].role} at ${testimonials[activeIndex].company}`}
                     className="w-full h-full object-cover"
                   />
                 </div>

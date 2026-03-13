@@ -15,6 +15,13 @@ export default function Hero() {
       id="home"
       className="relative overflow-hidden pt-25 pb-20 md:pt-25 md:pb-24 lg:pt-40 lg:pb-32 bg-white"
     >
+      {/* Hidden image for SEO as per guidelines */}
+      <img 
+        src="/images/brand/logo.svg" 
+        alt="Qurix healthcare delivery platform dashboard - Healthcare software platform by Qurix" 
+        className="sr-only" 
+      />
+
       {/* Background gradient overlay */}
       <div className="absolute inset-0 bg-[#582974]/[0.02] pointer-events-none"></div>
 

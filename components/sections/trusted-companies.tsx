@@ -81,7 +81,7 @@ export default function TrustedCompanies() {
                 <div className="relative h-8 w-24 md:h-10 md:w-32 lg:h-12 lg:w-36">
                   <Image
                     src={company.logo}
-                    alt={company.name}
+                    alt={`${company.name} Logo - Trusted Qurix Partner`}
                     fill
                     className="object-contain"
                     sizes="(max-width: 768px) 96px, (max-width: 1024px) 128px, 144px"
