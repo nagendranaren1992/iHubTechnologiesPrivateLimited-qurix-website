@@ -1,4 +1,10 @@
 import Header from "@/components/layout/Header";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Blog | Qurix - Healthcare Technology Insights",
+  description: "Explore the latest insights on healthcare technology, interoperability, and AI from the Qurix team.",
+};
 
 export default function BlogPage() {
   const posts = [
