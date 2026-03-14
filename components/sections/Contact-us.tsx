@@ -366,7 +366,10 @@ export default function ContactUs() {
 
                 <div className="space-y-4">
                   {/* Call Sales */}
-                  <div className="bg-white/5 rounded-2xl p-5 border border-white/5 flex items-center gap-5 transition-all hover:bg-white/10 group cursor-pointer">
+                  <a
+                    href="tel:+917075740042"
+                    className="bg-white/5 rounded-2xl p-5 border border-white/5 flex items-center gap-5 transition-all hover:bg-white/10 group cursor-pointer"
+                  >
                     <div className="w-12 h-12 rounded-xl bg-[#14bbd3] flex items-center justify-center group-hover:scale-110 transition-transform">
                       <Phone size={20} className="text-white" />
                     </div>
@@ -374,14 +377,17 @@ export default function ContactUs() {
                       <div className="text-[15px] font-bold text-white mb-0.5">
                         Call Sales Directly
                       </div>
-                      <div className="text-[13px] text-white/40 font-medium">
+                      <div className="text-[13px] text-white/40 font-medium group-hover:text-white/70 transition-colors">
                         +91 - 7075740042 (Mon-Sat, 9am-7pm)
                       </div>
                     </div>
-                  </div>
+                  </a>
 
                   {/* Email Us */}
-                  <div className="bg-white/5 rounded-2xl p-5 border border-white/5 flex items-center gap-5 transition-all hover:bg-white/10 group cursor-pointer">
+                  <a
+                    href="mailto:hello@qurix.com"
+                    className="bg-white/5 rounded-2xl p-5 border border-white/5 flex items-center gap-5 transition-all hover:bg-white/10 group cursor-pointer"
+                  >
                     <div className="w-12 h-12 rounded-xl bg-[#14bbd3] flex items-center justify-center group-hover:scale-110 transition-transform">
                       <Mail size={20} className="text-white" />
                     </div>
@@ -389,14 +395,19 @@ export default function ContactUs() {
                       <div className="text-[15px] font-bold text-white mb-0.5">
                         Email Our Team
                       </div>
-                      <div className="text-[13px] text-white/40 font-medium">
+                      <div className="text-[13px] text-white/40 font-medium group-hover:text-white/70 transition-colors">
                         hello@qurix.com
                       </div>
                     </div>
-                  </div>
+                  </a>
 
                   {/* WhatsApp */}
-                  <div className="bg-white/5 rounded-2xl p-5 border border-white/5 flex items-center gap-5 transition-all hover:bg-white/10 group cursor-pointer">
+                  <a
+                    href="https://wa.me/917075740042"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-white/5 rounded-2xl p-5 border border-white/5 flex items-center gap-5 transition-all hover:bg-white/10 group cursor-pointer"
+                  >
                     <div className="w-12 h-12 rounded-xl bg-[#F59E0B] flex items-center justify-center group-hover:scale-110 transition-transform">
                       <MessageSquare size={20} className="text-white" />
                     </div>
@@ -404,11 +415,11 @@ export default function ContactUs() {
                       <div className="text-[15px] font-bold text-white mb-0.5">
                         WhatsApp Us
                       </div>
-                      <div className="text-[13px] text-white/40 font-medium">
+                      <div className="text-[13px] text-white/40 font-medium group-hover:text-white/70 transition-colors">
                         Quick response, instant support
                       </div>
                     </div>
-                  </div>
+                  </a>
                 </div>
               </div>
             </div>

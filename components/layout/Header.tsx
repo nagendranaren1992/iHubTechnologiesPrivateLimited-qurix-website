@@ -57,16 +57,19 @@ export default function Header() {
 
             {/* Right Side - Phone & Demo CTA */}
             <div className="hidden md:flex items-center gap-10">
-              <div className="flex items-center gap-3 group cursor-pointer group">
+              <a
+                href="tel:+917075740042"
+                className="flex items-center gap-3 group cursor-pointer"
+              >
                 <div className="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center text-slate-400 group-hover:bg-[#14bbd3] group-hover:text-white transition-all duration-300 border border-slate-100">
                   <Phone size={18} />
                 </div>
                 <div className="flex flex-col">
-                  <span className="text-[15px] font-extrabold text-[#111827] leading-none">
+                  <span className="text-[15px] font-extrabold text-[#111827] leading-none group-hover:text-[#14bbd3] transition-colors">
                     +91 - 7075740042
                   </span>
                 </div>
-              </div>
+              </a>
 
               <button
                 onClick={() => setIsDemoModalOpen(true)}
@@ -111,18 +114,21 @@ export default function Header() {
           ))}
 
           <div className="mt-8 space-y-6">
-            <div className="p-6 bg-slate-50 rounded-2xl border border-slate-100">
+            <a
+              href="tel:+917075740042"
+              className="p-6 bg-slate-50 rounded-2xl border border-slate-100 block group hover:bg-slate-100/80 transition-all"
+            >
               <div className="flex items-center gap-5">
-                <div className="w-14 h-14 rounded-full bg-[#14bbd3] flex items-center justify-center text-white">
+                <div className="w-14 h-14 rounded-full bg-[#14bbd3] flex items-center justify-center text-white group-hover:scale-105 transition-transform">
                   <Phone size={24} />
                 </div>
                 <div className="flex flex-col gap-1">
-                  <span className="text-xl font-black text-[#111827]">
+                  <span className="text-xl font-black text-[#111827] group-hover:text-[#14bbd3] transition-colors">
                     +91 - 7075740042
                   </span>
                 </div>
               </div>
-            </div>
+            </a>
 
             <button
               onClick={() => {
