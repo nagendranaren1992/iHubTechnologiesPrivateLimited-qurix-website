@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Menu, X, Phone } from "lucide-react";
 import DemoModal from "../ui/demo-modal";
 
@@ -10,11 +11,12 @@ export default function Header() {
   const [isDemoModalOpen, setIsDemoModalOpen] = useState(false);
 
   const navLinks = [
-    { name: "Product", href: "#features" },
-    { name: "Modules", href: "#modules" },
-    { name: "Services", href: "#services" },
-    { name: "Results", href: "#results" },
-    { name: "Contact", href: "#contact" },
+    { name: "Product", href: "/#features" },
+    { name: "Modules", href: "/#modules" },
+    { name: "Services", href: "/#services" },
+    { name: "Results", href: "/#results" },
+    { name: "Contact", href: "/#contact" },
+    { name: "Blog", href: "/blog" },
   ];
 
   return (
@@ -34,24 +36,27 @@ export default function Header() {
                 }
               }}
             >
-              <img
+              <Image
                 src="/images/brand/logo.svg"
                 alt="Qurix Logo"
-                className="w-auto h-full max-h-[45px] md:max-h-[55px] object-contain"
+                width={180}
+                height={45}
+                className="w-auto h-full max-h-[45px] object-contain"
+                priority
               />
             </Link>
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center gap-8 lg:gap-12">
               {navLinks.map((link) => (
-                <a
+                <Link
                   key={link.name}
                   href={link.href}
                   className="text-[#4b5563] hover:text-[#14bbd3] transition-all font-bold text-[15px] tracking-tight py-2 px-1 relative group"
                 >
                   {link.name}
                   <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#14bbd3] transition-all duration-300 group-hover:w-full"></span>
-                </a>
+                </Link>
               ))}
             </div>
 
@@ -103,14 +108,14 @@ export default function Header() {
       >
         <div className="container-custom pt-32 pb-12 flex flex-col gap-8">
           {navLinks.map((link) => (
-            <a
+            <Link
               key={link.name}
               href={link.href}
               onClick={() => setIsMenuOpen(false)}
               className="text-2xl font-black text-[#111827] hover:text-[#14bbd3] transition-colors border-b border-slate-50 pb-4"
             >
               {link.name}
-            </a>
+            </Link>
           ))}
 
           <div className="mt-8 space-y-6">

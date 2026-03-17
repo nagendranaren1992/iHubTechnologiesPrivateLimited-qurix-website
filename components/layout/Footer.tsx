@@ -1,4 +1,3 @@
-import React from "react";
 import Link from "next/link";
 
 export default function Footer() {
@@ -11,19 +10,20 @@ export default function Footer() {
           {/* Main Navigation Links */}
           <nav className="flex flex-wrap justify-center gap-x-10 gap-y-4">
             {[
-              { name: "Product", href: "#features" },
-              { name: "Modules", href: "#modules" },
-              { name: "Services", href: "#services" },
-              { name: "Results", href: "#results" },
-              { name: "Contact", href: "#contact" },
+              { name: "Product", href: "/#features" },
+              { name: "Modules", href: "/#modules" },
+              { name: "Services", href: "/#services" },
+              { name: "Results", href: "/#results" },
+              { name: "Contact", href: "/#contact" },
+              { name: "Blog", href: "/blog" },
             ].map((link) => (
-              <a
+              <Link
                 key={link.name}
                 href={link.href}
                 className="text-white/60 hover:text-white text-[15px] font-bold transition-all duration-300 uppercase tracking-wider"
               >
                 {link.name}
-              </a>
+              </Link>
             ))}
           </nav>
 
