@@ -1,10 +1,12 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
+import Image from "next/image";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import {
   getBlogData,
+  getStrapiImageUrl,
   type BlogData,
   type SocialLink,
 } from "../../services/blogService";
@@ -18,8 +20,6 @@ import {
 import type { Icon as TablerIcon } from "@tabler/icons-react";
 
 const svgStroke = { strokeWidth: 2 };
-
-const STRAPI_URL = process.env.NEXT_PUBLIC_STRAPI_URL || "https://qurix.com";
 
 const iconMap: Record<string, TablerIcon> = {
   IconBrandLinkedin,
@@ -92,7 +92,7 @@ export default function BlogPage() {
     }
   };
 
-  const filterPosts = () => {
+  const filterPosts = useCallback(() => {
     const q = searchQuery.toLowerCase().trim();
     const cards = document.querySelectorAll<HTMLElement>(".blog-card");
     let visible = 0;
@@ -111,12 +111,12 @@ export default function BlogPage() {
     if (noResultsRef.current) {
       noResultsRef.current.style.display = visible === 0 ? "block" : "none";
     }
-  };
+  }, [blogData, searchQuery]);
 
   useEffect(() => {
     setFeaturedSlide(0);
     filterPosts();
-  }, [searchQuery]);
+  }, [filterPosts, searchQuery]);
 
   const handleTagClick = (tag: string) => {
     setSearchQuery(tag);
@@ -187,6 +187,7 @@ export default function BlogPage() {
     reveal: i === 0 ? "" : `rd${i}`,
     icon: post.icon,
     slug: post.slug,
+    imageUrl: getStrapiImageUrl(post.image?.formats?.medium?.url ?? post.image?.url),
   }));
 
   const renderShareIcons = (links: SocialLink[]) => {
@@ -207,11 +208,12 @@ export default function BlogPage() {
                 title={link.platform}
               >
                 {link.iconImage ? (
-                  <img
-                    src={`${STRAPI_URL}${link.iconImage.url}`}
+                  <Image
+                    src={getStrapiImageUrl(link.iconImage.url)}
                     alt={link.platform}
                     width={20}
                     height={20}
+                    unoptimized
                   />
                 ) : TablerIcon ? (
                   <TablerIcon size={20} />
@@ -389,7 +391,20 @@ export default function BlogPage() {
                         onClick={() => showArticle(fp.slug)}
                       >
                         <div className="featured-img">
-                          <div className="featured-img-bg" />
+                          {fp.image?.url ? (
+                            <Image
+                              src={getStrapiImageUrl(
+                                fp.image.formats?.medium?.url ?? fp.image.url,
+                              )}
+                              alt={fp.title}
+                              className="featured-img-photo"
+                              width={1200}
+                              height={560}
+                              unoptimized
+                            />
+                          ) : (
+                            <div className="featured-img-bg" />
+                          )}
                           <div className="feat-deco">
                             <svg
                               viewBox="0 0 500 140"
@@ -562,75 +577,86 @@ export default function BlogPage() {
                     }
                   >
                     <div className="blog-card-img">
-                      <div className={`blog-card-img-bg ${card.cardBg}`}>
-                        <div className="card-pattern" />
-                        <div className="card-icon-float">
-                          {card.icon === "emr" && (
-                            <svg
-                              viewBox="0 0 24 24"
-                              fill="none"
-                              stroke="currentColor"
-                              {...svgStroke}
-                            >
-                              <path d="M19 3H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2V5a2 2 0 00-2-2z" />
-                              <path d="M9 9h6M9 13h6M9 17h4" />
-                            </svg>
-                          )}
-                          {card.icon === "people" && (
-                            <svg
-                              viewBox="0 0 24 24"
-                              fill="none"
-                              stroke="currentColor"
-                              {...svgStroke}
-                            >
-                              <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
-                              <circle cx="9" cy="7" r="4" />
-                            </svg>
-                          )}
-                          {card.icon === "billing" && (
-                            <svg
-                              viewBox="0 0 24 24"
-                              fill="none"
-                              stroke="currentColor"
-                              {...svgStroke}
-                            >
-                              <line x1="12" y1="1" x2="12" y2="23" />
-                              <path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6" />
-                            </svg>
-                          )}
-                          {card.icon === "globe" && (
-                            <svg
-                              viewBox="0 0 24 24"
-                              fill="none"
-                              stroke="currentColor"
-                              {...svgStroke}
-                            >
-                              <circle cx="12" cy="12" r="10" />
-                              <path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z" />
-                            </svg>
-                          )}
-                          {card.icon === "inventory" && (
-                            <svg
-                              viewBox="0 0 24 24"
-                              fill="none"
-                              stroke="currentColor"
-                              {...svgStroke}
-                            >
-                              <path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z" />
-                            </svg>
-                          )}
-                          {card.icon === "heart" && (
-                            <svg
-                              viewBox="0 0 24 24"
-                              fill="none"
-                              stroke="currentColor"
-                              {...svgStroke}
-                            >
-                              <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z" />
-                            </svg>
-                          )}
+                      {card.imageUrl ? (
+                        <Image
+                          src={card.imageUrl}
+                          alt={card.heading}
+                          className="blog-card-img-photo"
+                          width={800}
+                          height={450}
+                          unoptimized
+                        />
+                      ) : (
+                        <div className={`blog-card-img-bg ${card.cardBg}`}>
+                          <div className="card-pattern" />
+                          <div className="card-icon-float">
+                            {card.icon === "emr" && (
+                              <svg
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                {...svgStroke}
+                              >
+                                <path d="M19 3H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2V5a2 2 0 00-2-2z" />
+                                <path d="M9 9h6M9 13h6M9 17h4" />
+                              </svg>
+                            )}
+                            {card.icon === "people" && (
+                              <svg
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                {...svgStroke}
+                              >
+                                <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
+                                <circle cx="9" cy="7" r="4" />
+                              </svg>
+                            )}
+                            {card.icon === "billing" && (
+                              <svg
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                {...svgStroke}
+                              >
+                                <line x1="12" y1="1" x2="12" y2="23" />
+                                <path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6" />
+                              </svg>
+                            )}
+                            {card.icon === "globe" && (
+                              <svg
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                {...svgStroke}
+                              >
+                                <circle cx="12" cy="12" r="10" />
+                                <path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z" />
+                              </svg>
+                            )}
+                            {card.icon === "inventory" && (
+                              <svg
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                {...svgStroke}
+                              >
+                                <path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z" />
+                              </svg>
+                            )}
+                            {card.icon === "heart" && (
+                              <svg
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                {...svgStroke}
+                              >
+                                <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z" />
+                              </svg>
+                            )}
+                          </div>
                         </div>
-                      </div>
+                      )}
                       <span className={`blog-card-cat ${card.pill}`}>
                         {card.pillLabel}
                       </span>
@@ -798,6 +824,16 @@ export default function BlogPage() {
           className={`article-view${activeArticle === article.slug ? " show" : ""}`}
         >
           <div className="article-hero-banner">
+            {article.imageUrl && (
+              <Image
+                src={article.imageUrl}
+                alt={article.title}
+                className="article-hero-image"
+                width={1600}
+                height={700}
+                unoptimized
+              />
+            )}
             <div className="article-hero-inner">
               <div className="article-back" onClick={hideArticle}>
                 <svg

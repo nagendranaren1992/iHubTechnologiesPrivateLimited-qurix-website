@@ -1,9 +1,11 @@
 import type { BlogArticle, SocialLink } from '../../services/blogService';
+import { getStrapiImageUrl } from '../../services/blogService';
 
 export interface ArticleData {
   slug: string;
   category: string;
   title: string;
+  imageUrl: string;
   authorInitials: string;
   authorName: string;
   authorRole: string;
@@ -19,6 +21,7 @@ export function mapApiToArticle(post: BlogArticle): ArticleData {
     slug: post.slug,
     category: post.category,
     title: post.title,
+    imageUrl: getStrapiImageUrl(post.image?.url),
     authorInitials: post.author?.initials || '',
     authorName: post.author?.name || '',
     authorRole: post.author?.role || '',

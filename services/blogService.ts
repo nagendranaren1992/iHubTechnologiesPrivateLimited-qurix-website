@@ -1,6 +1,30 @@
 // services/blogService.ts
 const API_URL = process.env.NEXT_PUBLIC_STRAPI_URL || "https://qurix.com";
 
+export function getStrapiImageUrl(url: string | null | undefined): string {
+    if (!url) return "";
+    if (url.startsWith("http")) return url;
+    return `${API_URL}${url.startsWith("/") ? "" : "/"}${url}`;
+}
+
+export type StrapiImage = {
+    id: number;
+    url: string;
+    formats?: {
+        thumbnail?: { url: string };
+        small?: { url: string };
+        medium?: { url: string };
+        large?: { url: string };
+    };
+};
+
+export type BlogAuthor = {
+    id: number;
+    initials: string;
+    name: string;
+    role: string;
+};
+
 export type SocialLink = {
     id: number;
     platform: string;
@@ -28,12 +52,8 @@ export type BlogArticle = {
     icon: string;
     tags: string[];
     isFeatured: boolean;
-    author?: {
-        id: number;
-        name: string;
-        initials: string;
-        role: string;
-    };
+    image: StrapiImage | null;
+    author?: BlogAuthor;
     socialLinks: SocialLink[];
 };
 
@@ -61,7 +81,7 @@ export type BlogData = {
 };
 
 export async function getBlogData(): Promise<BlogData> {
-    const res = await fetch(`${API_URL}/api/blog`);
+    const res = await fetch(`${API_URL}/api/blog?populate=*`);
     if (!res.ok) throw new Error(`Failed to fetch blog data: ${res.status}`);
     const json = await res.json();
     return json.data as BlogData;
