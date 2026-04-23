@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
@@ -35,7 +35,6 @@ export default function BlogPage() {
   const [activeArticle, setActiveArticle] = useState<string | null>(null);
   const [blogData, setBlogData] = useState<BlogData | null>(null);
   const [featuredSlide, setFeaturedSlide] = useState(0);
-  const noResultsRef = useRef<HTMLDivElement | null>(null);
   const blogGridRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
@@ -57,7 +56,7 @@ export default function BlogPage() {
     );
     document.querySelectorAll(".reveal").forEach((el) => obs.observe(el));
     return () => obs.disconnect();
-  }, [blogData]);
+  }, [blogData, activePage, activeCat, searchQuery]);
 
   const showArticle = (slug: string) => {
     setActiveArticle(slug);
@@ -73,50 +72,14 @@ export default function BlogPage() {
 
   const filterByCategory = (cat: CatType) => {
     setActiveCat(cat);
+    setActivePage(1);
     setFeaturedSlide(0);
-    const cards = document.querySelectorAll<HTMLElement>(".blog-card");
-    let visible = 0;
-    cards.forEach((c) => {
-      const match = cat === "all" || c.dataset.cat === cat;
-      c.style.display = match ? "" : "none";
-      if (match) visible++;
-    });
-    if (blogData) {
-      const hasMatchingFeatured = blogData.featuredPosts.some(
-        (fp) => cat === "all" || fp.categorySlug === cat,
-      );
-      if (hasMatchingFeatured) visible++;
-    }
-    if (noResultsRef.current) {
-      noResultsRef.current.style.display = visible === 0 ? "block" : "none";
-    }
   };
 
-  const filterPosts = useCallback(() => {
-    const q = searchQuery.toLowerCase().trim();
-    const cards = document.querySelectorAll<HTMLElement>(".blog-card");
-    let visible = 0;
-    cards.forEach((c) => {
-      const title = (c.dataset.title || "").toLowerCase();
-      const match = !q || title.includes(q);
-      c.style.display = match ? "" : "none";
-      if (match) visible++;
-    });
-    if (blogData) {
-      const hasMatchingFeatured = blogData.featuredPosts.some(
-        (fp) => !q || (fp.searchTitle || "").toLowerCase().includes(q),
-      );
-      if (hasMatchingFeatured) visible++;
-    }
-    if (noResultsRef.current) {
-      noResultsRef.current.style.display = visible === 0 ? "block" : "none";
-    }
-  }, [blogData, searchQuery]);
-
   useEffect(() => {
+    setActivePage(1);
     setFeaturedSlide(0);
-    filterPosts();
-  }, [filterPosts, searchQuery]);
+  }, [searchQuery]);
 
   const handleTagClick = (tag: string) => {
     setSearchQuery(tag);
@@ -154,11 +117,26 @@ export default function BlogPage() {
   );
 
   const q = searchQuery.toLowerCase().trim();
+
   const filteredFeatured = blogData.featuredPosts.filter((fp) => {
     const catMatch = activeCat === "all" || fp.categorySlug === activeCat;
     const searchMatch = !q || (fp.searchTitle || "").toLowerCase().includes(q);
     return catMatch && searchMatch;
   });
+
+  const filteredPosts = blogData.posts.filter((post) => {
+    const catMatch = activeCat === "all" || post.categorySlug === activeCat;
+    const searchMatch = !q || (post.searchTitle || "").toLowerCase().includes(q);
+    return catMatch && searchMatch;
+  });
+
+  const POSTS_PER_PAGE = 6;
+  const totalPages = Math.max(1, Math.ceil(filteredPosts.length / POSTS_PER_PAGE));
+  const safeActivePage = Math.min(activePage, totalPages);
+  const paginatedPosts = filteredPosts.slice(
+    (safeActivePage - 1) * POSTS_PER_PAGE,
+    safeActivePage * POSTS_PER_PAGE,
+  );
 
   const safeSlide = featuredSlide < filteredFeatured.length ? featuredSlide : 0;
 
@@ -174,7 +152,7 @@ export default function BlogPage() {
     );
   };
 
-  const blogCards = blogData.posts.map((post, i) => ({
+  const blogCards = paginatedPosts.map((post, i) => ({
     cat: post.categorySlug,
     title: post.searchTitle,
     cardBg: post.cardBg,
@@ -568,7 +546,7 @@ export default function BlogPage() {
               <div className="blog-grid" id="blogGrid" ref={blogGridRef}>
                 {blogCards.map((card) => (
                   <article
-                    key={card.title}
+                    key={card.slug}
                     className={`blog-card reveal ${card.reveal}`}
                     data-cat={card.cat}
                     data-title={card.title}
@@ -709,22 +687,29 @@ export default function BlogPage() {
                 ))}
               </div>
 
-              <div className="no-results" id="noResults" ref={noResultsRef}>
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="var(--gray-300)"
-                  strokeWidth="1.5"
-                >
-                  <circle cx="11" cy="11" r="8" />
-                  <path d="M21 21l-4.35-4.35" />
-                </svg>
-                <h3>No articles found</h3>
-                <p>Try a different search term or category.</p>
-              </div>
+              {filteredPosts.length === 0 && filteredFeatured.length === 0 && (
+                <div className="no-results" id="noResults">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="var(--gray-300)"
+                    strokeWidth="1.5"
+                  >
+                    <circle cx="11" cy="11" r="8" />
+                    <path d="M21 21l-4.35-4.35" />
+                  </svg>
+                  <h3>No articles found</h3>
+                  <p>Try a different search term or category.</p>
+                </div>
+              )}
 
               <div className="pagination">
-                <button type="button" className="page-btn arrow">
+                <button
+                  type="button"
+                  className="page-btn arrow"
+                  onClick={() => setActivePage((p) => Math.max(1, p - 1))}
+                  disabled={safeActivePage === 1}
+                >
                   <svg
                     viewBox="0 0 24 24"
                     fill="none"
@@ -734,17 +719,22 @@ export default function BlogPage() {
                     <path d="M15 18l-6-6 6-6" />
                   </svg>
                 </button>
-                {[1, 2, 3].map((n) => (
+                {Array.from({ length: totalPages }, (_, i) => i + 1).map((n) => (
                   <button
                     key={n}
                     type="button"
-                    className={`page-btn ${activePage === n ? "active" : ""}`}
+                    className={`page-btn ${safeActivePage === n ? "active" : ""}`}
                     onClick={() => setActivePage(n)}
                   >
                     {n}
                   </button>
                 ))}
-                <button type="button" className="page-btn arrow">
+                <button
+                  type="button"
+                  className="page-btn arrow"
+                  onClick={() => setActivePage((p) => Math.min(totalPages, p + 1))}
+                  disabled={safeActivePage === totalPages}
+                >
                   <svg
                     viewBox="0 0 24 24"
                     fill="none"
@@ -818,7 +808,7 @@ export default function BlogPage() {
         </div>
       </div>
 
-      {allArticles.map((article) => (
+      {/* {allArticles.map((article) => (
         <div
           key={article.slug}
           className={`article-view${activeArticle === article.slug ? " show" : ""}`}
@@ -906,6 +896,93 @@ export default function BlogPage() {
               </div>
               {renderShareIcons(article.socialLinks)}
             </div>
+          </div>
+        </div>
+      ))} */}
+      {allArticles.map((article) => (
+        <div
+          key={article.slug}
+          className={`article-view${activeArticle === article.slug ? " show" : ""}`}
+        >
+          <div className="article-page-wrap">
+            <div className="article-back" onClick={hideArticle}>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" {...svgStroke}>
+                <path d="M19 12H5M12 19l-7-7 7-7" />
+              </svg>
+              Back to Blog
+            </div>
+
+            <article className="article-single-card">
+              {article.imageUrl && (
+                <div className="article-card-img-wrap">
+                  <Image
+                    src={article.imageUrl}
+                    alt={article.title}
+                    className="article-card-hero-img"
+                    width={1600}
+                    height={420}
+                    unoptimized
+                  />
+                  <div className="article-card-img-overlay">
+                    <span className="article-cat-badge">{article.category}</span>
+                  </div>
+                </div>
+              )}
+
+              <div className="article-card-body">
+                {!article.imageUrl && (
+                  <span className="article-cat-badge" style={{ marginBottom: 16 }}>
+                    {article.category}
+                  </span>
+                )}
+                <h1 className="article-card-title">{article.title}</h1>
+
+                <div className="article-hero-meta">
+                  {article.authorInitials && (
+                    <>
+                      <div className="meta-author">
+                        <div className="meta-avatar">{article.authorInitials}</div>
+                        <div className="meta-author-info">
+                          <span className="meta-author-name">{article.authorName}</span>
+                          <span className="meta-author-role">{article.authorRole}</span>
+                        </div>
+                      </div>
+                      <div className="meta-sep" />
+                    </>
+                  )}
+                  <div className="meta-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" {...svgStroke}>
+                      <rect x="3" y="4" width="18" height="18" rx="2" />
+                      <line x1="16" y1="2" x2="16" y2="6" />
+                      <line x1="8" y1="2" x2="8" y2="6" />
+                      <line x1="3" y1="10" x2="21" y2="10" />
+                    </svg>
+                    {article.date}
+                  </div>
+                  <div className="meta-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" {...svgStroke}>
+                      <circle cx="12" cy="12" r="10" />
+                      <path d="M12 6v6l4 2" />
+                    </svg>
+                    {article.readTime}
+                  </div>
+                </div>
+
+                <div className="article-divider" />
+
+                <div
+                  className="article-content"
+                  dangerouslySetInnerHTML={{ __html: markdownToHtml(article.content) }}
+                />
+
+                <div className="article-tags">
+                  {article.tags.map((tag) => (
+                    <span key={tag} className="article-tag">{tag}</span>
+                  ))}
+                </div>
+                {renderShareIcons(article.socialLinks)}
+              </div>
+            </article>
           </div>
         </div>
       ))}
