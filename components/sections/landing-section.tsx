@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { ArrowRight, Heart, Check, TrendingUp, Activity } from "lucide-react";
+import { ArrowRight, Heart, Check, TrendingUp } from "lucide-react";
 
 export default function Hero() {
   const [mounted, setMounted] = useState(false);
@@ -101,97 +101,17 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Right Side - Floating Card Illustration */}
+          {/* Right Side - Hero Image */}
           <div
             className={`${mounted ? "animate-fade-in-up" : "opacity-0"}`}
             style={{ animationDelay: "0.3s" }}
           >
             <div className="relative">
-              {/* Main Dashboard Card */}
-              <div className="relative z-10 bg-[#0F0A1E] rounded-[32px] p-6 shadow-2xl border border-white/5 overflow-hidden">
-                {/* Header Dots */}
-                <div className="flex items-center gap-6 mb-10">
-                  <div className="flex gap-2">
-                    <div className="w-2.5 h-2.5 rounded-full bg-[#FF5F56]"></div>
-                    <div className="w-2.5 h-2.5 rounded-full bg-[#FFBD2E]"></div>
-                    <div className="w-2.5 h-2.5 rounded-full bg-[#27C93F]"></div>
-                  </div>
-                  <div className="text-[11px] font-bold text-white/40 uppercase tracking-[0.2em]">
-                    Hospital Operations Dashboard
-                  </div>
-                </div>
-
-                {/* Grid Content */}
-                <div className="grid grid-cols-2 gap-4 mb-4">
-                  {/* Patients Card */}
-                  <div className="bg-white/[0.03] border border-white/[0.05] rounded-2xl p-4 sm:p-6">
-                    <div className="text-[10px] font-bold text-white/40 uppercase tracking-wider mb-2">
-                      Patients Today
-                    </div>
-                    <div className="text-3xl font-bold text-white mb-1">
-                      2,840
-                    </div>
-                    <div className="text-[10px] text-white/30 font-medium">
-                      OPD, IPD & Emergency
-                    </div>
-                  </div>
-
-                  {/* Revenue Card */}
-                  <div className="bg-white/[0.03] border border-white/[0.05] rounded-2xl p-4 sm:p-6">
-                    <div className="text-[10px] font-bold text-white/40 uppercase tracking-wider mb-2">
-                      Revenue Today
-                    </div>
-                    <div className="text-3xl font-bold text-[#14bbd3] mb-1">
-                      ₹1.2Cr
-                    </div>
-                    <div className="text-[10px] text-white/30 font-medium">
-                      Billing & collections
-                    </div>
-                  </div>
-
-                  {/* Bed Occupancy Card */}
-                  <div className="bg-white/[0.03] border border-white/[0.05] rounded-2xl p-4 sm:p-6">
-                    <div className="text-[10px] font-bold text-white/40 uppercase tracking-wider mb-2">
-                      Bed Occupancy
-                    </div>
-                    <div className="text-3xl font-bold text-[#FFBD2E] mb-1">
-                      97.2%
-                    </div>
-                    <div className="text-[10px] text-white/30 font-medium">
-                      Real-time ward visibility
-                    </div>
-                  </div>
-
-                  {/* Claims Card */}
-                  <div className="bg-white/[0.03] border border-white/[0.05] rounded-2xl p-4 sm:p-6">
-                    <div className="text-[10px] font-bold text-white/40 uppercase tracking-wider mb-2">
-                      Claims Processed
-                    </div>
-                    <div className="text-3xl font-bold text-[#27C93F] mb-1">
-                      340
-                    </div>
-                    <div className="text-[10px] text-white/30 font-medium">
-                      Insurance cleared today
-                    </div>
-                  </div>
-                </div>
-
-                {/* Bottom Chart Mockup */}
-                <div className="bg-white/[0.03] border border-white/[0.05] rounded-2xl p-4 sm:p-6 relative overflow-hidden h-24">
-                  <div className="absolute inset-x-0 bottom-0 h-[60%] bg-gradient-to-t from-[#14bbd3]/10 to-transparent"></div>
-                  <svg
-                    className="absolute bottom-0 left-0 w-full h-12"
-                    preserveAspectRatio="none"
-                  >
-                    <path
-                      d="M0 40 Q 50 20, 100 35 T 200 15 T 300 30 T 400 10 L 400 50 L 0 50 Z"
-                      fill="none"
-                      stroke="#14bbd3"
-                      strokeWidth="2"
-                    />
-                  </svg>
-                </div>
-              </div>
+              <img
+                src="/images/hero/hero-image.png"
+                alt="Qurix healthcare operations platform dashboard"
+                className="w-full h-auto rounded-2xl"
+              />
 
               {/* Floating Improvement Badge */}
               <div className="absolute -top-10 right-4 lg:-right-10 z-20 bg-white rounded-2xl p-5 shadow-2xl border border-gray-100 flex items-center gap-4 animate-float">
@@ -207,10 +127,6 @@ export default function Hero() {
                   </div>
                 </div>
               </div>
-
-              {/* Background Decorations */}
-              <div className="absolute -top-20 -right-20 w-80 h-80 bg-[#14bbd3]/10 rounded-full blur-3xl -z-10"></div>
-              <div className="absolute -bottom-20 -left-20 w-80 h-80 bg-[#14bbd3]/10 rounded-full blur-3xl -z-10"></div>
             </div>
           </div>
         </div>

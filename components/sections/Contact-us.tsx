@@ -349,16 +349,16 @@ export default function ContactUs() {
           {/* Right Column - Info Cards (4/5 cols) */}
           <div className="lg:col-span-5 space-y-6">
             {/* Talk To Experts Card */}
-            <div className="bg-[#0F0A1E] rounded-[32px] p-8 md:p-10 text-white shadow-2xl relative overflow-hidden">
+            <div className="bg-white rounded-[32px] p-8 md:p-10 text-[#111827] shadow-xl shadow-slate-200/60 ring-1 ring-slate-100 relative overflow-hidden">
               {/* Accent decoration */}
-              <div className="absolute top-[-10%] right-[-10%] w-[50%] h-[50%] bg-[#14bbd3]/20 rounded-full blur-[60px]"></div>
+              <div className="absolute top-[-10%] right-[-10%] w-[50%] h-[50%] bg-[#14bbd3]/10 rounded-full blur-[60px]"></div>
 
               <div className="relative z-10 space-y-8">
                 <div className="space-y-4">
                   <h2 className="text-2xl md:text-3xl font-extrabold tracking-tight">
                     Talk to Our Experts
                   </h2>
-                  <p className="text-white/50 text-[15px] leading-relaxed font-medium">
+                  <p className="text-slate-500 text-[15px] leading-relaxed font-medium">
                     Prefer a direct conversation? Reach our healthcare solutions
                     team through any of these channels.
                   </p>
@@ -368,16 +368,16 @@ export default function ContactUs() {
                   {/* Call Sales */}
                   <a
                     href="tel:+917075740042"
-                    className="bg-white/5 rounded-2xl p-5 border border-white/5 flex items-center gap-5 transition-all hover:bg-white/10 group cursor-pointer"
+                    className="bg-slate-50 rounded-2xl p-5 border border-slate-200 flex items-center gap-5 transition-all hover:bg-white hover:border-[#14bbd3]/30 group cursor-pointer"
                   >
                     <div className="w-12 h-12 rounded-xl bg-[#14bbd3] flex items-center justify-center group-hover:scale-110 transition-transform">
                       <Phone size={20} className="text-white" />
                     </div>
                     <div>
-                      <div className="text-[15px] font-bold text-white mb-0.5">
+                      <div className="text-[15px] font-bold text-[#111827] mb-0.5">
                         Call Sales Directly
                       </div>
-                      <div className="text-[13px] text-white/40 font-medium group-hover:text-white/70 transition-colors">
+                      <div className="text-[13px] text-slate-500 font-medium group-hover:text-slate-700 transition-colors">
                         +91 - 7075740042 (Mon-Sat, 9am-7pm)
                       </div>
                     </div>
@@ -386,16 +386,16 @@ export default function ContactUs() {
                   {/* Email Us */}
                   <a
                     href="mailto:hello@qurix.com"
-                    className="bg-white/5 rounded-2xl p-5 border border-white/5 flex items-center gap-5 transition-all hover:bg-white/10 group cursor-pointer"
+                    className="bg-slate-50 rounded-2xl p-5 border border-slate-200 flex items-center gap-5 transition-all hover:bg-white hover:border-[#14bbd3]/30 group cursor-pointer"
                   >
                     <div className="w-12 h-12 rounded-xl bg-[#14bbd3] flex items-center justify-center group-hover:scale-110 transition-transform">
                       <Mail size={20} className="text-white" />
                     </div>
                     <div>
-                      <div className="text-[15px] font-bold text-white mb-0.5">
+                      <div className="text-[15px] font-bold text-[#111827] mb-0.5">
                         Email Our Team
                       </div>
-                      <div className="text-[13px] text-white/40 font-medium group-hover:text-white/70 transition-colors">
+                      <div className="text-[13px] text-slate-500 font-medium group-hover:text-slate-700 transition-colors">
                         hello@qurix.com
                       </div>
                     </div>
@@ -406,16 +406,16 @@ export default function ContactUs() {
                     href="https://wa.me/917075740042"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-white/5 rounded-2xl p-5 border border-white/5 flex items-center gap-5 transition-all hover:bg-white/10 group cursor-pointer"
+                    className="bg-slate-50 rounded-2xl p-5 border border-slate-200 flex items-center gap-5 transition-all hover:bg-white hover:border-[#14bbd3]/30 group cursor-pointer"
                   >
                     <div className="w-12 h-12 rounded-xl bg-[#F59E0B] flex items-center justify-center group-hover:scale-110 transition-transform">
                       <MessageSquare size={20} className="text-white" />
                     </div>
                     <div>
-                      <div className="text-[15px] font-bold text-white mb-0.5">
+                      <div className="text-[15px] font-bold text-[#111827] mb-0.5">
                         WhatsApp Us
                       </div>
-                      <div className="text-[13px] text-white/40 font-medium group-hover:text-white/70 transition-colors">
+                      <div className="text-[13px] text-slate-500 font-medium group-hover:text-slate-700 transition-colors">
                         Quick response, instant support
                       </div>
                     </div>
