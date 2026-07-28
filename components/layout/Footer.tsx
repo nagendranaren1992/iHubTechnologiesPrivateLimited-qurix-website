@@ -30,16 +30,16 @@ export default function Footer() {
           </nav>
 
           {/* Copyright Row */}
-          <div className="text-white/40 text-[14px] leading-relaxed font-normal">
+          <div className="text-white/60 text-[14px] leading-relaxed font-normal">
             © {currentYear}{" "}
-            <span className="font-bold text-white/80">
+            <span className="font-bold text-white/90">
               QURIX Healthcare Platform
             </span>{" "}
             — All rights reserved.
           </div>
 
           {/* SEO Keywords Row */}
-          <div className="flex flex-wrap justify-center gap-x-3 gap-y-2 text-white/20 text-[12px] font-medium uppercase tracking-[0.05em]">
+          <div className="flex flex-wrap justify-center gap-x-3 gap-y-2 text-white/45 text-[12px] font-medium uppercase tracking-[0.05em]">
             <span>Healthcare Management Platform</span>
             <span className="opacity-50">·</span>
             <span>Hospital Management Software</span>

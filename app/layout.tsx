@@ -10,7 +10,7 @@ import "./globals.css";
 const plusJakarta = Plus_Jakarta_Sans({
   variable: "--font-plus-jakarta",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700", "800"],
+  weight: ["400", "500", "600", "700", "800"],
 });
 
 export const metadata: Metadata = {
@@ -57,6 +57,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <link
+          rel="preload"
+          href="/images/brand/logo.svg"
+          as="image"
+          fetchPriority="high"
+        />
+      </head>
       <body
         className={`${plusJakarta.variable} font-sans antialiased`}
         suppressHydrationWarning

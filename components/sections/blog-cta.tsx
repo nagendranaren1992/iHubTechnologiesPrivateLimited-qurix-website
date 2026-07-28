@@ -15,7 +15,7 @@ export default function BlogCta() {
           </p>
           <Link
             href="/blog"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-[#14bbd3] text-white rounded-xl font-bold text-[14px] hover:bg-[#12a5ba] transition-all duration-300 shadow-xl shadow-cyan-500/10"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-[#14bbd3] text-white rounded-xl font-bold text-[14px] hover:bg-[#12a5ba] transition-all duration-300 shadow-xl shadow-[#14bbd3]/10"
           >
             Read the Blog
             <ArrowRight size={18} />

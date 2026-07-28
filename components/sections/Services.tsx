@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 import { Book, Wrench, Coffee, TrendingUp, Hexagon } from "lucide-react";
 
@@ -90,7 +88,7 @@ export default function Services() {
               </h3>
 
               {/* Description */}
-              <p className="text-gray-500 text-[13px] leading-relaxed group-hover:text-white/80 transition-colors duration-300">
+              <p className="text-gray-500 text-[13px] leading-relaxed group-hover:text-white transition-colors duration-300">
                 {service.description}
               </p>
             </div>

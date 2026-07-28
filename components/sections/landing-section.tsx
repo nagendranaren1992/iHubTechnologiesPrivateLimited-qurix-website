@@ -1,16 +1,7 @@
-"use client";
-
-import { useEffect, useState } from "react";
 import Image from "next/image";
 import { ArrowRight, Heart, Check, TrendingUp } from "lucide-react";
 
 export default function Hero() {
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
   return (
     <section
       id="home"
@@ -22,9 +13,7 @@ export default function Hero() {
       <div className="container-custom relative">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Side - Text Content */}
-          <div
-            className={`space-y-8 ${mounted ? "animate-fade-in-up" : "opacity-0"}`}
-          >
+          <div className="space-y-8 animate-fade-in-up">
             {/* Badge */}
             <div className="inline-flex items-center gap-2 bg-[#ecfeff] text-[#14bbd3] px-5 py-2.5 rounded-full text-sm font-bold border border-[#cffafe]">
               <Heart size={16} fill="#14bbd3" className="text-[#14bbd3]" />
@@ -66,7 +55,7 @@ export default function Hero() {
               </a>
               <a
                 href="#features"
-                className="cursor-pointer border-2 border-[#14bbd3] text-[#14bbd3] px-8 py-4 rounded-full font-semibold hover:bg-[#14bbd3]/5 transition-all duration-300"
+                className="cursor-pointer border-2 border-[#14bbd3] text-[#14bbd3] px-8 py-4 rounded-full font-semibold hover:bg-[#ecfeff] transition-all duration-300"
               >
                 Explore Features
               </a>
@@ -96,18 +85,15 @@ export default function Hero() {
           </div>
 
           {/* Right Side - Hero Image */}
-          <div
-            className={`${mounted ? "animate-fade-in-up" : "opacity-0"}`}
-            style={{ animationDelay: "0.3s" }}
-          >
+          <div className="animate-fade-in-up" style={{ animationDelay: "0.3s" }}>
             <div className="relative">
               <Image
                 src="/images/hero/hero-image.png"
                 alt="Qurix healthcare operations platform dashboard"
                 width={1200}
                 height={900}
-                priority
-                sizes="(max-width: 1024px) 100vw, 50vw"
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 600px"
+                quality={70}
                 className="w-full h-auto rounded-2xl"
               />
 
@@ -120,7 +106,7 @@ export default function Hero() {
                   <div className="text-[16px] font-black text-[#14bbd3]">
                     +35% Faster Billing
                   </div>
-                  <div className="text-[12px] text-gray-400 font-medium">
+                  <div className="text-[12px] text-gray-500 font-medium">
                     Avg. improvement
                   </div>
                 </div>

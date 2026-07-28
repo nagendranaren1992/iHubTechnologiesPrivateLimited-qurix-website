@@ -1,8 +1,4 @@
-"use client";
-
-import React, { useEffect, useState } from "react";
 import Image from "next/image";
-
 const companies = [
   { name: "Alavi", logo: "/images/clients/alavi.png", id: 1 },
   { name: "Amor", logo: "/images/clients/amor.png", id: 2 },
@@ -22,36 +18,6 @@ const companies = [
 ];
 
 export default function TrustedCompanies() {
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  if (!mounted) {
-    return (
-      <section
-        className="relative py-6 overflow-hidden border-y border-white/10"
-        style={{
-          background: "linear-gradient(135deg, #14bbd3 0%, #12a5ba 100%)",
-        }}
-      >
-        {/* Same structure as real version for hydration match */}
-        <div className="absolute inset-y-0 left-0 w-32 md:w-64 bg-gradient-to-r from-[#14bbd3] to-transparent z-10 pointer-events-none"></div>
-        <div className="absolute inset-y-0 right-0 w-32 md:w-64 bg-gradient-to-l from-[#12a5ba] to-transparent z-10 pointer-events-none"></div>
-
-        <div className="container-custom">
-          <div className="text-center mb-4">
-            <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/80">
-              TRUSTED BY
-            </p>
-          </div>
-          <div className="h-10" />
-        </div>
-      </section>
-    );
-  }
-
   return (
     <section
       className="relative py-6 overflow-hidden border-y border-white/10"
@@ -59,18 +25,16 @@ export default function TrustedCompanies() {
         background: "linear-gradient(135deg, #14bbd3 0%, #12a5ba 100%)",
       }}
     >
-      {/* Edge Masking (Fades) - Full Width */}
       <div className="absolute inset-y-0 left-0 w-32 md:w-64 bg-gradient-to-r from-[#14bbd3] to-transparent z-10 pointer-events-none"></div>
       <div className="absolute inset-y-0 right-0 w-32 md:w-64 bg-gradient-to-l from-[#12a5ba] to-transparent z-10 pointer-events-none"></div>
 
       <div className="container-custom">
         <div className="text-center mb-4">
-          <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/80">
+          <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-white">
             TRUSTED BY
           </p>
         </div>
 
-        {/* Logo Animation Wrapper */}
         <div className="relative pause-hover">
           <div className="flex animate-marquee whitespace-nowrap w-max">
             {[...companies, ...companies].map((company, index) => (
@@ -82,9 +46,11 @@ export default function TrustedCompanies() {
                   <Image
                     src={company.logo}
                     alt={`${company.name} Logo - Trusted Qurix Partner`}
-                    fill
-                    className="object-contain"
-                    sizes="(max-width: 768px) 96px, (max-width: 1024px) 128px, 144px"
+                    width={96}
+                    height={32}
+                    sizes="96px"
+                    quality={50}
+                    className="h-full w-full object-contain"
                   />
                 </div>
               </div>

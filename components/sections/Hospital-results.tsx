@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 import { Star } from "lucide-react";
 
@@ -38,7 +36,7 @@ export default function HospitalResults() {
                 </h3>
 
                 {/* Card Subtext */}
-                <p className="text-white/80 text-[15px] leading-relaxed font-medium">
+                <p className="text-white text-[15px] leading-relaxed font-medium">
                   Using QURIX's Revenue Cycle Management and automated claims
                   processing to recover lost revenue.
                 </p>
@@ -65,7 +63,7 @@ export default function HospitalResults() {
                 <div className="text-[32px] font-black text-[#14bbd3] leading-none tracking-tight">
                   18%
                 </div>
-                <div className="text-[13px] text-gray-400 font-medium whitespace-nowrap">
+                <div className="text-[13px] text-gray-500 font-medium whitespace-nowrap">
                   Billing leakage reduced
                 </div>
               </div>
@@ -74,7 +72,7 @@ export default function HospitalResults() {
                 <div className="text-[32px] font-black text-[#14bbd3] leading-none tracking-tight">
                   3x
                 </div>
-                <div className="text-[13px] text-gray-400 font-medium whitespace-nowrap">
+                <div className="text-[13px] text-gray-500 font-medium whitespace-nowrap">
                   Faster claims processing
                 </div>
               </div>
@@ -83,7 +81,7 @@ export default function HospitalResults() {
                 <div className="text-[32px] font-black text-[#14bbd3] leading-none tracking-tight">
                   2 weeks
                 </div>
-                <div className="text-[13px] text-gray-400 font-medium whitespace-nowrap">
+                <div className="text-[13px] text-gray-500 font-medium whitespace-nowrap">
                   Implementation time
                 </div>
               </div>

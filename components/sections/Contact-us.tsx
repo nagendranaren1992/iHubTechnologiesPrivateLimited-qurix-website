@@ -238,11 +238,15 @@ export default function ContactUs() {
                   </div>
                   {/* Number of Beds */}
                   <div className="space-y-2">
-                    <label className="text-[13px] font-bold text-[#374151]">
+                    <label
+                      htmlFor="noOfBeds"
+                      className="text-[13px] font-bold text-[#374151]"
+                    >
                       Number of Beds
                     </label>
                     <div className="relative">
                       <select
+                        id="noOfBeds"
                         name="noOfBeds"
                         value={formData.noOfBeds}
                         onChange={handleInputChange}
@@ -328,7 +332,7 @@ export default function ContactUs() {
                     <div className="w-8 h-8 rounded-full bg-teal-50 flex items-center justify-center">
                       <ShieldCheck size={16} className="text-[#14bbd3]" />
                     </div>
-                    <p className="text-[12px] text-slate-400 font-medium leading-tight">
+                    <p className="text-[12px] text-slate-500 font-medium leading-tight">
                       Your data is safe. We never share your <br /> information
                       with third parties.
                     </p>
@@ -430,10 +434,10 @@ export default function ContactUs() {
                 <div className="w-10 h-10 rounded-full bg-[#ecfeff] flex items-center justify-center mb-6 border border-[#14bbd3]/10">
                   <Clock size={18} className="text-[#14bbd3]" />
                 </div>
-                <h4 className="text-[14px] font-bold text-[#111827] mb-2">
+                <h3 className="text-[14px] font-bold text-[#111827] mb-2">
                   30-Minute Demo
-                </h4>
-                <p className="text-[12px] text-slate-400 font-medium leading-relaxed">
+                </h3>
+                <p className="text-[12px] text-slate-500 font-medium leading-relaxed">
                   Quick, focused walkthrough tailored to your hospital's
                   workflow
                 </p>
@@ -443,10 +447,10 @@ export default function ContactUs() {
                 <div className="w-10 h-10 rounded-full bg-teal-50 flex items-center justify-center mb-6">
                   <Shield size={18} className="text-[#14bbd3]" />
                 </div>
-                <h4 className="text-[14px] font-bold text-[#111827] mb-2">
+                <h3 className="text-[14px] font-bold text-[#111827] mb-2">
                   No Obligation
-                </h4>
-                <p className="text-[12px] text-slate-400 font-medium leading-relaxed">
+                </h3>
+                <p className="text-[12px] text-slate-500 font-medium leading-relaxed">
                   Free consultation with zero commitment or hidden costs
                 </p>
               </div>

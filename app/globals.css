@@ -321,6 +321,13 @@
 
 .animate-float {
   animation: float 6s ease-in-out infinite;
+  transform: translate3d(0, 0, 0);
+}
+
+@media (max-width: 768px) {
+  .animate-float {
+    animation: none;
+  }
 }
 
 .animate-float-x {
@@ -341,6 +348,19 @@
 
 .pause-hover:hover .animate-marquee {
   animation-play-state: paused;
+}
+
+.animate-marquee {
+  transform: translate3d(0, 0, 0);
+  contain: layout style;
+}
+
+@media (max-width: 768px) {
+  .animate-fade-in-up {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
 }
 
 /* Blog page styles (from standalone blog globals) */

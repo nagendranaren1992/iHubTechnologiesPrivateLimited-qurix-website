@@ -11,7 +11,6 @@ export default function Header() {
   const [isDemoModalOpen, setIsDemoModalOpen] = useState(false);
 
   const navLinks = [
-    { name: "Home", href: "/" },
     { name: "Product", href: "/#features" },
     { name: "Modules", href: "/#modules" },
     { name: "Services", href: "/#services" },
@@ -24,11 +23,11 @@ export default function Header() {
     <>
       <header className="fixed top-0 left-0 right-0 z-[1000] bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-100/50">
         <nav className="container-custom">
-          <div className="flex items-center justify-between h-16 md:h-20 lg:h-24">
+          <div className="flex items-center justify-between gap-4 h-16 md:h-20 lg:h-24">
             {/* Logo */}
             <Link
               href="/"
-              className="flex items-center h-full"
+              className="flex items-center h-full shrink-0"
               onClick={(e) => {
                 if (window.location.pathname === "/") {
                   e.preventDefault();
@@ -44,16 +43,17 @@ export default function Header() {
                 height={45}
                 className="w-auto h-full max-h-[45px] object-contain"
                 priority
+                fetchPriority="high"
               />
             </Link>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center gap-8 lg:gap-12">
+            <div className="hidden lg:flex items-center gap-6 xl:gap-10">
               {navLinks.map((link) => (
                 <Link
                   key={link.name}
                   href={link.href}
-                  className="text-[#4b5563] hover:text-[#14bbd3] transition-all font-bold text-[15px] tracking-tight py-2 px-1 relative group"
+                  className="text-[#4b5563] hover:text-[#14bbd3] transition-all font-bold text-[15px] tracking-tight py-2 whitespace-nowrap relative group"
                 >
                   {link.name}
                   <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#14bbd3] transition-all duration-300 group-hover:w-full"></span>
@@ -62,24 +62,22 @@ export default function Header() {
             </div>
 
             {/* Right Side - Phone & Demo CTA */}
-            <div className="hidden md:flex items-center gap-10">
+            <div className="hidden lg:flex items-center gap-6 xl:gap-8 shrink-0">
               <a
                 href="tel:+917075740042"
-                className="flex items-center gap-3 group cursor-pointer"
+                className="flex items-center gap-3 group cursor-pointer whitespace-nowrap"
               >
-                <div className="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center text-slate-400 group-hover:bg-[#14bbd3] group-hover:text-white transition-all duration-300 border border-slate-100">
+                <div className="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center text-slate-400 group-hover:bg-[#14bbd3] group-hover:text-white transition-all duration-300 border border-slate-100 shrink-0">
                   <Phone size={18} />
                 </div>
-                <div className="flex flex-col">
-                  <span className="text-[15px] font-extrabold text-[#111827] leading-none group-hover:text-[#14bbd3] transition-colors">
-                    +91 - 7075740042
-                  </span>
-                </div>
+                <span className="text-[15px] font-extrabold text-[#111827] leading-none group-hover:text-[#14bbd3] transition-colors">
+                  +91 - 7075740042
+                </span>
               </a>
 
               <button
                 onClick={() => setIsDemoModalOpen(true)}
-                className="group flex items-center gap-2 px-8 py-4 bg-[#14bbd3] text-white rounded-xl font-bold text-[14px] hover:bg-[#12a5ba] transition-all duration-300 shadow-xl shadow-cyan-500/10 active:scale-[0.98]"
+                className="px-6 xl:px-8 py-3 xl:py-4 bg-[#14bbd3] text-white rounded-xl font-bold text-[14px] whitespace-nowrap hover:bg-[#12a5ba] transition-all duration-300 shadow-xl shadow-[#14bbd3]/10 active:scale-[0.98]"
               >
                 Schedule Demo
               </button>
@@ -88,7 +86,7 @@ export default function Header() {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="md:hidden p-2 text-[#111827] hover:text-[#14bbd3] transition-colors relative z-[1001]"
+              className="lg:hidden p-2 text-[#111827] hover:text-[#14bbd3] transition-colors relative z-[1001]"
               aria-label="Toggle menu"
             >
               <div className="relative w-7 h-7">
@@ -101,7 +99,7 @@ export default function Header() {
 
       {/* Mobile Menu Overlay */}
       <div
-        className={`fixed inset-0 z-[999] bg-white transition-all duration-500 md:hidden overflow-y-auto ${
+        className={`fixed inset-0 z-[999] bg-white transition-all duration-500 lg:hidden overflow-y-auto ${
           isMenuOpen
             ? "translate-y-0 opacity-100 visible"
             : "-translate-y-full opacity-0 invisible"

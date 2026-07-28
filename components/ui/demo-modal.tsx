@@ -271,11 +271,12 @@ export default function DemoModal({ isOpen, onClose }: DemoModalProps) {
 
               {/* Number of Beds */}
               <div className="space-y-2">
-                <label className="text-sm font-bold text-[#111827]">
+                <label htmlFor="demo-noOfBeds" className="text-sm font-bold text-[#111827]">
                   Number of Beds
                 </label>
                 <div className="relative">
                   <select
+                    id="demo-noOfBeds"
                     name="noOfBeds"
                     value={formData.noOfBeds}
                     onChange={handleInputChange}
