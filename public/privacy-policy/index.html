@@ -105,6 +105,20 @@
       font-size: 0.88rem;
     }
 
+    .site-nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.75rem 1.25rem;
+      margin-bottom: 1.25rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .site-nav a {
+      color: var(--accent);
+    }
+
     @media (max-width: 600px) {
       header h1 {
         font-size: 1.45rem;
@@ -118,6 +132,12 @@
 </head>
 <body>
   <header>
+    <nav class="site-nav" aria-label="Site">
+      <a href="/">Home</a>
+      <a href="/blog">Blog</a>
+      <a href="/#contact">Contact</a>
+      <a href="/privacy-policy/">Privacy Policy</a>
+    </nav>
     <h1>Privacy Policy</h1>
     <p>Qurix EMR Mobile Application</p>
     <p class="meta">Effective date: June 22, 2026 &nbsp;|&nbsp; Last updated: June 22, 2026</p>
@@ -339,6 +359,11 @@
   </main>
 
   <footer>
+    <nav class="site-nav" aria-label="Footer">
+      <a href="/">Home</a>
+      <a href="/blog">Blog</a>
+      <a href="/#contact">Contact</a>
+    </nav>
     &copy; 2026 iHUB Technologies Private Limited. All rights reserved.
   </footer>
 </body>

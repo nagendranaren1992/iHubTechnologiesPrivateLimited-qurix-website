@@ -109,7 +109,36 @@ export default function BlogPage() {
   }, [filteredFeaturedLen, activeCat, searchQuery]);
 
   if (!blogData) {
-    return <div className="blog-listing" style={{ minHeight: "100vh" }} />;
+    return (
+      <>
+        <Header />
+        <div className="blog-listing" style={{ minHeight: "100vh" }}>
+          <section className="blog-hero">
+            <div className="blog-hero-inner">
+              <div className="blog-hero-top">
+                <div>
+                  <p className="blog-breadcrumb">
+                    <a href="/">Home</a>
+                    <span aria-hidden="true"> / </span>
+                    <span>Blog</span>
+                  </p>
+                  <h1>
+                    Healthcare Insights &amp;
+                    <br />
+                    HMS Best Practices
+                  </h1>
+                  <p className="blog-hero-sub">
+                    Expert articles on hospital operations, EMR, revenue cycle,
+                    and digital health.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+        <Footer />
+      </>
+    );
   }
 
   const allArticles = [...blogData.featuredPosts, ...blogData.posts].map(
@@ -216,6 +245,11 @@ export default function BlogPage() {
           <div className="blog-hero-inner">
             <div className="blog-hero-top">
               <div>
+                <p className="blog-breadcrumb">
+                  <a href="/">Home</a>
+                  <span aria-hidden="true"> / </span>
+                  <span>Blog</span>
+                </p>
                 <h1>
                   Healthcare{" "}
                   <span className="hl">{blogData.heroHighlight}</span> &amp;

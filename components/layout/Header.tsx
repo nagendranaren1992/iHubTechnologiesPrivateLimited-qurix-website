@@ -11,6 +11,7 @@ export default function Header() {
   const [isDemoModalOpen, setIsDemoModalOpen] = useState(false);
 
   const navLinks = [
+    { name: "Home", href: "/" },
     { name: "Product", href: "/#features" },
     { name: "Modules", href: "/#modules" },
     { name: "Services", href: "/#services" },

@@ -403,7 +403,7 @@ export default function ContactUs() {
 
                   {/* WhatsApp */}
                   <a
-                    href="https://wa.me/917075740042"
+                    href="https://api.whatsapp.com/send?phone=917075740042"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="bg-slate-50 rounded-2xl p-5 border border-slate-200 flex items-center gap-5 transition-all hover:bg-white hover:border-[#14bbd3]/30 group cursor-pointer"

@@ -14,12 +14,26 @@ const plusJakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Qurix | Healthcare Operations & Patient Journey Platform",
-  description: "Qurix is a unified healthcare operations platform that streamlines hospital workflows, patient engagement, clinical management, and billing.",
-  keywords: ["Healthcare Operations", "Patient Journey", "Hospital Management", "Clinical Management", "Medical Billing"],
+  title: "Hospital Management Software & Healthcare ERP | Qurix",
+  description:
+    "Qurix is a unified hospital management platform for EMR, billing, pharmacy, laboratory, inventory, patient engagement, and hospital operations.",
+  keywords: [
+    "Hospital Management Software",
+    "Healthcare ERP",
+    "EMR",
+    "Hospital Billing",
+    "Pharmacy Management",
+    "Laboratory Information System",
+    "Patient Engagement",
+  ],
+  metadataBase: new URL("https://qurix.com"),
+  alternates: {
+    canonical: "https://qurix.com",
+  },
   openGraph: {
-    title: "Qurix | Healthcare Operations & Patient Journey Platform",
-    description: "Qurix is a unified healthcare operations platform that streamlines hospital workflows, patient engagement, clinical management, and billing.",
+    title: "Hospital Management Software & Healthcare ERP | Qurix",
+    description:
+      "Qurix is a unified hospital management platform for EMR, billing, pharmacy, laboratory, inventory, patient engagement, and hospital operations.",
     url: "https://qurix.com",
     siteName: "Qurix",
     locale: "en_US",
@@ -27,8 +41,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Qurix | Healthcare Operations & Patient Journey Platform",
-    description: "Qurix is a unified healthcare operations platform that streamlines hospital workflows, patient engagement, clinical management, and billing.",
+    title: "Hospital Management Software & Healthcare ERP | Qurix",
+    description:
+      "Qurix is a unified hospital management platform for EMR, billing, pharmacy, laboratory, inventory, patient engagement, and hospital operations.",
   },
   icons: {
     icon: "/favicon.ico",

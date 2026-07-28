@@ -10,6 +10,7 @@ export default function Footer() {
           {/* Main Navigation Links */}
           <nav className="flex flex-wrap justify-center gap-x-10 gap-y-4">
             {[
+              { name: "Home", href: "/" },
               { name: "Product", href: "/#features" },
               { name: "Modules", href: "/#modules" },
               { name: "Services", href: "/#services" },

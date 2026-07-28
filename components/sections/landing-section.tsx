@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import { ArrowRight, Heart, Check, TrendingUp } from "lucide-react";
 
 export default function Hero() {
@@ -15,13 +16,6 @@ export default function Hero() {
       id="home"
       className="relative overflow-hidden pt-25 pb-20 md:pt-25 md:pb-24 lg:pt-40 lg:pb-32 bg-white"
     >
-      {/* Hidden image for SEO as per guidelines */}
-      <img 
-        src="/images/brand/logo.svg" 
-        alt="Qurix healthcare delivery platform dashboard - Healthcare software platform by Qurix" 
-        className="sr-only" 
-      />
-
       {/* Background gradient overlay */}
       <div className="absolute inset-0 bg-[#14bbd3]/[0.02] pointer-events-none"></div>
 
@@ -39,11 +33,11 @@ export default function Hero() {
 
             {/* Heading */}
             <h1 className="text-3xl md:text-4xl lg:text-[54px] font-bold leading-tight text-[#1a1a1a]">
-              Manage the entire{" "}
-              <span className="text-[#14bbd3]">Patient Journey</span>
+              Unified{" "}
+              <span className="text-[#14bbd3]">Hospital Management Software</span>
               <br />
-              on one{" "}
-              <span className="text-[#14bbd3]">Intelligent Platform</span>
+              for the{" "}
+              <span className="text-[#14bbd3]">Complete Patient Journey</span>
             </h1>
 
             {/* Description */}
@@ -107,9 +101,13 @@ export default function Hero() {
             style={{ animationDelay: "0.3s" }}
           >
             <div className="relative">
-              <img
+              <Image
                 src="/images/hero/hero-image.png"
                 alt="Qurix healthcare operations platform dashboard"
+                width={1200}
+                height={900}
+                priority
+                sizes="(max-width: 1024px) 100vw, 50vw"
                 className="w-full h-auto rounded-2xl"
               />
 

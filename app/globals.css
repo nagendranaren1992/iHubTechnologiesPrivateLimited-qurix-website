@@ -414,6 +414,23 @@
   max-width: 440px;
   line-height: 1.7;
 }
+
+.blog-breadcrumb {
+  font-size: 13px;
+  color: #9ca3af;
+  margin: 0 0 12px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.blog-breadcrumb a {
+  color: #14bbd3;
+  text-decoration: none;
+}
+
+.blog-breadcrumb a:hover {
+  text-decoration: underline;
+}
 .blog-search {
   display: flex;
   align-items: center;
