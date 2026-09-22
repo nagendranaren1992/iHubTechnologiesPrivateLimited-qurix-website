@@ -17,7 +17,6 @@ export default function Footer() {
               { name: "Results", href: "/#results" },
               { name: "Contact", href: "/#contact" },
               { name: "Blog", href: "/blog" },
-              { name: "Privacy Policy", href: "/privacy-policy/" },
             ].map((link) => (
               <Link
                 key={link.name}
